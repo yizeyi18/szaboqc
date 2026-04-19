@@ -348,7 +348,7 @@ Hartree-Fock方程
 以得到可用计算机方便求解的代数方程(矩阵方程). 
 同时, 
 我们仅关注一般性的该积分微分方程的推导(即Hartree-Fock)及这些方程及其解的内涵. 
-推导过程中哪个我们使用了泛函变分这个一般且使用的技巧—. 
+推导中我们会用到泛函变分，一种一般且实用的技巧. 
 
 \subsection{泛函变分}
 \label{sec3.2.1}
@@ -385,46 +385,46 @@ $\delta\braket{\tp|\hs|\tp} = \braket{\delta\tp|\hs|\tp} + \braket{\tp|\hs|\delt
 \begin{align}
 	\delta E = 0
 \end{align}
-这个条件保证了$E$对于$\tp$的任何变分都处于\emph{驻态}(stationary). 
+这个条件保证$E$对于$\tp$的任何变分都\emph{稳定}(stationary). 
 通常情况下, 
 驻点(stationary point)往往就是最小值.
 
 
-下面我们用变分的技巧重新推导1.3.2节中的线性变分问题对应的矩阵本征值方程, 
+下面我们用变分的技巧重新推导\autoref{sec:1.3.2}节中线性变分问题对应的矩阵本征值方程, 
 以期对变分技巧作个展示. 
 给定一个线性变分尝试波函数：
 \begin{align}
 	\ket{\tp} = \sum_{i=1}^{N}c_i\ket{\Psi_i}
 \end{align}
-我们希望对如下能量极小化：
+我们希望极小化如下能量：
 \begin{align}
 	E = \braket{\tp|\hs|\tp} = \sum_{ij} c_i^*c_j\braket{\Psi_i|\hs|\Psi_j}
 \end{align}
-并且保持尝试波函数为归一化的：
+并且保持尝试波函数的归一性：
 \begin{align}
 	\braket{\tp|\tp} - 1 = \sum_{ij}c_i^*c_j \braket{\Psi|\Psi} - 1 = 0
 \end{align}
 利用第一章中的Lagrange不定乘子法, 
-我们可以将如下的泛函对$c_i$极小化：
+上述问题等于将如下泛函对系数$c_i$极小化：
 \begin{align}
 	\mathscr{L} & = \braket{\tp|\hs|\tp} - E(\braket{\tp|\tp}-1) \notag\\
 	& = \sum_{ij}c_i^*c_j\braket{\Psi_i|\hs|\Psi_j} - E\left( \sum_{ij}c_i^*c_j \braket{\Psi|\Psi} - 1 \right)
 \end{align}
 其中$E$是Lagrange乘子. 
-下面我们令$\scr{L}$的一阶变分为零：
+极小化时，$\scr{L}$的一阶变分为零：
 \begin{align}
 	\delta\scr{L} = & \sum_{ij}\delta c_i^*c_j\braket{\Psi_i|\hs|\Psi_j} - E\sum_{ij}\delta c_i^*c_j\braket{\Psi_i|\Psi_j} \notag \\
-	& +  \sum_{ij}c_i^*\delta c_j\braket{\Psi_i|\hs|\Psi_j} - E\sum_{ij}c_i^*\delta c_j\braket{\Psi_i|\Psi_j}
+	& +  \sum_{ij}c_i^*\delta c_j\braket{\Psi_i|\hs|\Psi_j} - E\sum_{ij}c_i^*\delta c_j\braket{\Psi_i|\Psi_j} = 0
 \end{align}
-由于$E$是实的(因此$\scr{L}$也是实的), 
-合并项并交换指标后, 
+由于$E$是实的($\scr{L}$也是实的), 
+合并同类项、交换求和-数乘后, 
 我们得到
 \begin{align}
 	\sum_i\delta c_i^*\left[ \sum_j H_{ij}c_j - ES_{ij}c_j \right] + \text{复共轭} = 0
 \end{align}
 其中$H_{ij} = \braket{\Psi_i|\hs|\Psi_j}$. 
 用于线性展开的基函数$\ket{\Psi_i}$并不需要正交, 
-但是这里特别写出它们的重叠积分：
+它们的重叠积分记作：
 \begin{align}
 	\braket{\Psi_i|\Psi_j} = S_{ij}
 \end{align}
@@ -437,7 +437,7 @@ $\delta\braket{\tp|\hs|\tp} = \braket{\delta\tp|\hs|\tp} + \braket{\tp|\hs|\delt
 	\sum_j H_{ij}c_j & = E \sum_j S_{ij}c_j \notag\\
 	\mathbf{Hc} & = E\mathbf{Sc}
 \end{align}
-所以此处得到的结果本质上与之前在1.3.2节所得的结果相同(若$\mathbf{S}=1$且系数为实的). 
+所以此处得到的结果本质上与之前在\autoref{sec:1.3.2} 节所得的结果相同(若$\mathbf{S}=1$且系数为实的). 
 用泛函变分技巧所得的结果也可用对系数微分的办法得到. 
 但泛函变分是更具普遍性的技巧, 
 下面用它来导出\hft 方程. 
