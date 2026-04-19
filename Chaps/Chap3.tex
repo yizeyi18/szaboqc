@@ -228,8 +228,8 @@ Hartree-Fock理论中,
 这式代表$\chi_b$上的电子在$\mathbf{x}_1$处所产生的平均局域势能.
 
 
-(3.4)中的交换项来自单行列式的反对称性质, 它的形式比较特殊, 而且没有如库伦项那样简单的经典解释. 
-但仍可将Hartree-Fock方程(3.4)写成本征值方程的形式：
+\autoref{3.4}中的交换项来自单行列式的反对称性质, 它的形式比较特殊, 而且没有如库伦项那样简单的经典解释. 
+但仍可将Hartree-Fock方程\autoref{3.4}写成本征值方程的形式：
 \begin{align}
 	\left[ h(1) + \sum_{b\neq a}\mathscr{J}_b(1) - \sum_{b\neq a}\mathscr{K}_b(1)   \right]\chi_a(1) = \epsilon_a\chi_a(1)
 \end{align}
@@ -245,17 +245,18 @@ Hartree-Fock理论中,
 	\mathscr{J}_b(1)\chi_a(1) = \left[ \int\dd{x}_2\,\chi_b^*(2)r_{12}^{-1}\chi_b(2) \right]\chi_a(1)
 \end{align}
 当$\mathscr{K}_b(1)$作用在$\chi_a(1)$时会涉及到坐标交换：
-与(3.11)相比, (3.10)中$r_{12}^{-1}$右边的电子1和2的坐标交换了顺序. 
+与\autoref{3.11}相比, \autoref{3.10}中$r_{12}^{-1}$右边的电子1和2的坐标交换了顺序. 
 不同于\emph{定域}的库伦算符, 人们一般说交换算符是\emph{非定域}算符, 
 因为在空间中任一点$\mathbf{x}_1$上, 并不存在一个简单的势能$\mathscr{K}_b(\mathbf{x}_1)$。 $\mathscr{K}_b(\mathbf{x}_1)$作用于$\chi_a(\mathbf{x}_1)$上所产生的结果依赖于$\chi_a$在全空间的值\footnote{
 	注意到\autoref{3.10}中的积分也涉及$\chi_a$即可理解这一点.
 }, 
-并非只依赖于$\chi_a$在$\mathbf{x}_1$一点的值, 这点在(3.10)的表达式中很明显. 
+并非只依赖于$\chi_a$在$\mathbf{x}_1$一点的值, 这点在\autoref{3.10}的表达式中很明显. 
 如此的后果就是, 举个例子, 我们无法画出交换势的等高线图, 但库伦势就可以. 
 对于在$\chi_a$上的电子而言, 库伦算符和交换算符$\mathscr{J}_b,\mathscr{K}_b$的期望值就是前一章提过的库伦和交换积分：
 \begin{align}
-	\braket{\chi_a(1)|\mathscr{J}_b(1)|\chi_a(1)} & = \int\dd{x}_2\,\chi_a^*(1)\chi_a(1)r_{12}^{-1}\chi_b^*(2)\chi_b(2) = [aa|bb]\\
-	\braket{\chi_a(1)|\mathscr{K}_b(1)|\chi_a(1)} & = \int\dd{x}_2\,\chi_a^*(1)\chi_b(1)r_{12}^{-1}\chi_b^*(2)\chi_a(2) = [ab|ba]
+	\label{3.12}
+	\braket{\chi_a(1)|\mathscr{J}_b(1)|\chi_a(1)} & = \int\dd{x}_1\,\dd{x}_2\,\chi_a^*(1)\chi_a(1)r_{12}^{-1}\chi_b^*(2)\chi_b(2) = [aa|bb]\\
+	\braket{\chi_a(1)|\mathscr{K}_b(1)|\chi_a(1)} & = \int\dd{x}_1\,\dd{x}_2\,\chi_a^*(1)\chi_b(1)r_{12}^{-1}\chi_b^*(2)\chi_a(2) = [ab|ba]
 \end{align}
 
 \subsection{Fock算符}
