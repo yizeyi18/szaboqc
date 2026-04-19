@@ -455,20 +455,21 @@ $\delta\braket{\tp|\hs|\tp} = \braket{\delta\tp|\hs|\tp} + \braket{\tp|\hs|\delt
 \begin{align}
 	[a|b] - \delta_{ab} = 0
 \end{align}
-下面考虑$\scr{L}[\{\chi_a \}]$作为自旋轨道的泛函：
+下面考虑自旋轨道的泛函$\scr{L}[\{\chi_a \}]$：
 \begin{align}
+	\label{3.38}
 	\scr{L}[\{\chi_a \}] = E_0[\{\chi_a\}] - \sum_{a=1}^{N}\sum_{b=1}^{N}\epsilon_{ab}([a|b]-\delta_{ab})
 \end{align}
 其中$E_0$是单行列式$\ket{\Psi_0}$的期望值：
 \begin{align}
 	E_0[\{\chi_a\}] = \sum_{a=1}^{N}[a|h|a] + \frac{1}{2}\sum_{a=1}^{N}\sum_{b=1}^{N}[aa|bb]- [ab|ba]
 \end{align}
-并且$\epsilon_{ab}$是一组Lagrange乘子. 
+而$\epsilon_{ab}$是一组Lagrange乘子. 
 由于$\scr{L}$是实的而且$[a|b]=[b|a]^*$, 
 所以Lagrange乘子必须是一个厄米矩阵的元素：
 \begin{align}
 	\label{3.40}
-	\epsilon_{ab} = \epsilon_{ab}^*
+	\epsilon_{ba} = \epsilon_{ab}^*
 \end{align}
 \exercise{
 	证明\autoref{3.40}.
@@ -484,8 +485,8 @@ $\delta\braket{\tp|\hs|\tp} = \braket{\delta\tp|\hs|\tp} + \braket{\tp|\hs|\delt
 \begin{align}
 	\delta\scr{L} = \delta E_0 - \sum_{a=1}^{N}\sum_{b=1}^{N}\epsilon_{ab}\delta[a|b] = 0
 \end{align}
-该式可从(3.38)直接导出, 
-因为常数($\delta_{ab}$)的变分为零. 
+该式可从\autoref{3.38}直接导出, 
+常数($\delta_{ab}$)的变分为零. 
 现在有
 \begin{align}
 	\delta[a|b] = [\delta\chi_a|\chi_b] + [\chi_a|\delta\chi_b]
@@ -507,18 +508,18 @@ $\delta\braket{\tp|\hs|\tp} = \braket{\delta\tp|\hs|\tp} + \braket{\tp|\hs|\delt
 而且
 \begin{align}
 	\sum_{ab}\epsilon_{ba}([\delta\chi_a|\chi_b] + [\chi_a|\delta\chi_b]) & = \sum_{ab}\epsilon_{ba}[\delta\chi_a|\chi_b] + \sum_{ab}\epsilon_{ab}[\chi_b|\delta\chi_a]\notag\\
-	& = \sum_{ab}\epsilon_{ba}[\delta\chi_a|\chi_b] + \sum_{ab}\epsilon_{ba}^*[\chi_b|\delta\chi_a]^*\notag\\
+	& = \sum_{ab}\epsilon_{ba}[\delta\chi_a|\chi_b] + \sum_{ab}\epsilon_{ba}^*[\delta\chi_a|\chi_b]^*\notag\\
 	& = \sum_{ab}\epsilon_{ba}[\delta\chi_a|\chi_b] + \text{复共轭}
 	\label{3.45}
 \end{align}
 由上面的练习及\autoref{3.45}可知, 
-$\scr{L}$的一阶变分(3.42)成为
+$\scr{L}$的一阶变分\autoref{3.42}成为
 \begin{align}
 	\delta\scr{L} =& \sum_{a=1}^N [\delta\chi_a|h|\chi_a] + \sum_{a=1}^{N}\sum_{b=1}^{N} [\delta\chi_a\chi_a|\chi_b\chi_b] - [\delta\chi_a\chi_b|\chi_b\chi_a]\notag\\
 	& - \sum_{a=1}^{N}\sum_{b=1}^{N}\epsilon_{ab}[\delta\chi_a|\chi_b]  + \text{复共轭}\notag\\
 	=&0
 \end{align}
-利用库伦和交换算符的定义(3.10)(3.11)可将上式简写为
+利用库伦和交换算符的定义\autoref{3.10}\autoref{3.11}可将上式简写为
 \begin{align}
 	\delta\scr{L} = & \sum_{a=1}^N\int\dd{x}_1\,\delta\chi_a^*(1)\left[ h(1)\chi_a(1) + \sum_{b=1}^{N}(\scr{J}_b(1)-\scr{K}_b(1))\chi_a(1) - \sum_{b=1}^{N}\epsilon_{ba}\chi_b(1) \right]\notag\\
 	& +\text{复共轭} = 0
