@@ -1594,7 +1594,7 @@ $\mathbf{T,V^\mathrm{nucl}}$中的积分会具体地计算出来,
 
 \exercise{
 	若基函数为实的, 
-	请用双电子积分的对称性$[(\mu\nu|\lambda\sigma)=(\nu\mu|\lambda\sigma)=(\lambda\sigma|\mu\nu)]$
+        请用双电子积分的对称性$[(\mu\nu|\lambda\sigma)=(\nu\mu|\lambda\sigma)=(\lambda\sigma|\mu\nu),\,\rm{etc.}]$
 	证明含$K=100$个基函数的基组有$12753775=O(K^4/8)$个互不相同的双电子积分.
 }
 
@@ -1648,7 +1648,7 @@ Roothaan方程就成为通常本征值方程的形式,
 	\int\dd{r}\phi_\mu^{\prime*}(\bfr)\phi_\nu'(\bfr) = \delta_{\mu\nu}
 \end{align}
 为得到$\mathbf{X}$的具体性质, 
-我们将变换\autoref{3.162}带入\autoref{3.163}得到
+我们将变换\autoref{3.162}代入\autoref{3.163}得到
 \begin{align}
 	\int\dd{r}\phi_\mu^{\prime *}(\bfr)\phi_\nu^{\prime}(\bfr) & = \int\dd{r}\left[ \sum_{\lambda}X_{\lambda\mu}^*\phi_{\lambda}^*(\bfr)\right]\left[ \sum_\sigma X_{\sigma\nu}\phi_\sigma(\bfr) \right]\notag\\
 	& = \sum_\lambda\sum_\sigma X_{\lambda\sigma}^*\int\dd{r}\phi_\lambda^*(\bfr)\phi_\sigma(\bfr)X_{\sigma\nu}\notag\\
@@ -1675,7 +1675,7 @@ $\mathbf{X}$必须是非奇异的,
 	使用定义$S_{\mu\nu}=\int\dd{r}\phi_\mu^*\phi_\nu$证明$\mathbf{S}$的本征值全为正数. 
 	\textit{提示：}考虑$\sum_\nu S_{\mu\nu}c_\nu^i=s_ic_\mu^i$, 
 	乘以$c_\mu^{i*}$并求和, 
-	这里$\mathbf{c}^i$是$\mathbf{U}$的第$i$行.
+	这里$\mathbf{c}^i$是$\mathbf{U}$的第$i$列.
 	
 }
 
@@ -1725,7 +1725,7 @@ $\mathbf{X}$必须是非奇异的,
 ), 
 则正交化流程会引发困难. 
 但用正则正交化即可规避这种难处. 
-在矩阵本征值问题(3.166)中, 
+在矩阵本征值问题\autoref{3.166}中, 
 可以将对角阵$\mathbf{s}$中的本征值按任意顺序排列, 
 只要将$\mathbf{U}$中的列也以相同方式放置即可. 
 设想按该顺序排列本征值：$s_1>s_2>s_3>\cdots$. 
@@ -1766,6 +1766,7 @@ $\mathbf{X}$必须是非奇异的,
 考虑新的系数矩阵$\mathbf{C}'$, 
 它与旧系数矩阵的关系为
 \begin{align}
+	\label{3.174}
 	\mathbf{C'=X}^{-1}\mathbf{C}\quad \mathbf{C=XC'}
 \end{align}
 此处假设$\mathbf{X}$有逆矩阵. 
@@ -1780,26 +1781,30 @@ $\mathbf{X}$必须是非奇异的,
 \end{align}
 若定义新矩阵$\mathbf{F}'$为
 \begin{align}
+	\label{3.177}
 	\mathbf{F'=X^\dagger FX}
 \end{align}
-并用(3.165), 
+并用\autoref{3.165}, 
 那么
 \begin{align}
+	\label{3.178}
 	\mathbf{F'C'=C'}\bm{\epsilon}
 \end{align}
 这就是变换后的Roothaan方程, 
 可将$\mathbf{F'}$对角化以解得$\mathbf{C'}$. 
 有了$\mathbf{C'}$, 
-$\mathbf{C}$就能从(3.174)得到. 
+$\mathbf{C}$就能从\autoref{3.174}得到. 
 因此给定$\mathbf{F}$, 
-可用(3.177)(3.178)(3.174)求解Roothaan方程$\mathbf{FC=SC}\bm{\epsilon}$. 
+可用\autoref{3.177} \autoref{3.178} \autoref{3.174}求解Roothaan方程$\mathbf{FC=SC}\bm{\epsilon}$. 
 中间的带撇矩阵就是正交基下的Fock矩阵和展开系数：
 \begin{align}
+	\label{3.179}
 	\psi_i & = \sum_{\mu=1}^{K}C_{\mu i}'\phi_\mu'\\
+	\label{3.180}
 	F_{\mu\nu}' & = \int\dd{r}_1\,\phi^{\prime*}_\mu(1)f(1)\phi_\nu'(1)
 \end{align}
 \exercise{
-	用(3.179)(3.180)(3.162)导出(3.174)(3.177).
+    用\autoref{3.179} \autoref{3.180} \autoref{3.162}导出\autoref{3.174} \autoref{3.177}.
 	
 }
 \subsection{SCF（自洽场）流程}
