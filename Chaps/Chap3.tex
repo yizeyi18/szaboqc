@@ -1531,6 +1531,7 @@ $\bm{\epsilon}$是轨道能量$\epsilon_i$构成的对角阵：
 \subsection{Fock矩阵的表达式}
 Fock矩阵$\mathbf{F}$是Fock算符
 \begin{align}
+	\label{3.147}
 	f(1) = h(1) + \sum_{a}^{N/2}2J_a(1) -K_a(1)
 \end{align}
 在基$\{\phi_\mu\}$下的矩阵表示
@@ -1987,16 +1988,17 @@ $\mathbf{F'}$的本征值是轨道能量$\epsilon_i$.
 \begin{align}
 	E_0 =2\sum_a^{N/2}h_{aa} + \sum_a^{N/2}\sum_b^{N/2}2J_{ab}-K_{ab}
 \end{align}
-利用(3.147)中Fock算符的定义, 
+利用\autoref{3.147}中Fock算符的定义, 
 我们有
 \begin{align}
 	\epsilon_a = f_{aa} = h_{aa} + \sum_b^{N/2}2J_{ab} - K_{ab}
 \end{align}
 因此总能成为
 \begin{align}
+	\label{3.183}
 	E_0 = \sum_{a}^{N/2}(h_{aa}+f_{aa}) = \sum_{a}^{N/2}(h_{aa}+\epsilon_a)
 \end{align}
-这个结果方便我们计算：若将分子轨道的基函数展开(3.133)带入上式, 
+这个结果方便我们计算：若将分子轨道的基函数展开\autoref{3.133}带入上式, 
 就得到能量公式, 
 在迭代的任一阶段都可以快速计算出该值：
 \begin{align}
@@ -2004,9 +2006,9 @@ $\mathbf{F'}$的本征值是轨道能量$\epsilon_i$.
 	E_0 = \frac{1}{2}\sum_\mu\sum_\nu P_{\nu\mu}(H_{\mu\nu}^\mathrm{core}+F_{\mu\nu})
 \end{align}
 \exercise{
-	由(3.183)导出(3.184)。
+	由\autoref{3.183}导出\autoref{3.184}。
 }
-若按(3.184)计算$E_0$时所用密度矩阵$\mathbf{P}$与构建$\mathbf{F}$时所用的相同, 
+若按\autoref{3.184}计算$E_0$时所用密度矩阵$\mathbf{P}$与构建$\mathbf{F}$时所用的相同, 
 那么$E_0$在迭代的任一截断都是真实能量的上界, 
 而且一般在开始到收敛结果之间单调收敛. 
 $E_0$再加上核-核排斥势就得到总能$E_\mathrm{tot}$
@@ -2031,6 +2033,7 @@ $E_0$再加上核-核排斥势就得到总能$E_\mathrm{tot}$
 根据矩阵元规则, 
 这种算符的期望值总可写成
 \begin{align}
+	\label{3.187}
 	\braket{\mathcal{O}_1} = \braket{\Psi_0|\mathcal{O}_1|\Psi_0} = \sum_{a}^{N/2}(\psi_a|h|\psi_a) = \sum_{\mu\nu}P_{\mu\nu}(\nu|h|\mu)
 \end{align}
 那么欲求单电子期望值, 
@@ -2039,11 +2042,11 @@ $E_0$再加上核-核排斥势就得到总能$E_\mathrm{tot}$
 我们会用偶极矩作例讲述这种计算. 
 
 
-一组$r_i$处电荷$q_i$的偶极矩在经典定义下为
+经典语境下, 一组处于位置$r_i$的点电荷$q_i$偶极矩为
 \begin{align}
-	\vec{\mu} = \sum_i q\mathbf{r}_i
+	\vec{\mu} = \sum_i q_i\mathbf{r}_i
 \end{align}
-分子偶极矩在按量子力学计算时的相应定义为
+在量子力学计算时, 分子偶极矩的相应定义为
 \begin{align}
 	\vec{\mu} = \braket{\Psi_0|-\sum_{i=1}^{N}\mathbf{r}_i|\Psi_0} + \sum_AZ_A\mathbf{R}_A
 \end{align}
@@ -2052,7 +2055,7 @@ $E_0$再加上核-核排斥势就得到总能$E_\mathrm{tot}$
 第二项是核的贡献(按经典做法). 
 电子偶极算符是$-\sum_{i=1}^{N}\mathbf{r}_i$, 
 是一组单电子算符之和. 
-因此利用(3.187)可有
+因此利用\autoref{3.187}可有
 \begin{align}
 	\vec{\mu} = -\sum_\mu\sum_\nu P_{\mu\nu}(\nu|\mathbf{r}|\mu) + \sum_AZ_A\mathbf{R}_A
 \end{align}
@@ -2077,11 +2080,13 @@ $E_0$再加上核-核排斥势就得到总能$E_\mathrm{tot}$
 表示在空间中一区域内找到一个电子的概率, 一般用画在分子截面上的等高线图来表示. 
 在分子内, 说某个原子带了多少电子没有意义, 但有时进行这种布居分析（population analysis）也会有用. 由于
 \begin{align}
+	\label{3.194}
 	N = 2\sum_{a}^{N/2}\int\dd{r}|\psi_a(\bfr)|^2
 \end{align}
-实际上这是将所有电子按每两个电子配一个轨道分配在了分子轨道上, 
-若将$\psi_a$的基函数展开带入(3.194)则有
+实际上是将所有电子按每两个电子配一个轨道分配在了分子轨道上, 
+若将$\psi_a$的基函数展开带入\autoref{3.194}则有
 \begin{align}
+	\label{3.195}
 	N = \sum_\mu\sum_\nu P_{\mu\nu}S_{\nu\mu} = \sum_\mu(\mathbf{PS})_{\mu\mu} = \mathrm{tr}\,\,\mathbf{PS}
 \end{align}
 如此, 
@@ -2097,7 +2102,7 @@ $E_0$再加上核-核排斥势就得到总能$E_\mathrm{tot}$
 求和指标提示我们求和只对$A$中心的基函数求和.
 
 
-定义(3.195)绝非唯一. 
+定义\autoref{3.195}绝非唯一. 
 由于$\mathrm{tr}\,\mathbf{AB}=\mathrm{tr}\,\mathbf{BA}$, 
 有
 \begin{align}
