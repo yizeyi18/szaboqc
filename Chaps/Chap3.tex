@@ -4491,6 +4491,51 @@ Hartree-Fock对电子亲和势几乎总是描述得很差,
 	\label{tab:3.15}
 \end{table}
 
+\begin{table}\centering
+	\caption{由Koopmans定理计算得的$\mathrm{N_2}$电离势(a.u.)}
+	\begin{threeparttable}
+		\begin{tabular}{l@{\hspace{1.5cm}}c@{\hspace{1.5cm}}c}
+			\hline & \multicolumn{2}{c}{离子对称性} \\
+			\cline{2-3}
+			基组 & $^2\Sigma$ & $^2\Pi$ \\
+			\hline STO-3G & $0.540$ & $0.573$ \\
+			4-31G & $0.629$ & $0.621$ \\
+			6-31G* & $0.630$ & $0.612$ \\
+			近HF极限\tnote{a} & $0.635$ & $0.616$ \\
+			实验 & $0.573$ & $0.624$ \\
+			\hline
+		\end{tabular}
+		\begin{tablenotes}
+			\item[a] P. E. Kade, K. D. Sales, and A. C. Wahl, \textit{J. Chem. Phys.} \textbf{44}: 1973 (1966).
+		\end{tablenotes}
+	\end{threeparttable}
+	\label{tab:3.16}
+\end{table}
+
+\begin{table}\centering
+	\caption{由Koopmans定理计算得的十电子化合物最低电离势(a.u.)}
+	\begin{threeparttable}
+		\begin{tabular}{lcccc}
+			\hline 基组 & $\mathrm{CH}_4$ & $\mathrm{NH}_3$ & $\mathrm{H}_2 \mathrm{O}$ & $\mathrm{FH}$ \\
+			\hline STO-3G & $0.518$ & $0.353$ & $0.391$ & $0.464$ \\
+			4-31G & $0.543$ & $0.414$ & $-0.500$ & $0.628$ \\
+			6-31G* & $0.545$ & $0.421$ & $0.498$ & $0.628$ \\
+			6-31G** & $0.543$ & $0.421$ & $0.497$ & $0.627$ \\
+			近HF极限 & $0.546$\tnote{a} & $0.428$\tnote{b}
+				 & $0.507$\tnote{c} & $0.650$\tnote{d} \\
+			实验 & $0.529$ & $0.400$ & $0.463$ & $0.581$ \\
+			\hline
+		\end{tabular}
+		\begin{tablenotes}
+			\item[a] W. Meyer, \textit{J. Chem. Phys.} \textbf{58}: 1017 (1973).
+			\item[b] A. Rauk, L. C. Allen, and E. Clementi, \textit{J. Chem. Phys.} \textbf{52}: 4133 (1970).
+			\item[c] B. J. Rosenberg and I. Shavitt, \textit{J. Chem. Phys.} \textbf{63}: 2162 (1975).
+			\item[d] P. E. Cade and W. M. Huo, \textit{J. Chem. Phys.} \textbf{47}: 614 (1967).
+		\end{tablenotes}
+	\end{threeparttable}
+	\label{tab:3.17}
+\end{table}
+
 分子$\hd$只有一个占据轨道. 
 在不同基组下计算得到的该占据轨道的能量（取负数之后）如表\autoref{tab:3.14}所示, 
 $\hd$中的全部轨道如图\autoref{f3.9}所示. 
@@ -4499,29 +4544,88 @@ $\hd$中的全部轨道如图\autoref{f3.9}所示.
 对所有超过极小基的那些基组, 
 轨道能量都保持在约 -0.595 Hartrees. 
 预测出的电离势（+0.595 Hartrees）误差仅有2\%. 
-在表\autoref{tab:3.14}以及随后的表格中, 
+在\autoref{tab:3.14}以及随后的表格中, 
 所有电离势都是垂直电离势而不是绝热电离势. 
 垂直跃迁中, 终态和初态的核几何结构相同；
-绝热跃迁中, 跃迁前后核都处在平衡几何结构上. 
-Koopmans电离势的值与实验值之间的出色一致性是由于电离势中的关联效应和弛豫效应恰好相互抵消了, 
+绝热跃迁中, 跃迁前后核分别处在对应电子态的平衡几何结构上. 
+Koopmans电离势的值与实验值之间的出色一致性是由于电离势中的相关和弛豫效应恰好相互抵消了, 
 而其实两种效应在Koopmans近似里是被忽略的. 
-电子关联对终态的单电子物种$\hd^+$没有影响, 
-但它降低了初态的$\hd$的能量. 
-弛豫效应则是降低了终态的$\hd^+$的能量. 
+电子相关对终态的单电子物种$\hd^+$没有影响, 
+但它降低了初态$\hd$的能量. 
+弛豫则降低了终态$\hd^+$的能量. 
 这两种效应在$\hd$这个例子里几乎相互抵消了. 
 
-表\autoref{tab:3.15}列出了$\mathrm{CO}$的两个Koopmans电离势. 
-$\mathrm{CO}$能量最高的占据分子轨道是成键轨道$5\sigma$和$1\pi$. 
+\autoref{tab:3.15}列出了$\mathrm{CO}$的前两个Koopmans电离势. 
+$\mathrm{CO}$的最高占据分子轨道是成键轨道$5\sigma$和$1\pi$. 
 这两个轨道主要由C和O原子的$2p$轨道线性组合而成. 
 如果从$5\sigma$轨道电离出一个电子, 
 则$\mathrm{CO}^+$离子具有$\mbox{}^2\Sigma$对称性；
 如果从$1\pi$轨道电离出一个电子, 
 则$\mathrm{CO}^+$离子具有$\mbox{}^2\Pi$对称性. 
-考虑$\mathrm{CO}$（以及$\mathrm{N}_2$）电离时的首要问题, 
+考虑$\mathrm{CO}$(以及等电子体$\mathrm{N}_2$)电离时的首要问题, 
 就是判断电子到底是从$5\sigma$还是$1\pi$轨道电离出来的. 
 在\hft 近似下, 与此等价的问题是, $5\sigma$和$1\pi$到底哪个才是能量最高的占据轨道. 
 
-对于$\mathrm{CO}$来说, （\hft）计算和实验给出相同结果, 即$5\sigma$轨道比$1\pi$轨道能量高. 
+对于$\mathrm{CO}$来说, (\hft)计算和实验给出相同结果, 即$5\sigma$轨道比$1\pi$轨道能量高. 
+一般认为, $\mathrm{C}$和$\mathrm{O}$的$2p\sigma$轨道的相互作用比$2p\pi$的强,
+于是成键$\sigma$轨道能量会比对应的成键$\pi$轨道低,
+$5\sigma$轨道和$\mathrm{C}$和$\mathrm{O}$的$2s$轨道形成的$4\sigma$反键轨道相互作用,
+才被``推''上去了.
+总之, \emph{从头算}SCF的结果和实验的吻合良好.
+
+$\mathrm{N}_2$分子是$\mathrm{CO}$的等电子体, 轨道结构类似.
+但与$\mathrm{CO}$不同, 用Koopmans定理解释它的电离谱存在原则性问题.
+\autoref{tab:3.16}比较了$\mathrm{N}_2$电离势的Koopmans计算值与实验值,
+\autoref{f3.10}展示了计算所得的轨道能量.
+首先需要注意的是,
+STO-3G计算结果与使用更佳基组的计算结果以及 \hft 极限下的计算结果不一致.
+STO-3G计算预测$3\sigma _g$轨道的能级高于$1\pi _u$轨道,
+但``正确的'' \hft 结果是$1\pi _u$轨道才是最高占据轨道.
+如\autoref{f3.10}所示,
+在同核分子$\mathrm{N}_2$中,
+与异核分子$\mathrm{CO}$不同,
+$3\sigma _g$(对应CO中的$5\sigma$)轨道和$2\sigma _u$(对应CO中的$4\sigma$)轨道具有不同的对称性,
+因此, 在CO中存在、能使这两个轨道能级分离的相互作用, 在$\mathrm{N}_2$中并不存在.
+这可解释为什么\hft 预测$\mathrm{N}_2$的最高占据分子轨道有$\pi$对称性,
+但$\mathrm{CO}$的有$\sigma$对称性.
+
+\autoref{tab:3.16}的第二点也是最重要的一点是,
+``正确''的\hft 计算结果与实验定性不符.
+在分子轨道\hft 模型中,$1\pi_u$轨道是最高占据轨道,
+但实验测得的最低电离能对应生成具有$\Sigma_g$对称性的离子.
+这表明用轨道描述电离的简单模型失效了.
+\hft 模型是一种近似.
+对于$N_2$而言,这种近似的精度不足以让我们定性理解其电离现象.
+我们将在\autoref{ch:4}和\autoref{ch:7}中看到,
+当单行列式\hft 模型被包含相关效应的多行列式模型取代后,
+理论计算结果最终会与$\mathrm{N}_2$的电离谱一致。
+
+\autoref{tab:3.17}展示了十电子分子$\mathrm{CH_4}$、$\mathrm{NH_3}$、
+$\mathrm{H_2O}$和$\mathrm{FH}$第一电离能的计算值与实验值.
+最大基组给出的电离能均略高于实验值,
+且在元素周期表中越靠右, 计算值与实验值差得越多.
+计算复现了正确的顺序$\mathrm{FH > CH_4 > H_2O > NH_3}$, 但极小基除外.
+\autoref{f3.11}采用最大的6-31G**基组,
+展示了这些十电子分子的全部占据轨道和最低虚轨道.
+能量最低的分子轨道本质上是重原子的$1s$内层原子轨道.
+第二个分子轨道主要由重原子的$2s$轨道构成,
+且在元素周期表中越靠右, 这一特征越明显.
+在$\mathrm{FH}$中, 该分子轨道的原子性很强, 具备显著的内层轨道特征.
+最高的三个占据轨道的平均能量也会随元素在周期表中右移而略有降低,
+但这些轨道的单个能级由体系的对称性决定.
+这正是$\mathrm{CH_4}$的第一电离能不符合系列中其余分子趋势的原因：
+四面体对称性导致这三个轨道简并.
+若$\mathrm{CH_4}$偏离四面体对称性,
+其第一电离能会降低.
+
+\autoref{f3.12}展示我们的四种标准基组下$\mathrm{H_2O}$的全部轨道能级。
+与其他例子一致, 对于2 zeta或更好的基组,
+占据轨道的能级分布几乎不再随基组变化.
+极小基得出的电离能与高档基组的相差甚远.
+
+电离能的Koopmans近似为解释实验电离谱、进行谱峰归属提供了一种宝贵的定性工具.
+不过, 和其他所有\hft 结果一样, 它并不真正地定量,
+甚至有时可能给出定性错误的结论.
 
 \begin{figure}[h]
     \begin{tikzpicture}[
@@ -4603,17 +4707,17 @@ $\mathrm{CO}$能量最高的占据分子轨道是成键轨道$5\sigma$和$1\pi$.
 
 % ========== 6. 绘制各基组的能级线（核心部分，修改这里换你的数据）==========
 % --- STO-3G 能级 ---
-\draw[level line] (1-\levelHalfWidth, -0.58*2) -- (1+\levelHalfWidth, -0.58*2);
+\draw[level line] (1-\levelHalfWidth, -0.578*2) -- (1+\levelHalfWidth, -0.578*2);
 \draw[level line] (1-\levelHalfWidth, 0.65*2) -- (1+\levelHalfWidth, 0.65*2);
 
 % --- 4-31G 能级 ---
-\draw[level line] (3-\levelHalfWidth, -0.6*2) -- (3+\levelHalfWidth, -0.6*2);
+\draw[level line] (3-\levelHalfWidth, -0.596*2) -- (3+\levelHalfWidth, -0.596*2);
 \draw[level line] (3-\levelHalfWidth, 0.25*2) -- (3+\levelHalfWidth, 0.25*2);
 \draw[level line] (3-\levelHalfWidth, 0.78*2) -- (3+\levelHalfWidth, 0.78*2);
 \draw[level line] (3-\levelHalfWidth, 1.4*2) -- (3+\levelHalfWidth, 1.4*2);
 
 % --- 6-31G** 能级 ---
-\draw[level line] (5-\levelHalfWidth, -0.6*2) -- (5+\levelHalfWidth, -0.6*2);
+\draw[level line] (5-\levelHalfWidth, -0.595*2) -- (5+\levelHalfWidth, -0.595*2);
 \draw[level line] (5-\levelHalfWidth, 0.25*2) -- (5+\levelHalfWidth, 0.25*2);
 \draw[level line] (5-\levelHalfWidth, 0.75*2) -- (5+\levelHalfWidth, 0.75*2);
 \draw[level line] (5-\levelHalfWidth, 1.15*2) -- (5+\levelHalfWidth, 1.15*2);
@@ -4630,8 +4734,412 @@ $\mathrm{CO}$能量最高的占据分子轨道是成键轨道$5\sigma$和$1\pi$.
 %\node[right, font=\normalsize, align=left] at (\xMax+0.2, \yMin) {Figure 3.9 Orbital energies of $\text{H}_2$.};
 
 \end{tikzpicture}
-    \caption{H2 的轨道能量.}
+    \caption{H$_2$ 的轨道能量.}
     \label{f3.9}
+\end{figure}
+
+\begin{figure}[h]
+    \begin{tikzpicture}[
+    >=latex, % 箭头样式
+    % 全局样式定义，方便统一修改
+    level line/.style={line width=0.7pt}, % 能级短线的粗细
+    axis line/.style={line width=0.7pt},  % 坐标轴/分隔线的粗细
+    % 波浪线样式：amplitude控制波浪高度，segment length控制波浪密度
+    wave line/.style={decorate, decoration={snake, amplitude=1.5pt, segment length=4pt}}
+]
+
+% ========== 1. 核心参数定义（修改这里即可适配你的数据）==========
+% 三个基组的中心X坐标、名称
+\def\baseX{1, 3, 5}
+\def\baseNames{{"STO-3G", "4-31G", "6-31G*"}}
+% 坐标轴范围
+\def\xMin{0}
+\def\xMax{6}
+\def\yMin{-7}
+\def\yMax{2}
+\def\yMid{-2}
+% 纵轴断轴的上下边界（原图在0.8~1.0之间断开）
+\def\breakAStart{-0.1}
+\def\breakAEnd{-0.5}
+\def\breakBStart{-3.3}
+\def\breakBEnd{-3.7}
+\def\breakCStart{-4.9}
+\def\breakCEnd{-5.3}
+% 能级短线的半长（控制横线长度）
+\def\levelHalfWidth{0.2}
+% 能级位置
+%\def\STOsanGEnergies{-0.58, 0.64}
+%\def\siSanYiGEnergies{{-0.6, 0.25, 0.78, 1.4}}
+%\def\liuSanYiGEnergies{{-0.6, 0.25, 0.75, 1.15, 2.75, 4.3}}
+
+% ========== 2. 绘制坐标轴（带断轴）==========
+% 纵轴分两段绘制，中间用波浪线断开
+\draw[axis line, ->] (0, \breakAStart) -- (0, \yMax);
+\draw[wave line] (0, \breakAEnd) -- (0, \breakAStart);
+\draw[wave line] (0, \breakBEnd) -- (0, \breakBStart);
+\draw[wave line] (0, \breakCEnd) -- (0, \breakCStart);
+\draw[axis line] (0, \breakBStart) -- (0, \breakAEnd);
+\draw[axis line] (0, \breakCStart) -- (0, \breakBEnd);
+\draw[axis line] (0, \yMin) -- (0, \breakCEnd);
+\draw[axis line] (\xMin, \yMin) -- (\xMax, \yMin);
+% ========== 3. 绘制纵轴刻度与标签 ==========
+% 正方向
+\foreach \y in {0.1, 0.2, 0.3} {
+    \draw[axis line] (-0.1, 4*\y) -- (0, 4*\y);
+    \node[left, font=\normalsize] at (-0.15, 4*\y) {\y};
+}
+% 0刻度
+\draw[axis line] (-0.1, 0) -- (0, 0);
+\node[left, font=\normalsize] at (-0.15, 0) {0};
+% 负方向刻度组1
+\foreach \y in {-.5, -.6, -.7, -.8} {
+    \draw[axis line] (-0.1, 8*\y+3.2) -- (0, 8*\y+3.2);
+    \node[left, font=\normalsize] at (-0.15, 8*\y+3.2) {\y};
+}
+% 负方向刻度组2
+\foreach \y in {-1.4, -1.5, -1.6} {
+    \draw[axis line] (-0.1, 4*\y+1.6) -- (0, 4*\y+1.6);
+    \node[left, font=\normalsize] at (-0.15, 4*\y+1.6) {\y};
+}
+% 负方向刻度组3
+\foreach \y in {-15.5, -15.6, -15.7} {
+    \draw[axis line] (-0.1, 4*\y+56.4) -- (0, 4*\y+56.4);
+    \node[left, font=\normalsize] at (-0.15, 4*\y+56.4) {\y};
+}
+
+% 纵轴标题（旋转90度）
+\node[rotate=90, left=12pt, font=\normalsize] at (-1.3, \yMid) {Orbital Energy (a.u.)};
+
+% ========== 4. 绘制零能级波浪参考线 ==========
+\draw[wave line, line width=0.8pt] (\xMin, 0) -- (\xMax, 0);
+
+% ========== 5. 绘制基组分隔竖线与横轴标签 ==========
+% 分隔三个基组的竖线（同样适配断轴）
+\draw[axis line] (2, \yMin) -- (2, \yMax);
+\draw[axis line] (4, \yMin) -- (4, \yMax);
+
+% 基组名称标签
+\foreach \i in {0,1,2} {
+    \pgfmathsetmacro\xPos{{\baseX}[\i]}
+    \pgfmathsetmacro\baseName{\baseNames[\i]}
+    \node[below, font=\normalsize] at (\xPos, \yMin-0.15) {\baseName};
+}
+
+% ========== 6. 绘制各基组的能级线 ==========
+% 1s的sigma
+% --- STO-3G  ---
+\foreach \E in {-15.518, -15.516} {
+    \draw[level line] (1-\levelHalfWidth, 4*\E+56.4) -- (1+\levelHalfWidth, 4*\E+56.4);
+}
+% --- 4-31G  ---
+\foreach \E in {-15.718, -15.714} {
+    \draw[level line] (3-\levelHalfWidth, 4*\E+56.4) -- (3+\levelHalfWidth, 4*\E+56.4);
+}
+% --- 6-31G* ---
+\foreach \E in {-15.694, -15.691} {
+    \draw[level line] (5-\levelHalfWidth, 4*\E+56.4) -- (5+\levelHalfWidth, 4*\E+56.4);
+}
+\node[right, font=\small, align=left] at (\xMax+0.2, 4*-15.724+56.4)
+{$1\sigma_g$};
+\node[right, font=\small, align=left] at (\xMax+0.2, 4*-15.661+56.4)
+{$1\sigma_u$};
+% 2s的sigma
+% --- STO-3G  ---
+\def\E{-1.443}
+\draw[level line] (1-\levelHalfWidth, 4*\E+1.6) -- (1+\levelHalfWidth, 4*\E+1.6);
+% --- 4-31G  ---
+\def\E{-1.527}
+\draw[level line] (3-\levelHalfWidth, 4*\E+1.6) -- (3+\levelHalfWidth, 4*\E+1.6);
+% --- 6-31G* ---
+\def\E{-1.474}
+\draw[level line] (5-\levelHalfWidth, 4*\E+1.6) -- (5+\levelHalfWidth, 4*\E+1.6);
+\node[right, font=\small, align=left] at (\xMax+0.2,  4*\E+1.6)
+{$2\sigma_g$};
+% 前线轨道
+% --- STO-3G  ---
+\foreach \E in {-0.722, -0.540}{
+    \draw[level line] (1-\levelHalfWidth, 8*\E+3.2) -- (1+\levelHalfWidth, 8*\E+3.2);
+}
+\def\E{-0.573}
+\draw[level line] (1-\levelHalfWidth-0.3, 8*\E+3.2) -- (1-0.1, 8*\E+3.2);
+\draw[level line] (1+0.1, 8*\E+3.2) -- (1+\levelHalfWidth+0.3, 8*\E+3.2);
+% --- 4-31G  ---
+\foreach \E in {-0.775, -0.630}{
+    \draw[level line] (3-\levelHalfWidth, 8*\E+3.2) -- (3+\levelHalfWidth, 8*\E+3.2);
+}
+\def\E{-0.622}
+\draw[level line] (3-\levelHalfWidth-0.3, 8*\E+3.2) -- (3-0.1, 8*\E+3.2);
+\draw[level line] (3+0.1, 8*\E+3.2) -- (3+\levelHalfWidth+0.3, 8*\E+3.2);
+% --- 6-31G* ---
+\foreach \E in {-0.776, -0.629}{
+    \draw[level line] (5-\levelHalfWidth, 8*\E+3.2) -- (5+\levelHalfWidth, 8*\E+3.2);
+}
+\def\E{-0.611}
+\draw[level line] (5-\levelHalfWidth-0.3, 8*\E+3.2) -- (5-0.1, 8*\E+3.2);
+\draw[level line] (5+0.1, 8*\E+3.2) -- (5+\levelHalfWidth+0.3, 8*\E+3.2);
+\node[right, font=\small, align=left] at (\xMax+0.2, 8*-0.776+3.2)
+{$2\sigma_u$};
+\node[right, font=\small, align=left] at (\xMax+0.2, 8*-0.629+3.2-0.2)
+{$3\sigma_g$};
+\node[right, font=\small, align=left] at (\xMax+0.2, 8*\E+3.2+0.2)
+{$1\pi_u$};
+% 虚轨道
+% --- STO-3G  ---
+\def\E{0.281}
+\draw[level line] (1-\levelHalfWidth-0.3, 4*\E) -- (1-0.1, 4*\E);
+\draw[level line] (1+0.1, 4*\E) -- (1+\levelHalfWidth+0.3, 4*\E);
+% --- 4-31G  ---
+\def\E{0.151}
+\draw[level line] (3-\levelHalfWidth-0.3, 4*\E) -- (3-0.1, 4*\E);
+\draw[level line] (3+0.1, 4*\E) -- (3+\levelHalfWidth+0.3, 4*\E);
+% --- 6-31G* ---
+\def\E{0.171}
+\draw[level line] (5-\levelHalfWidth-0.3, 4*\E) -- (5-0.1, 4*\E);
+\draw[level line] (5+0.1, 4*\E) -- (5+\levelHalfWidth+0.3, 4*\E);
+\node[right, font=\small, align=left] at (\xMax+0.2, 4*\E)
+{$1\pi_g$};
+
+\end{tikzpicture}
+    \caption{N$_2$ 的轨道能量.}
+    \label{f3.10}
+\end{figure}
+
+\begin{figure}[h]
+    \begin{tikzpicture}[
+    >=latex, % 箭头样式
+    % 全局样式定义，方便统一修改
+    level line/.style={line width=0.7pt}, % 能级短线的粗细
+    axis line/.style={line width=0.7pt},  % 坐标轴/分隔线的粗细
+    % 波浪线样式：amplitude控制波浪高度，segment length控制波浪密度
+    wave line/.style={decorate, decoration={snake, amplitude=1.5pt, segment length=4pt}}
+]
+
+% ========== 1. 核心参数定义（修改这里即可适配你的数据）==========
+% 四个分子的中心X坐标、名称
+\def\baseX{1, 3, 5, 7}
+\def\baseNames{{"CH$_4$", "NH$_3$", "H$_2$O", "FH"}}
+% 坐标轴范围
+\def\xMin{0}
+\def\xMax{8}
+\def\yMin{-8.4}
+\def\yMax{1.2}
+\def\yMid{-2}
+% 纵轴断轴的上下边界（原图在0.8~1.0之间断开）
+\def\breakAStart{-6.6}
+\def\breakAEnd{-6.9}
+% 能级短线的半长（控制横线长度）
+\def\levelHalfWidth{0.2}
+
+% ========== 2. 绘制坐标轴（带断轴）==========
+% 纵轴分两段绘制，中间用波浪线断开
+\draw[axis line, ->] (0, \breakAStart) -- (0, \yMax);
+\draw[wave line] (0, \breakAEnd) -- (0, \breakAStart);
+\draw[axis line] (0, \yMin) -- (0, \breakAEnd);
+\draw[axis line] (\xMin, \yMin) -- (\xMax, \yMin);
+% ========== 3. 绘制纵轴刻度与标签 ==========
+% 0刻度
+\draw[axis line] (-0.1, 0) -- (0, 0);
+\node[left, font=\normalsize] at (-0.15, 0) {0};
+% 组1
+\foreach \y in {0.2, -0.2, -0.4, -0.4, -0.6, -0.8, -1.0, -1.2, -1.4, -1.6} {
+    \draw[axis line] (-0.1, 4*\y) -- (0, 4*\y);
+    \node[left, font=\normalsize] at (-0.15, 4*\y) {\y};
+}
+% 组2
+\foreach \y in {-10.0, -20.0, -30.0} {
+    \draw[axis line] (-0.1, 0.04*\y-6.8) -- (0, 0.04*\y-6.8);
+    \node[left, font=\normalsize] at (-0.15, 0.04*\y-6.8) {\y};
+}
+
+% 纵轴标题（旋转90度）
+\node[rotate=90, left=12pt, font=\normalsize] at (-1.3, \yMid) {Orbital Energy (a.u.)};
+
+% ========== 4. 绘制零能级波浪参考线 ==========
+\draw[wave line, line width=0.8pt] (\xMin, 0) -- (\xMax, 0);
+
+% ========== 5. 绘制基组分隔竖线与横轴标签 ==========
+% 分隔四个分子的竖线
+\draw[axis line] (2, \yMin) -- (2, \yMax);
+\draw[axis line] (4, \yMin) -- (4, \yMax);
+\draw[axis line] (6, \yMin) -- (6, \yMax);
+
+% 分子名称标签
+\foreach \i in {0,1,2,3} {
+    \pgfmathsetmacro\xPos{{\baseX}[\i]}
+    \pgfmathsetmacro\baseName{\baseNames[\i]}
+    \node[below, font=\normalsize] at (\xPos, \yMin-0.15) {\baseName};
+}
+
+% ========== 6. 绘制各分子的能级线 ==========
+% 组1
+% --- CH4 ---
+\foreach \E in {0.257, -0.544, -0.944} {
+    \draw[level line] (1-\levelHalfWidth, 4*\E) -- (1+\levelHalfWidth, 4*\E);
+}
+% --- NH3 ---
+\foreach \E in {0.224, -0.415, -1.131} {
+    \draw[level line] (3-\levelHalfWidth, 4*\E) -- (3+\levelHalfWidth, 4*\E);
+}
+% --- H2O ---
+\foreach \E in {0.216, -0.497, -0.569, -0.703, -1.340} {
+    \draw[level line] (5-\levelHalfWidth, 4*\E) -- (5+\levelHalfWidth, 4*\E);
+}
+% --- FH  ---
+\foreach \E in {0.221, -0.743, -1.579} {
+    \draw[level line] (7-\levelHalfWidth, 4*\E) -- (7+\levelHalfWidth, 4*\E);
+}
+% 简并部分
+\def\E{-0.544}
+\draw[level line] (1-\levelHalfWidth*4, 4*\E) -- (1-\levelHalfWidth*2, 4*\E);
+\draw[level line] (1+\levelHalfWidth*4, 4*\E) -- (1+\levelHalfWidth*2, 4*\E);
+\def\E{-0.620}
+\draw[level line] (3-\levelHalfWidth*3, 4*\E) -- (3-\levelHalfWidth*1, 4*\E);
+\draw[level line] (3+\levelHalfWidth*3, 4*\E) -- (3+\levelHalfWidth*1, 4*\E);
+\def\E{-0.627}
+\draw[level line] (7-\levelHalfWidth*3, 4*\E) -- (7-\levelHalfWidth*1, 4*\E);
+\draw[level line] (7+\levelHalfWidth*3, 4*\E) -- (7+\levelHalfWidth*1, 4*\E);
+% 组2
+\def\E{-11.206}
+\draw[level line] (1-\levelHalfWidth, 0.04*\E-6.8) -- (1+\levelHalfWidth, 0.04*\E-6.8);
+\def\E{-15.538}
+\draw[level line] (3-\levelHalfWidth, 0.04*\E-6.8) -- (3+\levelHalfWidth, 0.04*\E-6.8);
+\def\E{-20.558}
+\draw[level line] (5-\levelHalfWidth, 0.04*\E-6.8) -- (5+\levelHalfWidth, 0.04*\E-6.8);
+\def\E{-26.273}
+\draw[level line] (7-\levelHalfWidth, 0.04*\E-6.8) -- (7+\levelHalfWidth, 0.04*\E-6.8);
+
+% ========== 7. 右下角图注 ==========
+%\node[right, font=\normalsize, align=left] at (\xMax+0.2, \yMin) {Figure 3.9 Orbital energies of $\text{H}_2$.};
+
+\end{tikzpicture}
+    \caption{十电子分子的6-31G**轨道能量.}
+    \label{f3.11}
+\end{figure}
+
+\begin{figure}[h]
+    \begin{tikzpicture}[
+    >=latex, % 箭头样式
+    % 全局样式定义，方便统一修改
+    level line/.style={line width=0.7pt}, % 能级短线的粗细
+    axis line/.style={line width=0.7pt},  % 坐标轴/分隔线的粗细
+    % 波浪线样式：amplitude控制波浪高度，segment length控制波浪密度
+    wave line/.style={decorate, decoration={snake, amplitude=1.5pt, segment length=4pt}}
+]
+
+% ========== 1. 核心参数定义（修改这里即可适配你的数据）==========
+% 四个分子的中心X坐标、名称
+\def\baseX{1, 3, 5, 7}
+\def\baseNames{{"STO-3G", "4-31G", "6-31G*", "6-31G**"}}
+% 坐标轴范围
+\def\xMin{0}
+\def\xMax{8}
+\def\yMin{-4.4}
+\def\yMax{5.6}
+\def\yMid{0.6}
+% 纵轴断轴的上下边界（原图在0.8~1.0之间断开）
+\def\breakAStart{4.3}
+\def\breakAEnd{4.1}
+\def\breakBStart{-3.1}
+\def\breakBEnd{-3.3}
+% 能级短线的半长（控制横线长度）
+\def\levelHalfWidth{0.2}
+
+% ========== 2. 绘制坐标轴（带断轴）==========
+% 纵轴分两段绘制，中间用波浪线断开
+\draw[axis line, ->] (0, \breakAStart) -- (0, \yMax);
+\draw[wave line] (0, \breakAEnd) -- (0, \breakAStart);
+\draw[axis line] (0, \breakBStart) -- (0, \breakAEnd);
+\draw[wave line] (0, \breakBEnd) -- (0, \breakBStart);
+\draw[axis line] (0, \yMin) -- (0, \breakBEnd);
+\draw[axis line] (\xMin, \yMin) -- (\xMax, \yMin);
+% ========== 3. 绘制纵轴刻度与标签 ==========
+% 0刻度
+\draw[axis line] (-0.1, 0) -- (0, 0);
+\node[left, font=\normalsize] at (-0.15, 0) {0};
+% 组1
+\foreach \y in {2.5, 3.0, 3.5, 4.0} {
+    \draw[axis line] (-0.1, 0.8*\y+2.4) -- (0, 0.8*\y+2.4);
+    \node[left, font=\normalsize] at (-0.15, 0.8*\y+2.4) {\y};
+}
+% 组2
+\foreach \y in {2.0, 1.8, 1.6, 1.4, 1.2, 1.0, 0.8, 0.6, 0.4,
+        0.2, -0.2, -0.4, -0.4, -0.6, -0.8, -1.0, -1.2, -1.4} {
+    \draw[axis line] (-0.1, 2*\y) -- (0, 2*\y);
+    \node[left, font=\normalsize] at (-0.15, 2*\y) {\y};
+}
+% 组3
+\foreach \y in {-20.0, -21.0} {
+    \draw[axis line] (-0.1, 0.4*\y+4.4) -- (0, 0.4*\y+4.4);
+    \node[left, font=\normalsize] at (-0.15, 0.4*\y+4.4) {\y};
+}
+
+% 纵轴标题（旋转90度）
+\node[rotate=90, left=12pt, font=\normalsize] at (-1.3, \yMid) {Orbital Energy (a.u.)};
+
+% ========== 4. 绘制零能级波浪参考线 ==========
+\draw[wave line, line width=0.8pt] (\xMin, 0) -- (\xMax, 0);
+
+% ========== 5. 绘制分隔竖线与横轴标签 ==========
+% 分隔四个基组的竖线
+\draw[axis line] (2, \yMin) -- (2, \yMax);
+\draw[axis line] (4, \yMin) -- (4, \yMax);
+\draw[axis line] (6, \yMin) -- (6, \yMax);
+
+% 基组名称标签
+\foreach \i in {0,1,2,3} {
+    \pgfmathsetmacro\xPos{{\baseX}[\i]}
+    \pgfmathsetmacro\baseName{\baseNames[\i]}
+    \node[below, font=\normalsize] at (\xPos, \yMin-0.15) {\baseName};
+}
+
+% ========== 6. 绘制各基组的能级线 ==========
+% 组1
+% --- STO-3G --- 无
+% --- 6-31G --- 无
+% --- 6-31G* ---
+\foreach \E in {2.631, 2.947} {
+    \draw[level line] (5-\levelHalfWidth, 0.8*\E+2.4) -- (5+\levelHalfWidth, 0.8*\E+2.4);
+}
+% --- 6-31G** ---
+\foreach \E in {2.577, 2.592, 2.808, 2.980, 2.992, 3.378, 3.745, 3.927} {
+    \draw[level line] (7-\levelHalfWidth, 0.8*\E+2.4) -- (7+\levelHalfWidth, 0.8*\E+2.4);
+}
+% 组2
+% --- STO-3G ---
+\foreach \E in {-1.268, -0.618, -0.453, -0.391, 0.606, 0.742} {
+    \draw[level line] (1-\levelHalfWidth, 2*\E) -- (1+\levelHalfWidth, 2*\E);
+}
+% --- 6-31G ---
+\foreach \E in {-1.356, -0.710, -0.561, -0.501, 0.204, 0.300,
+          1.058, 1.164, 1.187, 1.216, 1.380, 1.696} {
+    \draw[level line] (3-\levelHalfWidth, 2*\E) -- (3+\levelHalfWidth, 2*\E);
+}
+% --- 6-31G* ---
+\foreach \E in {-1.341, -0.707, -0.571, -0.498, 0.215, 0.305,
+          1.022, 1.164, 1.168, 1.197, 1.381, 1.660, 2.020, 2.034, 2.068} {
+    \draw[level line] (5-\levelHalfWidth, 2*\E) -- (5+\levelHalfWidth, 2*\E);
+}
+% --- 6-31G** ---
+\foreach \E in {-1.340, -0.703, -0.568, -0.497, 0.216, 0.305,
+          1.005, 1.089, 1.169, 1.192, 1.295, 1.599, 1.804, 1.831, 1.926} {
+    \draw[level line] (7-\levelHalfWidth, 2*\E) -- (7+\levelHalfWidth, 2*\E);
+}
+% 组3
+\def\E{-20.242}
+\draw[level line] (1-\levelHalfWidth, 0.4*\E+4.4) -- (1+\levelHalfWidth, 0.4*\E+4.4);
+\def\E{-20.561}
+\draw[level line] (3-\levelHalfWidth, 0.4*\E+4.4) -- (3+\levelHalfWidth, 0.4*\E+4.4);
+\def\E{-20.555}
+\draw[level line] (5-\levelHalfWidth, 0.4*\E+4.4) -- (5+\levelHalfWidth, 0.4*\E+4.4);
+\def\E{-20.558}
+\draw[level line] (7-\levelHalfWidth, 0.4*\E+4.4) -- (7+\levelHalfWidth, 0.4*\E+4.4);
+
+% ========== 7. 右下角图注 ==========
+%\node[right, font=\normalsize, align=left] at (\xMax+0.2, \yMin) {Figure 3.9 Orbital energies of $\text{H}_2$.};
+
+\end{tikzpicture}
+    \caption{H$_2$O的占据轨道与虚轨道能量.}
+    \label{f3.12}
 \end{figure}
 
 \subsection{平衡几何构型}
