@@ -5168,7 +5168,7 @@ $\mathrm{H_2O}$和$\mathrm{FH}$第一电离能的计算值与实验值.
 			4-31G & $2.050$ & $2.132$ \\
 			6-31G* & $2.039$ & $2.105$ \\
                         近HF极限 & $2.013$\tnote{a} & $2.081$\tnote{b} \\
-                        实验 & 2.074 & 2.132 \\
+                        实验 & $2.074$ & $2.132$ \\
 			\hline
 		\end{tabular}
 		\begin{tablenotes}
@@ -5200,6 +5200,27 @@ $\mathrm{H_2O}$和$\mathrm{FH}$第一电离能的计算值与实验值.
 		\end{tablenotes}
 	\end{threeparttable}
 	\label{tab:3.20}
+\end{table}
+
+\begin{table}\centering
+	\caption{$\mathrm{NH_3}$和$\mathrm{H_2 O}$的SCF平衡键角}
+	\begin{threeparttable}
+		\begin{tabular}{l@{\hspace{1.5cm}}c@{\hspace{1.5cm}}c}
+			\hline 基组 & $\mathrm{NH_3}$ & $\mathrm{H_2 O}$ \\
+			\hline STO-3G & $104.2$ & $100.0$ \\
+			4-31G & $115.8$ & $111.2$ \\
+			6-31G* & $107.5$ & $105.5$ \\
+			6-31G** & $107.6$ & $106.0$ \\
+                        近HF极限 & $107.2$\tnote{a} & $106.1$\tnote{b} \\
+                        实验 & $106.7$ & $104.5$ \\
+			\hline
+		\end{tabular}
+		\begin{tablenotes}
+			\item[a] A. Rauk, L. C. Allen, and E. Clementi, \textit{J. Chem. Phys.} \textbf{52}: 4133 (1970).
+			\item[b] B. J. Rosenberg, W. C. Ermler, and I. Shavitt, \textit{J. Chem. Phys.} \textbf{65}: 4072 (1976).
+		\end{tablenotes}
+	\end{threeparttable}
+	\label{tab:3.21}
 \end{table}
 
 预测分子的平衡几何构型或许是电子结构计算最常见的用途.
@@ -5243,7 +5264,7 @@ $\mathrm{H_2O}$和$\mathrm{FH}$第一电离能的计算值与实验值.
 6-31G**下的键长$1.385\au$与\hft 极限值很接近.
 键长有$0.016\au$($~1\%$)误差,
 这在好的\emph{从头}SCF计算中不离谱,
-而平均绝对误差更常落在$~0.02$-$0.04\au$间.
+而平均绝对误差更常落在\textasciitilde$0.02$-$0.04\au$间.
 
 \autoref{tab:3.19}给出$\mathrm{CO}$和$\mathrm{N}_2$的计算平衡键长,
 \autoref{tab:3.20}给出$\mathrm{CH_4}$、$\mathrm{NH_3}$、
@@ -5252,13 +5273,13 @@ $\mathrm{H_2O}$和$\mathrm{FH}$的.
 在这些例子以及大部分分子中,
 \hft 预测的键长偏短.
 诸如STO-3G这样的差劲基组预测键长时平均误差比接近\hft 极限的大,
-一般大$~0.05$-$0.10\au$
+一般大\textasciitilde$0.05$-$0.10\au$
 
 $\mathrm{NH_3}$和$\mathrm{H_2O}$的计算键角在\autoref{tab:3.21}中.
-\hft 极限下吻合得很好($~1^{\circ}$-$2^{\circ}$).
+\hft 极限下吻合得很好(\textasciitilde$1^{\circ}$-$2^{\circ}$).
 双 zeta (4-31G)级别下键角不怎么好,
-似乎定量描述这些分子的键角时$d-$型函数是必需的.
-一个极限情形是, 如果算$\mathrm{NH_3}$时候用只含$s-$和$p-$型函数的基组,
+似乎定量描述这些分子的键角时$d$-型函数是必需的.
+一个极限情形是, 如果算$\mathrm{NH_3}$时候用只含$s$-和$p$-型函数的基组,
 预测出来的几何构型是平面的!
 这说明了使用均衡的基组的必要性.
 
