@@ -95,8 +95,8 @@ $\ket{\Phi_i},\mathscr{E}$会很接近$\ket{i},E_i^{(0)}$.
 现在想找出一种方法，
 能使$\hs_0$的本征函数和本征值系统地逼近总哈密顿量$\hs$的本征函数和本征值。
 为此，
-我们引入一个阶参数$\lambda$，
-之后再令其等于1，
+引入一个阶参数$\lambda$，
+晚些地方我们会令其等于1，
 有:
 \begin{align}
 \hs=\hs_0+\lambda\vs
@@ -104,9 +104,10 @@ $\ket{\Phi_i},\mathscr{E}$会很接近$\ket{i},E_i^{(0)}$.
 现将精确的本征函数与本征值展开成$\lambda$的Taylor级数,
 
 \begin{subequations}
-	\begin{align}
+	\begin{align}\label{6.4a}
 	\es &= E_i^{(0)} + \lambda E_i^{(1)} + \lambda^2 E_i^{(2)} + \cdots\\
 	\ket{\Phi_i} &= \ket{i} + \lambda \ket{\Psi_i^{(1)}} + \lambda^2 \ket{\Psi_i^{(2)}} + \cdots
+        \label{6.4b}
 	\end{align}
 \end{subequations}
 称$E_i^{(n)}$为$n$阶能量.
@@ -115,93 +116,94 @@ $\ket{\Phi_i},\mathscr{E}$会很接近$\ket{i},E_i^{(0)}$.
 
 现在设$\hs_0$的波函数已归一化:$\braket{i|i}=1$, 
 且在$\ket{\Phi_i}$上乘上一个因子以使其满足等式$\braket{i|\Phi_i}=1$. 
-这种处理叫作``中间归一化", 
+这种处理叫作``中间归一化'', 
 并且, 
 除非$\ket{i}$与$\ket{\Phi_i}$正交, 
 否则总可以进行中间归一化. 
-将(6.4b)左乘$\bra{i}$, 
+将\autoref{6.4b}左乘$\bra{i}$, 
 得到
 \begin{align}
 \braket{i|\Phi_i}=\braket{i|i}+\lambda\braket{i|\Psi_i^{(1)}}+\lambda^2\braket{i|\Psi_i^{(2)}} + \cdots = 1
 \end{align}
-上面的方程对于所有的$\lambda$都成立($\lambda$不等于1时也成立), 
-那么就有
+上式对于任意$\lambda$取值恒成立,
+等号两边$\lambda ^n$的系数就一定相等,即
 \begin{align}
-\braket{i|\Psi_i^{(n)}} = 0\, \hfill n=1,2,3,\cdots
+\braket{i|\Psi_i^{(n)}} = 0~~~ \hfill n=1,2,3,\ldots
 \label{6.6}
 \end{align}
-将(6.4a,
-6.4b)带入\autoref{6.1}, 
+将\autoref{6.4a},\autoref{6.4b}代入\autoref{6.1}, 
 得到:
 \begin{align*}
 (\hs_0&+\lambda\vs)(\ket{i}+\lambda\ket{\Psi_i^{(1)}} + \lambda^2 \ket{\Psi_i^{(2)}} +\cdots )\\
 &=(E_i^{(0)} + \lambda E_i^{(1)} + \lambda^2 E_i^{(2)}  + \cdots )(\ket{i}+\lambda\ket{\Psi_i^{(1)}} + \lambda^2 \ket{\Psi_i^{(2)}} +\cdots)
 \end{align*}
-因为$\lambda^n$的系数对应相等，
-我们有
-\begin{subequations}
+限定$\lambda^n$的系数相等,
+有
+\begin{subequations}\label{6.7}
 	\begin{align}
-		\mathscr{H}_0|i\rangle=& E_i^{(0)}|i\rangle & & n=0 \\
-		\mathscr{H}_0\left|\Psi_i^{(1)}\right\rangle+\mathscr{V}|i\rangle=& E_i^{(0)}\left|\Psi_i^{(1)}\right\rangle+E_i^{(1)}|i\rangle & & n=1 \\
-		\mathscr{H}_0\left|\Psi_i^{(2)}\right\rangle+\mathscr{V}\left|\Psi_i^{(1)}\right\rangle=& E_i^{(0)}\left|\Psi_i^{(2)}\right\rangle+E_i^{(1)}\left|\Psi_i^{(1)}\right\rangle+E_i^{(2)}|i\rangle & & n=2 \\
+		\mathscr{H}_0|i\rangle=& E_i^{(0)}|i\rangle & & n=0 \\\label{6.7b}
+		\mathscr{H}_0\left|\Psi_i^{(1)}\right\rangle+\mathscr{V}|i\rangle=& E_i^{(0)}\left|\Psi_i^{(1)}\right\rangle+E_i^{(1)}|i\rangle & & n=1 \\\label{6.7c}
+		\mathscr{H}_0\left|\Psi_i^{(2)}\right\rangle+\mathscr{V}\left|\Psi_i^{(1)}\right\rangle=& E_i^{(0)}\left|\Psi_i^{(2)}\right\rangle+E_i^{(1)}\left|\Psi_i^{(1)}\right\rangle+E_i^{(2)}|i\rangle & & n=2 \\\label{6.7d}
 		\mathscr{H}_0\left|\Psi_i^{(3)}\right\rangle+\mathscr{V}\left|\Psi_i^{(2)}\right\rangle=& E_i^{(0)}\left|\Psi_i^{(3)}\right\rangle+E_i^{(1)}\left|\Psi_i^{(2)}\right\rangle & \notag \\
 		&+E_i^{(2)}\left|\Psi_i^{(1)}\right\rangle+E_i^{(3)}|i\rangle & & n=3
 	\end{align}
 \end{subequations}
 等等. 
 每个式子左乘$\ket{i}$, 
-由正交关系\autoref{6.6}可得如下各阶能量:
-\begin{subequations}
-\begin{align}
-E_i^{(0)} &= \braket{i|\hs|i} \\
-E_i^{(1)} &= \braket{i|\vs|i} \\
-E_i^{(2)} &= \braket{i|\vs|\Psi_i^{(1)}} \\
+由正交关系\autoref{6.6}可得如下各阶能量\footnote{
+须注意结合律与$\bra{i}\hs_0$ = $(\hs_0 \ket{i})^\dagger$ .
+}:
+\begin{subequations}\label{6.8}
+\begin{align}\label{6.8a}
+E_i^{(0)} &= \braket{i|\hs_0|i} \\\label{6.8b}
+E_i^{(1)} &= \braket{i|\vs|i} \\\label{6.8c}
+E_i^{(2)} &= \braket{i|\vs|\Psi_i^{(1)}} \\\label{6.8d}
 E_i^{(3)} &= \braket{i|\vs|\Psi_i^{(2)}}
 \end{align}
 \end{subequations}
-剩下的事情就是从(6.7)解出$\ket{\Psi_i^{(n)}}$, 
-然后用(6.8)确定$n$阶能量.
+剩下的事情就是从\autoref{6.7}解出$\ket{\Psi_i^{(n)}}$, 
+然后用\autoref{6.8}确定$n$阶能量.
 
 
-先来看(6.7b), 
+先来看\autoref{6.7b}, 
 由它来解出一阶波函数$\ket{\Psi_i^{(1)}}$. 
 此式可重写为
-\begin{align}
-(E_i^{(0)} - \hs_0 )\ket{\Psi_i^{(1)}} = (\vs - \braket{i|\vs|i})\ket{i}
+\begin{align}\label{6.9}
+(E_i^{(0)} - \hs_0 )\ket{\Psi_i^{(1)}} = (\vs - E_i^{(1)})\ket{i} = (\vs - \braket{i|\vs|i})\ket{i}
 \end{align}
 上式不再是一个本征方程, 
 而成为了一个非齐次微分方程(更广义地, 
 成为了积分微分方程). 
-解该方程的一种办法是将$\ket{\Psi_i^{(1)}}$用$\hs_0$的本征函数展开(因为$\hs_0$的本征函数是完备的):
+解该方程的一种办法是将$\ket{\Psi_i^{(1)}}$用$\hs_0$的本征函数展开(设$\hs_0$的本征函数完备):
 \begin{align*}
 \ket{\Psi_i^{(1)}} = \sum_n c_n^{(1)}\ket{n}
 \end{align*}
-又因$\hs_0$的本征函数是正交的, 
+又因$\hs_0$的本征函数正交归一, 
 将上式左乘$\bra{n}$ 得到
 \begin{align*}
 \braket{n|\Psi_i^{(1)}} = c_n^{(1)}
 \end{align*}
-由(6.6)可知, 
+由\autoref{6.6}可知, 
 $c_i^{(1)}=0$, 
 所以有
-\begin{align}
+\begin{align}\label{6.10}
 \ket{\Psi_i^{(1)}} = \sideset{}{'}\sum_n\ket{n}\braket{n|\Psi_i^{(1)}}
 \end{align}
 求和号上的一撇代表不包括$n=i$的项. 
-(6.9)左乘$\bra{n}$, 
+\autoref{6.9}左乘$\bra{n}$, 
 并注意到零阶波函数的正交性, 
 就可以得到:
-\begin{align}
-(E_i^{(0)} - E_n^{0} )\braket{n|\Psi_i^{(1)}} = \braket{n|\vs|i}
+\begin{align}\label{6.11}
+(E_i^{(0)} - E_n^{(0)} )\braket{n|\Psi_i^{(1)}} = \braket{n|\vs|i}
 \end{align}
 为得到二阶能量, 
-将(6.10)带入(6.8c)可以得到:
+将\autoref{6.10}代入\autoref{6.8c}可以得到:
 \begin{align*}
 E_i^{(2)} = \braket{i|\vs|\Psi_i^{(1)}} = \sideset{}{'}\sum_n\braket{i|\vs|n}\braket{n|\Psi_i^{(1)}}
 \end{align*}
-使用(6.11)可以求出$\braket{n|\Psi_i^{(1)}}$, 
+使用\autoref{6.11}可以求出$\braket{n|\Psi_i^{(1)}}$, 
 所以最终有
-\begin{align}
+\begin{align}\label{6.12}
 E_i^{(2)} = \sideset{}{'}\sum_n\frac{\braket{i|\vs|n}\braket{n|\vs|i}}{E_i^{(0)} - E_n^{(0)}}
 \end{align}
 这就是二阶能量的表达式.
@@ -210,22 +212,21 @@ E_i^{(2)} = \sideset{}{'}\sum_n\frac{\braket{i|\vs|n}\braket{n|\vs|i}}{E_i^{(0)}
 若想到三阶能量$E_i^{(3)}$, 
 可以使用相同的流程. 
 首先将二阶波函数展开为
-\begin{align}
+\begin{align}\label{6.13}
 \ket{\Psi_i^{(2)}} = \sideset{}{'}{\sum_n}\ket{n}\braket{n|\Psi_i^{(2)}}
 \end{align}
-然后用$\bra{n}$去乘(6.
-7c), 
+然后用$\bra{n}$去乘\autoref{6.7c}, 
 得到
-\begin{align}
+\begin{align}\label{6.14}
 (E_i^{(0)} -E_n^{(0)} )\braket{n|\Psi_i^{(2)}} = \braket{n|\vs|\Psi_i^{(1)}} - E_i^{(1)}\braket{n|\Psi_i^{(1)}}
 \end{align}
-将(6.8d)(6.13)(6.14)组合可得
+将\autoref{6.8d}\autoref{6.13}\autoref{6.14}组合可得
 \begin{align*}
 E_i^{(3)} & = \braket{i|\vs|\Psi_i^{(2)}}\\
 		  & = \sideset{}{'}{\sum_n}\braket{i|\vs|n}\braket{n|\Psi_i^{(2)}}\\
-		  & =\sideset{}{'}{\sum_n}\frac{\braket{i|\vs|n}\braket{n|\vs|\Psi_I^{(1)}}}{E_i^{(0)} - E_N^{(0)}} - E_i^{(1)} \sideset{}{'}{\sum_n}\frac{\braket{i|\vs|n}\braket{n|\Psi_i^{(1)}}}{E_i^{(0)} - E_n^{(0)} }
+		  & =\sideset{}{'}{\sum_n}\frac{\braket{i|\vs|n}\braket{n|\vs|\Psi_i^{(1)}}}{E_i^{(0)} - E_n^{(0)}} - E_i^{(1)} \sideset{}{'}{\sum_n}\frac{\braket{i|\vs|n}\braket{n|\Psi_i^{(1)}}}{E_i^{(0)} - E_n^{(0)} }
 \end{align*}
-最后再将(6.10)(6.11)插入, 
+最后再代入\autoref{6.10}\autoref{6.11}, 
 就得到
 \begin{align}
 E_i^{(3)} & =\sideset{}{'}{\sum_{mn}}\frac{\braket{i|\vs|n}\braket{n|\vs|m}\braket{m|\vs|i} }{(E_i^{(0)} -E_n^{(0)})(E_i^{(0)} - E_m^{(0)} )  } - E_i^{(1)} \sideset{}{'}{\sum_n} \frac{\left| \braket{i|\vs|n} \right|^2}{(E_i^{(0)} -E_n^{(0)} )^2}\notag\\
@@ -236,26 +237,24 @@ E_i^{(3)} & =\sideset{}{'}{\sum_{mn}}\frac{\braket{i|\vs|n}\braket{n|\vs|m}\brak
 
 
 此处给出这种办法的一个应用. 
-考虑一个体系, 
-该体系仅右边两个状态$\ket{I},\ket{II}$, 
-都是哈密顿量$\hs$的本征函数:
+考虑一个仅有两个态的简单量子体系, 
+这两个态记作$\ket{I},\ket{II}$, 都是哈密顿量$\hs$的本征函数:
 \begin{align*}
 \hs\ket{I} = \es_1\ket{I} \qquad \hs\ket{II} = \es_2\ket{II}
 \end{align*}
-假设
+假设可将$\hs$写作
 \begin{align*}
 \hs=\hs_0+\vs
 \end{align*}
-而且知道$\hs_0$的本征函数:
+其中$\hs_0$的本征函数、本征值已知:
 \begin{align*}
 \hs_0\ket{1} = E_1^{(0)}\ket{1}\qquad \hs_0\ket{2} = E_2^{(0)}\ket{2}
 \end{align*}
 现在想得到精确的基态能量$\es_1$. 
 假设零阶态非简并, 
-而且$E_1^{(0)}$是较低的能量(即$E_1^{(0)} < E_2^{(0)}$). 
+而且$E_1^{(0)}$是两个特征值里较小的那个(即$E_1^{(0)} < E_2^{(0)}$). 
 我们先用精确的办法得出解, 
-然后再用微扰理论求解, 
-最后比较这两个结果. 
+然后再和微扰解作比较. 
 为求解方程
 \begin{align}
 \hs\ket{\Phi}=\es\ket{\Phi}
@@ -280,7 +279,7 @@ c_1\\c_2
 \end{align}
 为简化记号, 
 令$\braket{1|\vs|1}=V_{11},\braket{1|\vs|2}=V_{12},\braket{2|\vs|1}=V_{21},\braket{2|\vs|2}=V_{22}$. 
-此矩阵较小的那个本征值为:
+易知此矩阵较小的那个本征值为:
 \begin{align}
 \es_1 = \frac{1}{2} \left\{  E_1^{(0)} + V_{11} + E_2^{(0)} + V_{22} - \left[ (E_1^{(0)} -E_{2}^{(0)} + V_{11} - V_{22})^2 +4V_{12}V_{21} \right]^{1/2}      \right\}\tag{6.19a}
 \addtocounter{equation}{1}
@@ -295,7 +294,7 @@ c_1\\c_2
 然后将$\es_1$展成$\lambda$的Taylor级数.
 
 
-此处需要两个等式:
+此处需要两个等式, 它们在$|x| < 1$时成立:
 \begin{align}
 	(1+x)^{1/2} =& 1 + \frac{1}{2} x - \frac{1}{8} x^2 + \cdots\\
 	(1-x)^{-1}  =& 1 +x +x^2 +x^3+\cdots
@@ -307,13 +306,13 @@ c_1\\c_2
      \Bigg\}
 \end{align*}
 请注意, 
-我们从平方根中提出了因子$(E_1^{(0)}) - E_2^{(2)} +\lambda(V_{11}-V_{22}) $, 
+我们从平方根中提出了因子$(E_1^{(0)} - E_2^{(2)} +\lambda(V_{11}-V_{22})) $, 
 此处假设它是负的, 
 因为$E_1^{(0)}<E_2^{(0)}$, 
 而且扰动(即$\vs$)是小的.
 
 
-首先展开平方根(略), 
+首先展开开平方(略), 
 然后展开$(E_1^{(0)}-E_2^{(0)} + \lambda(V_{11}-V_{22}))^{-1}$如下:
 \begin{align*}
 	\frac{1}{(E_1^{(0)}-E_2^{(0)} + \lambda(V_{11}-V_{22})} & =\frac{1}{E_1^{(0)} - E_2^{(0) }}\cdot \frac{1}{1+\frac{\lambda(V_{11}-V_{22}) }{E_1^{0} -E_2^{(0)} }}\\
@@ -321,61 +320,69 @@ c_1\\c_2
 \end{align*}
 可以证明
 \begin{align}
-\es_1 = E_1^{(1)} + \lambda E_1^{(1)} + \lambda^2 E_1^{(2)} + \lambda^3 E_1^{(3)} + E\lambda^4 E_1^{(4)} + \cdots
+\es_1 = E_1^{(1)} + \lambda E_1^{(1)} + \lambda^2 E_1^{(2)} + \lambda^3 E_1^{(3)} + \lambda^4 E_1^{(4)} + \cdots
 \end{align}
 其中
 \begin{subequations}
 	\begin{align}
 	E_1^{(1)} &= V_{11} \\
-	E_1^{(2)} &= \frac{V_{12}V_{21}}{E_1^{0} - E_2^{(0)}} \\
-	E_1^{(3)} &= \frac{V_{12} V_{22} V_{21} }{(E_1^{(0)} - E_2^{(0)})^2} - \frac{V_{12} V_{21} V_{11} }{ (E_1^{(0)} - E_2^{(0)})^2 }\\
-	E_1^{(4)} &= \frac{V_{12} V_{21} V_{11}^2 }{(E_1^{(0)} - E_2^{(0)})^3} - \frac{2 V_{12} V_{22} V_{21} V_{11} }{(E_1^{(0)} - E_2^{(0)})^3} + \frac{V_{12} V_{22}^2 V_{21} }{(E_1^{(0)} - E_2^{(0)})^3} + \frac{ (V_{12} V_{21})^2 }{(E_1^{(0)} - E_2^{(0)})^3}
+	E_1^{(2)} &= \frac{V_{12}V_{21}}{E_1^{(0)} - E_2^{(0)}} \\
+	E_1^{(3)} &= \frac{V_{12} V_{22} V_{21} }{(E_1^{(0)} - E_2^{(0)})^2} 
+                   - \frac{V_{12} V_{21} V_{11} }{ (E_1^{(0)} - E_2^{(0)})^2 }\\
+	E_1^{(4)} &= \frac{V_{12} V_{21} V_{11}^2 }{(E_1^{(0)} - E_2^{(0)})^3} 
+                   - \frac{2 V_{12} V_{22} V_{21} V_{11} }{(E_1^{(0)} - E_2^{(0)})^3}
+                   + \frac{V_{12} V_{22}^2 V_{21} }{(E_1^{(0)} - E_2^{(0)})^3}
+                   - \frac{ (V_{12} V_{21})^2 }{(E_1^{(0)} - E_2^{(0)})^3}
 	\end{align}
 \end{subequations}
 
 最终我们能看到,
-由RS微扰理论出发所得的一、二、三阶能量的公式[(6.8b)(6.12)(6.15)]与以上式中的$E_1^{(n)}\,(n=1,2,3)$相等. 
+由RS微扰理论出发所得的一、二、三阶能量的\autoref{6.8b} \autoref{6.12}
+\autoref{6.15}与以上式中的$E_1^{(n)}\,(n=1,2,3)$相等. 
 为理解这一点，
-只需注意到两态问题中中仅有一个中间态$\ket{n} = \ket{2}$. 
-由于微扰理论的公式是由Taylor展开所得，
+只需注意到两态问题中仅有一个中间态$\ket{n} = \ket{2}$. 
+由于微扰理论的公式也是由形式Taylor展开所得，
 出现这样的对应也是可期的。
 
 
+\let\oldthesection\thesection
+\renewcommand{\thesection}{*\oldthesection}
 \section{RS微扰论的图表示}
+\let\thesection\oldthesection
 \label{sec6.2}
+
 上节末尾我们已经看到, 
-即使是最简单的两态问题，
-其高阶能量公式也相当复杂。
-本章的主要目标就是将Hartree-Fock基态作为零阶态来得到相关能的微扰展开公式. 
+即使是最简单的两态问题,
+其高阶能量公式也相当复杂.
+本章的主要目标是用Hartree-Fock基态作为零阶态来得到相关能的微扰展开公式. 
 在这种情况下, 
-高阶能量的表达式愈将复杂. 
+高阶能量的表达式会更复杂. 
 因此若能找到某种相对简单的方法, 
 将高阶展开中的各项归类并表示出来, 
 那将再好不过. 
-本节来介绍一种图形化方法, 
-用图形表示微扰展开. 
+本节来介绍一种用图形表示微扰展开的方法. 
 我们并不会严格地推导图形微扰论, 
 而是从一个简单的例子开始, 
 推测出微扰展开和一组含义明确的图形之间的对应关系. 
-然后我们再``猜出"将图形转化为数学式子的规则, 
+然后再``猜出''将图形转化为数学式子的规则, 
 并展示其正确性.
-接下来会推广之前的图形及规则, 
-并在每一步都检查有图形所得的式子和直接推导所得式子之间的一致性. 
-用这种办法是望读者能习惯并认可这些图形.
+接下来会推广之前的图形及规则.
+每一步都会检查由图形和代数方法所得结果一致. 
+我们希望这种办法能让习惯并认可这些图形.
 
 
 微扰展开的图形表示首先出现在量子电动力学中. 
 Feynman首创了这种办法, 
-并在他的Nobel讲座\endnote{R. P. Feynman, The development of the space-time view of quantum electrodynamics. \textit{Science} \textbf{153}: 699 (1966). 这是一篇风趣又启示人的文章}
+并在他的Nobel奖获奖演说\endnote{R. P. Feynman, The development of the space-time view of quantum electrodynamics. \textit{Science} \textbf{153}: 699 (1966). 这是一篇风趣又启示人的文章}
 上介绍了其想法的演变发展. 
 此处引用他的话``我其余的工作就是发展了计算技巧, 
 用图形来帮助人们更快地分析微扰论. 
 这个工具最初基本上是猜出来的.
-"``即使是从物理学家的层面来讲, 
+''``即使是从物理学家的层面来讲, 
 我也并未证明这些规则和方程可以通过传统的电动力学得到, 
 但是从平时的`胡搞'中我已经知道, 
-所有这些东西和传统的电动力学毫无二致.
-"
+这一切和传统的电动力学毫无二致.
+''
 
 \subsection{两态系统的图微扰论}
 上节考察了两态问题, 
@@ -418,15 +425,14 @@ $\ket{2}$由向上和向下的箭头表示:
 \end{array}
 \]
 总之, 
-每个点上都有一线段进入, 
-有一线段穿出.
-
+每个点上都有一条线进入, 
+有一条线出去.
 对应的矩阵元就是
-$\braket{\text{穿入线的标签}| \vs |\text{穿出线的标签} }$.
+$\braket{\textbf{入}\text{线标签}| \vs |\textbf{出}\text{线标签} }$.
 
 
-回忆$n$阶能量表达式中的各项: $n=1,2,3,4$分子都是$n$个$\vs$矩阵元的乘积. 
-每个矩阵元都可由一个点一级传入和穿出的线来表示, 
+回忆$n$阶能量表达式中的各项: $n=1,2,3,4$的分数线上方都是$n$个$\vs$矩阵元的乘积. 
+既然每个矩阵元都可由一个点和出入的线来表示, 
 也许将$n$个点用某种方式相互链接起来组成的图, 
 可以用来表示矩阵元的乘积. 
 现在给出这种图的结构的严格描述:
@@ -435,13 +441,13 @@ $\braket{\text{穿入线的标签}| \vs |\text{穿出线的标签} }$.
 	\[\begin{tikzpicture}[draw=white]	\draw (0,0) node{$\bullet$}-- ++(0,0.5) node{}-- ++(0,0.5) node{$\bullet$}-- ++(0,0.5) node{$\bullet$}-- ++(0,0.5) node{$\bullet$}; 
 	\draw (1,0) node{$n$}-- ++(0,0.5) node{$\vdots$}-- ++(0,0.5) node{$3$}-- ++(0,0.5) node{$2$}-- ++(0,0.5) node{$1$}; 
 	\end{tikzpicture}\]
-	\item \textit{将所有点用一根无间断的线连起来, 保证每个点都被线穿通\footnote{译注：意思是线贯穿了点}.}
-	\item \textit{列出所有不同的连接方式, 如果在两个图中, 对应的点与其周围的点的链接方式都相同, 那么这两个图等价.}
+	\item \textit{将所有点用一根线串成环, 保证每个点都连有一出一入.}
+	\item \textit{列出所有不同的连接方式. 两图相同的条件是, 每对相同的点在两图中的前、后点分别相同.}
 \end{enumerate}
 
 第二个规则强制我们的图只能是完全连起来的, 
-或者叫\emph{链通}的(linked), 也就是说, 它们连成一个整体. 
-如下的不链通图:
+或者叫\emph{连通}的(linked), 也就是说, 它们连成一个整体. 
+如下的不连通图:
 \begin{equation*}
 \begin{tikzpicture}[scale=.667]
 \filldraw (0,0) circle(1pt) (2,0)circle (1pt) (4,0) circle(1pt)
@@ -681,25 +687,25 @@ $\braket{\text{穿入线的标签}| \vs |\text{穿出线的标签} }$.
 \filldraw[blue] 
 (0,0)circle(1pt) (0,1)circle(1pt) (0,2)circle(1pt) (0,3)circle(1pt);
 \draw[dashed] (-2,.5)node[left]{$C$}--(2,.5)
-              (-2,1.3)node[left]{$B$}--(2,1.3)
+              (-2,1.5)node[left]{$B$}--(2,1.5)
               (-2,2.5)node[left]{$A$}--(2,2.5);
 \begin{scope}
 \path [draw=blue,postaction={on each segment={mid arrow}}]
 (0,0)..controls+(.5,.5)and+(.5,-.5)..node[right]{2}(0,2) % n=4, 5th
-(0,2)..controls+(.25,-.25)and+(.25,.25)..node[left]{1}(0,1)
+(0,2)..controls+(.25,-.25)and+(.25,.25)..node[left, yshift=3]{1}(0,1)
 (0,1)..controls+(-.5,.5)and+(-.5,-.5)..node[right]{2}(0,3)
-(0,3)..controls+(-.75,-.75)and+(-.75,.75)..node[left]{1}(0,0);
+(0,3)..controls+(-.75,-.75)and+(-.75,.75)..node[left, yshift=3]{1}(0,0);
 \end{scope}
 \end{tikzpicture}
 \end{equation*}
-最上面的两个点每个为分子贡献一个因子$\braket{2|\vs|1}=V_{21}$, 
-剩余的点每个贡献$\braket{1|\vs|2}=V_{12}$. 
-虚线$A,C$每个都为分母贡献一因子$E_1^{(0)} - E_2^{(0)}$, 
+上方的两点各为分子贡献一个因子$\braket{2|\vs|1}=V_{21}$, 
+剩余的点各贡献$\braket{1|\vs|2}=V_{12}$. 
+虚线$A,C$各都为分母贡献一因子$E_1^{(0)} - E_2^{(0)}$, 
 虚线$B$贡献一个因子$(2E_1^{(0)} - 2E_2^{(0)})$. 
 此外, 
-该图有2个空穴线($h=2$)1个闭合圈图($l=1$), 
+该图有2条空穴线($h=2$), 1个闭合圈图($l=1$), 
 所以要将式子乘以$(-1)^3$. 
-所以最终有
+所以有
 \begin{equation*}
 \begin{tikzpicture}[baseline={(current bounding box.center)}, scale=1]
 \diagsize
@@ -765,8 +771,7 @@ $\braket{\text{穿入线的标签}| \vs |\text{穿出线的标签} }$.
 \emph{在不改变各点竖直顺序的前提下, 我们可以对图进行任意扭动}.
 
 
-表6.
-1中按照之前的规则计算出了所有的二、三、四阶图对应的代数式. 
+\autoref{t6.1}中按照之前的规则计算出了所有的二、三、四阶图对应的代数式. 
 按习惯, 
 一阶泡泡图定为
 \begin{equation*}
@@ -778,8 +783,7 @@ $\braket{\text{穿入线的标签}| \vs |\text{穿出线的标签} }$.
 \end{scope}
 \end{tikzpicture} = V_{11}
 \end{equation*}
-检视表6.
-1可以发现, 
+检视\autoref{t6.1}可以发现, 
 按照我们的规则把图换成算式, 
 然后将各阶图对应的算式加起来, 
 就得到该阶的能量修正, 
@@ -791,6 +795,7 @@ $\braket{\text{穿入线的标签}| \vs |\text{穿出线的标签} }$.
 \]
 \textit{提示}: 这样的图共有八个. 你可以把三个点加在二阶图上来生成所有可能的五阶图.
 }
+
 \begin{table}[H]
 	\caption{图到公式的转换}
     \begin{tabular}{cl}
@@ -885,7 +890,7 @@ $\braket{\text{穿入线的标签}| \vs |\text{穿出线的标签} }$.
 现下我们仍然只有一个空穴态$\ket{1}$, 
 但有$N-1$个粒子态$\ket{n}, n=2,3,\cdots,N$. 
 我们仍然按照之前的办法来画图, 
-但要注意现在粒子线的标签可以式任意的$n$. 
+但要注意现在粒子线的标签可以是任意的$n$. 
 举个例子, 
 下图
 \begin{equation*}
@@ -947,7 +952,7 @@ arc (45:-45:2.12cm)  node[right,midway]{1} node{\dian} ;
 \end{tikzpicture}
 \end{equation*}
 其中的标号$m,n$可以独立地取$2$到$N$的任何值. 
-其中一类图如下
+类似如下的图
 \begin{equation*}
 \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.6] 
 \path [draw=blue,postaction={on each segment={mid arrow}}] 
@@ -957,11 +962,11 @@ arc (180:135:2.12cm) node[left,midway]{$n$}  node{\dian}
 arc (45:-45:2.12cm)  node[right,midway]{1} node{\dian} ;
 \end{tikzpicture}
 \end{equation*}
-我们称这样的图为\emph{对角的}. 
-为得到这些推广了的图的数学表达式, 
+称为\emph{对角的}. 
+为得到这些推广的图对应的数学表达式, 
 我们需要在之前的规则上增加一条：
 \begin{itemize}\itshape
-	\item[4] 求和时要对所有粒子标签求和. 
+	\item[4] 对所有粒子序号求和. 
 \end{itemize}
 
 这里来看一个示例. 
@@ -973,7 +978,7 @@ arc (45:-45:2.12cm)  node[right,midway]{1} node{\dian} ;
 		(4.5,0) node{\dian}
 		arc (-45:45:2.12cm) node[right,midway]{$n$} node{\dian}
 		arc (135:225:2.12cm)node[left,midway]{1}  node{\dian};
-	\end{tikzpicture} & = \sum_{n\neq 1}\frac{V_{1n}V_{n1}}{E_1^{(0)} - E_n^{(0)}} = \sum_n'\frac{V_{1n}V_{n1}}{E_1^{(0)} - E_n^{(0)}}\\
+	\end{tikzpicture} & = \sum_{n\neq 1}\frac{V_{1n}V_{n1}}{E_1^{(0)} - E_n^{(0)}} = \sideset{}{'}\sum_n \frac{V_{1n}V_{n1}}{E_1^{(0)} - E_n^{(0)}}\\
 	\begin{tikzpicture}[baseline={(current bounding box.center)},scale=.6] 
 \path [draw=blue,postaction={on each segment={mid arrow}}] 
 (4.5,0) node{\dian}
@@ -989,18 +994,17 @@ arc (-45:45:2.12cm) node[right,midway]{$n$} node{\dian}
 arc (135:180:2.12cm)node[left,midway]{1}  node{\dian}
 arc (180:225:2.12cm)node[left,midway]{1}  node{\dian};
 \end{tikzpicture} 
-& = \sum_{nm}'\frac{V_{1m}V_{mn}V_{n1}}{(E_1^{(0)} - E_m^{(0)})(E_1^{(0)} - E_n^{(0)})} - \sum_n'\frac{V_{11}V_{1n}V_{n1}}{(E_1^{(0)} - E_n^{(0)})^2}
+& = \sideset{}{'}\sum_{nm} \frac{V_{1m}V_{mn}V_{n1}}{(E_1^{(0)} - E_m^{(0)})(E_1^{(0)} - E_n^{(0)})}
+    - \sideset{}{'}\sum_n \frac{V_{11}V_{1n}V_{n1}}{(E_1^{(0)} - E_n^{(0)})^2}
 \end{align}
 \end{subequations}
-这两个表达式与之前所得到的二阶、三阶能量的表达式(6.
-12)(6.
-15)在$i=1$的情况完全相同. 
+这两个表达式与之前所得到的二阶、三阶能量\autoref{6.12} \autoref{6.15}的基态($i=1$)完全相同. 
 如果现在要得到某个态$i$的微扰表达式, 
 而且$i$不一定是最低能态, 
-我们要如何处理? 图的形状怎么样呢？ 我们很容易能够验证, 
+我们要如何处理? 图会是什么样? 我们很容易能够验证, 
 如果将空穴线标为$i$, 
 粒子线标为$m,n,k$, 
-其取值为$1,2,\ldots,i-1$和$i+1,\ldots,N$, 
+其取值为$1,2,\ldots,i-1,i+1,\ldots,N$, 
 那么答案就与之前的相同. 
 那么现在我们对RS微扰论就有了一个完整的图表示框架, 
 可以将其应该用于任意的微扰和任意的零阶态上.
@@ -1062,8 +1066,7 @@ arc (-15:-45:2.12cm) node[right,midway]{$i$} node{\dian};
 \end{tikzpicture}
 \end{equation*}
 其中指标$m,n,k$的值不取$i$. 
-用6.
-1节介绍的方法得出四阶能量的代数表达式并与图形方法所得的结果比较.
+用\autoref{sec6.1}介绍的方法得出四阶能量的代数表达式并与图形方法所得的结果比较.
 
 } 
 \subsection{对图求和}
@@ -1134,7 +1137,7 @@ arc (45:-45:2.12cm) node[right,midway]{$1$} node{\dian};
 \path [draw=blue,postaction={on each segment={mid arrow}}] 
 (0,0) node{\dian}
 arc (-45:-15:2.12cm) node[right,midway]{$2$} node{\dian}
-arc (-15:45:2.12cm) node[right,midway]{$1$} node{\dian}
+arc (-15:45:2.12cm) node[right,midway]{$2$} node{\dian}
 arc (135:165:2.12cm) node[left,midway]{$1$} node{\dian}
 arc (165:225:2.12cm) node[left,midway]{$1$} node{\dian};
 \end{tikzpicture}
@@ -1150,27 +1153,29 @@ arc (-15:-45:2.12cm) node[right,midway]{$1$} node{\dian};
 \right]
 +\cdots
 \end{align}  
-利用表~\autoref{t6.1}和练习6.
-1中的五阶图表达式, 
+利用\autoref{t6.1}和\autoref{ex:6.1}中的五阶图表达式, 
 我们可以得到
-\begin{align}
+\begin{align}\label{6.26}
 \Delta = & \left[ \frac{V_{12}V_{21}}{E^{(0)}_1 - E_2^{(0)}}\right] + \left[ \frac{V_{12}V_{21}(V_{22}-V_{11})}{(E^{(0)}_1 - E_2^{(0)})^2}\right] + \left[ \frac{V_{12}V_{21}(V_{22}-V_{11})^2}{(E^{(0)}_1 - E_2^{(0)})^3}\right]\notag\\
          & + \left[ \frac{V_{12}V_{21}(V_{22}-V_{11})^3}{(E^{(0)}_1 - E_2^{(0)})^4}\right] + \cdots\notag\\
-\Delta = &  \frac{V_{12}V_{21}}{E^{(0)}_1 - E_2^{(0)}}\Bigg[ 1 + \left(\frac{V_{22}-V_{11}}{E_1^{(0)} - E_2{(0)}}\right) + \left(\frac{V_{22}-V_{11}}{E_1^{(0)} - E_2{(0)}}\right)^2 \notag\\
-         & + \left(\frac{V_{22}-V_{11}}{E_1^{(0)} - E_2{(0)}}\right) +\cdots \Bigg]
+\Delta = &  \frac{V_{12}V_{21}}{E^{(0)}_1 - E_2^{(0)}}\Bigg[ 1 
+    + \left(\frac{V_{22}-V_{11}}{E_1^{(0)} - E_2^{(0)}}\right) 
+    + \left(\frac{V_{22}-V_{11}}{E_1^{(0)} - E_2^{(0)}}\right)^2 \notag\\
+         & + \left(\frac{V_{22}-V_{11}}{E_1^{(0)} - E_2^{(0)}}\right)^3 +\cdots \Bigg]
 \end{align}
 注意到方括号中的式子是一几何级数. 
 使用公式
 \begin{align*}
 (1-x)^{-1} = 1+x+x^2+x^3+\cdots
 \end{align*}
-则级数(6.
-26)求和后就成为
+则级数\autoref{6.26}求和后就成为
 \begin{align}
-\Delta = &  \frac{V_{12}V_{21}}{E^{(0)}_1 - E_2^{(0)}}\left[ \frac{1}{1-\frac{V_{22}-V_{11}}{E_1^{(0)} - E_2{(0)}}} \right] = \frac{V_{12}V_{21}}{(E_1^{(0)} + V_{11}) - (E_2^{(0)} + V_{22})}
+\Delta = &  \frac{V_{12}V_{21}}{E^{(0)}_1 - E_2^{(0)}}\left[
+        \frac{1}{1-\cfrac{V_{22}-V_{11}}{E_1^{(0)} - E_2^{(0)}}} \right]
+   = \frac{V_{12}V_{21}}{(E_1^{(0)} + V_{11}) - (E_2^{(0)} + V_{22})}
 \end{align}
 对这组图求和到无穷阶得到的表达式类似于二阶微扰的结果, 
-但不同指出在于它有\emph{能量移动分母(shifted energy denominator)}. 
+但不同指出在于它有\emph{偏移的能量分母(shifted energy denominator)}. 
 这个结果可以重述如下：对一个呈几何级数的图求和至无穷阶, 
 所得的结果是某个微扰论的有限阶结果, 
 这个微扰论的哈密顿量的微扰和未受扰部分的划分方式与图所对应的划分方式不同. 
@@ -1201,7 +1206,7 @@ V_{21} & 0
 
 
 下面将此结果推广到$N$-态系统中. 
-在二阶图上加点可以禅城如下的图：
+在二阶图上加点可以生成如下的图：
 \begin{align}
 \Delta = 
 \left[
@@ -1236,7 +1241,7 @@ arc (45:-45:2.12cm) node[right,midway]{$1$} node{\dian};
 \Delta = \sideset{}{'}\sum_n \frac{V_{1n}V_{n1}}{(E_1^{(0)} + V_{11}) - (E_n^{(0)} + V_{nn})}
 \end{align}
 其中求和号上的一撇意思是求和时去掉$n=1$这项. 
-再次注意到上面所得的结果就是具有能量移动分母的二阶(微扰能量)表达式. 
+再次注意到上面所得的结果就是具有偏移的能量分母的二阶(微扰能量)表达式. 
 我们之后会知道, 
 几何级数求和技术可用以获得\hft 能量的微扰修正.
 
