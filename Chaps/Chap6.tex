@@ -1265,19 +1265,18 @@ arc (45:-45:2.12cm) node[right,midway]{$1$} node{\dian};
 其中$\mathbf{r}(i)$是第$i$个电子的位置矢量. 
 
 
-设想已经得到一组自旋轨道和轨道能量作为$h_0$的本征函数和本征值,
+设想已经得到一组自旋轨道与轨道能量作为$h_0$的本征函数和本征值,
 
 \begin{align}
 h_0\chi_i^{(0)} = \epsilon_i^{(0)} \chi_i^{(0)}
 \end{align}
 哈密顿量为$\hs_0$的$N$-电子系统的基态波函数$\ket{\Psi_0}$是由其中能量最低的$N$个自旋轨道组成的行列式：
-\begin{align}
-\ket{\Psi_0} = \ket{\chi_1^{(0)}\cdots\chi_a^{(0)}\cdots\chi_n^{(0)}}
+\begin{align}\label{6.33}
+\ket{\Psi_0} = \ket{\chi_1^{(0)}\cdots\chi_a^{(0)}\cdots\chi_N^{(0)}}
 \end{align}
 我们用指标$a,b,c,\ldots$来记占据(空穴hole)自旋轨道, 
 用$r,s,t,\ldots$来记未占(粒子particle)自旋轨道. 
-波函数(6.
-33)是$\hs_0$的本征函数, 
+波函数\autoref{6.33}是$\hs_0$的本征函数, 
 本征值就是占据自旋轨道能量之和：
 \begin{align*}
 \hs_0\ket{\Psi_0} = \left( \sum_a\epsilon_a^{(0)} \right)\ket{\Psi_0}
@@ -1286,7 +1285,7 @@ h_0\chi_i^{(0)} = \epsilon_i^{(0)} \chi_i^{(0)}
 那么$\ket{\Psi_0}$就是精确波函数$\ket{\Phi_0}$的一个近似. 
 在这种近似下, 
 受微扰的$N$-电子体系的基态就是：
-\begin{align}
+\begin{align}\label{6.34}
 E_0 & = \braket{\Psi_0|\hs|\Psi_0} = \braket{\Psi_0|\hs_0+\vs|\Psi_0}\notag\\
     & = \sum_a\epsilon_a^{(0)} + \sum_a\braket{a|v|a} = \sum_a\epsilon_a^{(0)} + \sum_av_{aa}
 \end{align}
@@ -1310,7 +1309,7 @@ h\chi_i = (h_0+v)\chi_i = \epsilon_i\chi_i
 \hs\ket{\Phi_0} = \left(\sum_a\epsilon_a \right)\ket{\Phi_0} = \scr{E}_0\ket{\Phi_0}
 \end{align*}
 那么体系当微扰存在时的精确能量就是
-\begin{align}
+\begin{align}\label{6.38}
 \scr{E}_0 = \sum_a\epsilon_a
 \end{align}
 
@@ -1321,23 +1320,24 @@ h\chi_i = (h_0+v)\chi_i = \epsilon_i\chi_i
 由于精确能量可写为占据轨道能量$\epsilon_a$之和, 
  我们简单地将每个$\epsilon_a$进行微扰展开, 
 然后将结果对所有占据自旋轨道求和. 
-由于6.
-1节中的一般性理论可以用于单粒子零阶\ha (即$h_0$)和单粒子微扰, 
+由于\autoref{sec6.1}中的一般性理论可以用于单粒子零阶\ha (即$h_0$)和单粒子微扰, 
 我们立马得到：
 \begin{align}
-\epsilon_a & = \epsilon_a^{(0)} + \braket{a|v|a} + \sum_i'\frac{\braket{a|v|i}\braket{i|v|a}}{\epsilon_a^{(0)}-\epsilon_i^{(0)}} + \cdots\notag\\
-	       & = \epsilon_a^{(0)} + v_{aa} + \sum_i'\frac{v_{ai}v_{ia}}{\epsilon_a^{(0)}-\epsilon_i^{(0)}} + \cdots
+\epsilon_a & = \epsilon_a^{(0)} + \braket{a|v|a}
+    + \sideset{}{'}\sum_i\frac{\braket{a|v|i}\braket{i|v|a}}{\epsilon_a^{(0)}-\epsilon_i^{(0)}}
+    + \cdots\notag\\
+	       & = \epsilon_a^{(0)} + v_{aa}
+    + \sideset{}{'}\sum_i\frac{v_{ai}v_{ia}}{\epsilon_a^{(0)}-\epsilon_i^{(0)}}
+    + \cdots
 \end{align}
 对$i$的求和可分为两部分, 
 一部分是对所有粒子轨道求和, 
 另一部分对除$a$外的所有空穴轨道求和：
-\begin{align}
+\begin{align}\label{6.40}
 \epsilon_a = \epsilon_a^{(0)} + v_{aa} + \sum_r\frac{v_{ar}v_{ra}}{\epsilon_a^{(0)}-\epsilon_r^{(0)}} + \sum_{b\neq a}\frac{v_{ab}v_{ba}}{\epsilon_a^{(0)}-\epsilon_b^{(0)}} + \cdots
 \end{align}
 当下我们要得到精确能量的微扰展开, 
-那么将(6.
-40)带入(6.
-38)可得
+那么将\autoref{6.40}代入\autoref{6.38}可得
 \begin{align}
 \scr{E}_0 = \sum_a\epsilon_a = \sum_av_{aa} + \sum_{ar}\frac{v_{ar}v_{ra}}{\epsilon_a^{(0)} - \epsilon_{r}^{(0)}} + \sum_{\substack{ab\\a\neq b}}\frac{v_{ab}v_{ba}}{\epsilon_a^{(0)}- \epsilon_{b}^{(0)}} + \cdots
 \end{align}
@@ -1358,7 +1358,7 @@ X = \sum_{\substack{ab\\a\neq b}}\frac{v_{ba}v_{ab}}{\epsilon_b^{(0)}- \epsilon_
 \scr{E}_0 = \sum_a\epsilon_a^{(0)} + \sum_av_{aa} + \sum_{ar}\frac{v_{ar}v_{ra}}{\epsilon_a^{(0)} - \epsilon_{r}^{(0)}}
 \end{align}
 因此
-\begin{subequations}
+\begin{subequations}\label{6.43}
 \begin{align}
 E_0^{(0)} & = \sum_a\epsilon_a^{(0)}\\
 E_0^{(1)} & = \sum_av_{aa} \label{6.43b}\\
@@ -1366,18 +1366,16 @@ E_0^{(2)} & = \sum_{ar}\frac{v_{ar}v_{ra}}{\epsilon_a^{(0)} - \epsilon_r^{(0)}}
 \label{6.43c}
 \end{align}
 \end{subequations}
-可以看见$\ket{\Psi_0}$的能量(见(6.
-34))等于零阶与一阶能量之和(即$E_0 = E_0^{(0)}+E_0^{(1)}$).
+可以看见$\ket{\Psi_0}$的能量(见\autoref{6.34})等于零阶与一阶能量之和(即$E_0 = E_0^{(0)}+E_0^{(1)}$).
 
 
-式(6.
-43)中的求和遍及所有占据(空穴)和非占据(粒子)自旋轨道. 
+\autoref{6.43}中的求和遍及所有占据(空穴)和非占据(粒子)自旋轨道. 
 由于矩阵元$v_{ij} = \braket{i|v|j}$仅当自旋轨道$i,j$自旋相同时非零, 
 所以对于闭壳层体系我们可以将该式重新写为对空间轨道的求和再乘以$2$:
-\begin{subequations}
-	\begin{align}
-	E_0^{(0)} & = 2\sum_a^{N/2}\epsilon_a^{(0)}\\
-	E_0^{(1)} & = 2\sum_a^{N/2}v_{aa} \\
+\begin{subequations}\label{6.44}
+	\begin{align}\label{6.44a}
+	E_0^{(0)} & = 2\sum_a^{N/2}\epsilon_a^{(0)}\\\label{6.44b}
+	E_0^{(1)} & = 2\sum_a^{N/2}v_{aa} \\\label{6.44c}
 	E_0^{(2)} & = 2\sum_{ar}^{N/2}\frac{v_{ar}v_{ra}}{\epsilon_a^{(0)} - \epsilon_r^{(0)}}
 	\end{align}
 \end{subequations}
@@ -1389,8 +1387,7 @@ E_0^{(2)} & = \sum_{ar}\frac{v_{ar}v_{ra}}{\epsilon_a^{(0)} - \epsilon_r^{(0)}}
 \begin{align*}
 E_0^{(2)} = \sum_{ar}\frac{v_{ar}v_{ra}}{\epsilon_a^{(0)} - \epsilon_r^{(0)}}
 \end{align*}
-你可以从二阶能量的一般表达式(式(6.
-12))开始, 
+你可以从二阶能量的一般表达式(\autoref{6.12})开始, 
 将其用在$N$-电子体系中：
 \begin{align*}
 E_0^{(2)} = \sideset{}{'}\sum_n\frac{\left| \braket{\Psi_0|\sum_iv(i)\ket{n}}\right|^2}{E_0^{(0)} - E_n^{(0)}}
@@ -1403,16 +1400,19 @@ E_0^{(2)} = \sideset{}{'}\sum_n\frac{\left| \braket{\Psi_0|\sum_iv(i)\ket{n}}\ri
 \ket{\Psi_a^r} = \ket{\chi_a^{(0)}\cdots\chi_{a-1}^{(0)}\chi_{r}^{(0)}\chi_{a+1}^{(0)}\chi_{N}^{(0)}}.
 \end{align*}
 \Next
-用式(6.
-15)中的一般表达式计算三阶能量$E_3^{(0)}.$
+用\autoref{6.15}中的一般表达式计算三阶能量$E_3^{(0)}.$
 \begin{enumerate}[a.]
 	\item 证明
 		\begin{align*}
-		B_0^{(3)} = -E_0^{(1)}\sideset{}{'}\sum_n\frac{|\braket{\Psi_0|\vs|n}|^2}{(E_0^{(0)} - E_n^{(0)})^2} = - \sum_{abr}\frac{v_{aa}v_{rb}v_{br}}{(\epsilon_b^{(0)} - \epsilon_r^{(0)} )}
+		B_0^{(3)} = -E_0^{(1)}\sideset{}{'}\sum_n
+                    \frac{|\braket{\Psi_0|\vs|n}|^2}{(E_0^{(0)} - E_n^{(0)})^2}
+                    = - \sum_{abr}\frac{v_{aa}v_{rb}v_{br}}{(\epsilon_b^{(0)} - \epsilon_r^{(0)} )^2}
 		\end{align*}
 	\item 证明
 		\begin{align*}
-		A_0^{(3)} = \sum_{nm}'\frac{\braket{\Psi_0|\vs|n}\braket{n|\vs|m}\braket{m|\vs|\Psi_0}}{(E^{(0)}_0 - E^{(0)}_n)(E^{(0)}_0 - E^{(0)}_m)} = \sum_{abrs}\frac{v_{ar}v_{sb}\braket{\Psi_a^r|\vs|\Psi_b^s}}{(\epsilon^{(0)}_0 - \epsilon^{(0)}_n)(\epsilon^{(0)}_0 - \epsilon^{(0)}_m)}
+		A_0^{(3)} = \sideset{}{'}\sum_{nm}
+                    \frac{\braket{\Psi_0|\vs|n}\braket{n|\vs|m}\braket{m|\vs|\Psi_0}}{(E^{(0)}_0 - E^{(0)}_n)(E^{(0)}_0 - E^{(0)}_m)}
+                    = \sum_{abrs}\frac{v_{ar}v_{sb}\braket{\Psi_a^r|\vs|\Psi_b^s}}{(\epsilon^{(0)}_a - \epsilon^{(0)}_r)(\epsilon^{(0)}_b - \epsilon^{(0)}_s)}
 		\end{align*}
 	\item 证明
 		\begin{align*}
@@ -1424,7 +1424,9 @@ E_0^{(2)} = \sideset{}{'}\sum_n\frac{\left| \braket{\Psi_0|\sum_iv(i)\ket{n}}\ri
 		\end{align*}
 	\item 最后将以上两项合在一起得到
 	\begin{align*}
-	E_0^{(3)} = A_0^{(3)} + B_0^{(3)} = \sum_{abrs}\frac{v_{ar}v_{sb}\braket{\Psi_a^r|\vs|\Psi_b^s}}{(\epsilon^{(0)}_0 - \epsilon^{(0)}_n)(\epsilon^{(0)}_0 - \epsilon^{(0)}_m)}- \sum_{abr}\frac{v_{aa}v_{rb}v_{br}}{(\epsilon_b^{(0)} - \epsilon_r^{(0)} )}
+	E_0^{(3)} = A_0^{(3)} + B_0^{(3)}
+            = \sum_{ars} \frac{v_{ar} v_{rs} v_{sa}}{(\epsilon^{(0)}_a - \epsilon^{(0)}_r)(\epsilon^{(0)}_a - \epsilon^{(0)}_s)}
+            - \sum_{abr} \frac{v_{ra} v_{ab} v_{br}}{(\epsilon^{(0)}_a - \epsilon^{(0)}_r)(\epsilon^{(0)}_b - \epsilon^{(0)}_r)}
 	\end{align*}
 	\item 证明对于闭壳层体系
 	\begin{align*}
@@ -1433,12 +1435,10 @@ E_0^{(2)} = \sideset{}{'}\sum_n\frac{\left| \braket{\Psi_0|\sum_iv(i)\ket{n}}\ri
 \end{enumerate}
 }
 
-在5.
-3.
-2节, 
+在\autoref{sec:5.3.2}, 
 我们已用不同的多体方法在H\"uckel理论的框架下计算了$N$个碳原子组成的环多烯的共振能($N=2n=4\nu +2,\nu=1,2,\ldots$). 
-为说明给出介绍的方法我们用微扰论重新处理这个问题. 
-回忆共振能的定义——精确总能量(对角化H\"uckel矩阵并将所有占据轨道能量加和即得)与$N/2=n$个局域烯烃单元的能量之差. 
+为说明上述方法我们用微扰论重新处理这个问题. 
+回忆共振能的定义——精确总能量(对角化H\"uckel矩阵并将所有占据轨道能量加和)与$N/2=n$个局域烯烃单元的能量之差. 
 第$i$个单元的占据(空穴)和非占据(粒子)轨道分别记为$\ket{i},\ket{i^*}$(见式(5.
 137)). 
 总的\ha 可划分为：
@@ -1446,19 +1446,19 @@ E_0^{(2)} = \sideset{}{'}\sum_n\frac{\left| \braket{\Psi_0|\sum_iv(i)\ket{n}}\ri
 \hs = \hs_0 + \vs = \sum_ih_0(i) + \sum_iv(i)
 \end{align}
 那么烯烃轨道就是$h_0$的本征函数：
-\begin{subequations}
+\begin{subequations}\label{6.46}
 	\begin{align}
 	h_0\ket{i} &= (\alpha+\beta)\ket{i} = \epsilon_i^{(0)}\ket{i}\\
 	h_0\ket{i^*} &= (\alpha-\beta)\ket{i^*} = \epsilon_{i^*}^{(0)}\ket{i^*}
 	\end{align}
 \end{subequations}
-为之后参考我们先指出$\epsilon_i^{(0)} - \epsilon^{(0)}_{j^*}=2\beta$无论$i,j$如何都成立. 
+为之后参考我们先指出$\epsilon_i^{(0)} - \epsilon^{(0)}_{j^*}=2\beta$对任意$i,j$恒成立. 
 微扰项的非零矩阵元为
-\begin{subequations}
-	\begin{align}
-	\braket{i|v|(i\pm 1)^*} & = \pm\beta/2\\
-	\braket{i|v|(i\pm 1)} & = \beta/2\\
-	\braket{i^*|v|(i\pm 1)^*} & = -\beta/2\\
+\begin{subequations}\label{6.47}
+	\begin{align}\label{6.47a}
+	\braket{i|v|(i\pm 1)^*} & = \pm\beta/2\\\label{6.47b}
+	\braket{i|v|(i\pm 1)} & = \beta/2\\\label{6.47c}
+	\braket{i^*|v|(i\pm 1)^*} & = -\beta/2
 	\end{align}
 \end{subequations}
 由于此处多烯是环状的, 
@@ -1467,63 +1467,56 @@ E_0^{(2)} = \sideset{}{'}\sum_n\frac{\left| \braket{\Psi_0|\sum_iv(i)\ket{n}}\ri
 在该模型中, 
 苯分子的精确共振能为$2\beta$, 
 此外有如下精确共振能的渐近公式：
-\begin{align}
+\begin{align}\label{6.48}
 \lim\limits_{N\to\infty}E_R = (4/\pi-1)N\beta=0.2732N\beta
 \end{align}
 
-有了微扰项$v$的矩阵元(6.
-47)和零阶轨道能量(6.
-46)我们就能计算微扰能量. 
+有了微扰项$v$的矩阵元\autoref{6.47}和零阶轨道能量\autoref{6.46}我们就能计算微扰能量. 
 先从二阶能量开始. 
 我们处理的为闭壳层体系, 
-相应的式子就是(6.
-44c):
+相应的式子就是\autoref{6.44c}:
 \begin{align}
-E_0^{(0)} = 2\sum_{ar}^{N/2}\frac{v_{ar}v_{ra}}{\epsilon^{(0)}_a - \epsilon^{(0)}_r} = 2 \sum_{ar}^{N/2}\frac{\braket{a|v|r}\braket{r|v|a}}{\epsilon^{(0)}_a - \epsilon^{(0)}_r}
+E_0^{(2)} = 2\sum_{ar}^{N/2}\frac{v_{ar}v_{ra}}{\epsilon^{(0)}_a - \epsilon^{(0)}_r} = 2 \sum_{ar}^{N/2}\frac{\braket{a|v|r}\braket{r|v|a}}{\epsilon^{(0)}_a - \epsilon^{(0)}_r}
 \end{align}
 指标$a$取遍全部$n$个占据烯烃轨道$\ket{i}$, 
 指标$r$取遍总共$n$个未占轨道$\ket{j^*}$, 
 因此我们有
-\begin{align}
-E_0^{(2)} = 2\sum_{i=1}^{n}\sum_{j=1}^{n}\frac{\braket{i|v|j^*}\braket{j^*|v|i}}{\epsilon^{(0)}-\epsilon^{(0)}_{j^*}} = \frac{1}{\beta}\sum_{i=1}^{n}\sum_{j=1}^{N}\braket{i|v|j^*}\braket{j^*|v|i}
+\begin{align}\label{6.50}
+E_0^{(2)} = 2\sum_{i=1}^{n}\sum_{j=1}^{n}\frac{\braket{i|v|j^*}\braket{j^*|v|i}}{\epsilon^{(0)}_i-\epsilon^{(0)}_{j^*}} = \frac{1}{\beta}\sum_{i=1}^{n}\sum_{j=1}^{N}\braket{i|v|j^*}\braket{j^*|v|i}
 \end{align}
 式中我们用到了轨道能之间的差为$2\beta$. 
 将$i$固定, 
 很容易计算对$j$的求和, 
-因为只有当$j=i\pm1$时矩阵元才不为零(见式(6.
-47a)). 
+因为只有当$j=i\pm1$时矩阵元才不为零(见\autoref{6.47a}). 
 因此
-\begin{align}
+\begin{align}\label{6.51}
 E_0^{(2)} & = \frac{1}{\beta}\sum_{i=1}^{n}\braket{i|v|(i+1)^*}\braket{(i+1)^*|v|i} + \braket{i|v|(i-1)^*}\braket{(i-1)^*|v|i}\notag\\
 & = \frac{1}{\beta}\sum_{i=1}^{n}[(\beta/2)^2 + (-\beta/2)^2] = \frac{n\beta}{2} = \frac{N\beta}{4} = 0.25N\beta
 \end{align}
 对于苯来说, 
-共振能就是$1.5\beta$, 
+二阶共振能就是$1.5\beta$, 
  是精确值的0.
 75倍(即75\%). 
-对于越大的体系, 
-这个结果的质量就越好. 
-比较(6.
-48)和(6.
-51)可以看见, 
+对于更大的体系, 
+这个结果的质量会更好. 
+比较\autoref{6.48}和\autoref{6.51}可见, 
 $N$很大的时候, 
-二阶能量接近精确结果的91.
+二阶能量可达精确结果的91.
 5\%.
 
 
 现在用一种略微不同的角度来考虑以上的推导, 
 这能帮助我们组织更高阶的计算. 
-在(6.
-50)中固定$i$, 
+在\autoref{6.50}中固定$i$, 
 计算对$j$的求和, 
 注意到轨道$i$仅与$(i\pm1)^*$相互作用. 
 可用图形表示这一点：
 \begin{equation*}
-i\to j^* \to i\leftrightarrow
+i\to j^* \to i~~~~~\longleftrightarrow~~~~
 \begin{tikzpicture}[baseline={(0,-.1)},scale=1.2]
 \node(a)at (0,0){$i$};\node(b)at(1,1){$(i+1)^*$};\node(c)at(2,0){$i$};\node(d)at(1,-1){$(i-1)^*$};
 \draw (a)--node[above]{$+$}(b)--node[above]{$+$}(c)--node[below]{$-$}(d)--node[below]{$-$}(a);
-\end{tikzpicture}\leftrightarrow \sum_j\braket{i|v|j^*}\braket{j^*|v|i}
+\end{tikzpicture}~~~~\longleftrightarrow~~~~~ \sum_j\braket{i|v|j^*}\braket{j^*|v|i}
 \end{equation*}
 图中正负号代表两轨道之间的矩阵元$\pm\beta/2$的正负. 
 对$j$的求和计算如下. 
@@ -1539,20 +1532,19 @@ i\to j^* \to i\leftrightarrow
 
 
 现在来计算三阶能量. 
-适用于闭壳层体系的表达式在练习6.
-4(e)中给出：
-\begin{align}
+适用于闭壳层体系的表达式在\autoref{ex:6.4}(e)中给出：
+\begin{align}\label{6.52}
 E_0^{(3)} = 2\sum_{ars}^{N/2}\frac{v_{ar}v_{rs}v_{sa}}{(\epsilon^{(0)}_a-\epsilon^{(0)}_r)(\epsilon^{(0)}_a-\epsilon^{(0)}_s)} - 2\sum_{abr}^{N/2}\frac{v_{ra}v_{ab}v_{br}}{(\epsilon^{(0)}_a-\epsilon^{(0)}_r)(\epsilon^{(0)}_b-\epsilon^{(0)}_r)}
 \end{align}
 按照计算$E_0^{(2)}$时的办法, 
 该表达式的第一项成为
-\begin{align}
+\begin{align}\label{6.53}
 \frac{2}{(2\beta)^2}\sum_{i=1}^{n}\sum_{j=1}^{n}\sum_{k=1}^{n}\braket{i|v|j^*}\braket{j^*|v|k^*}\braket{k^*|v|i}
 \end{align}
 为计算对$j,k$的求和, 
 我们使用上面介绍的图形表示：
 \begin{align*}
-i\to j^* \to k^* \to i \longleftrightarrow 
+i\to j^* \to k^* \to i ~~~~~\longleftrightarrow ~~~~
 \begin{tikzpicture}[baseline={(0,0)}]
 \node(i)at(0,0){$i$};\node(ip1)at(1,1){$(i+1)^*$};\node(ip2)at(2,2){$(i+2)^*$};\node(is)at(2,0){$i^*$};\node(im1)at(1,-1){$(i-1)^*$};\node(im2)at(2,-2){$(i-2)^*$};\node(ie)at(4,0){$i$};
 \draw (i)--node[above]{+}(ip1)--node[above]{$-$}(is)--node[below]{$-$}(im1)--node[below]{$-$}(i);
@@ -1565,8 +1557,7 @@ i\to j^* \to k^* \to i \longleftrightarrow
 此处要注意, 
 由于$i$不与$i^*,(i+2)^*,(i-2)^*$相互作用, 
 这些求和的值必须为零. 
-类似的说法对(6.
-52)中第二项也成立, 
+类似的说法对\autoref{6.52}中第二项也成立, 
 所以我们可以知道三阶共振能为零.
 
 
@@ -1575,7 +1566,7 @@ i\to j^* \to k^* \to i \longleftrightarrow
 以上的结果对苯之外的所有情况都成立. 
 由于研究对象是周环的, 
 此时$(i\pm 2)^*$与$(i\mp1)^*$是一样的. 
-因此在某个$i$下(比如设为$=1i$), 
+因此在某个$i$下(比如设$i=1$), 
 $j,k$求和的图表示为
 \begin{align*}
 \begin{tikzpicture}[baseline={(0,0)}]
@@ -1583,34 +1574,34 @@ $j,k$求和的图表示为
 \draw (i)--node[above]{+}(ip1)--node[above]{$-$}(is)--node[below]{$-$}(im1)--node[below]{$-$}(i);
 \draw (ip1)--node[above]{$-$}(ip2);
 \draw (im1)--node[below]{$-$}(im2);
-\draw[dashed] (ip2)--(ie)--(is);
-\draw[dashed] (im2)--(ie);
+\draw (ip2)--node[above]{$-$}(ie);
+\draw (im2)--node[below]{+}(ie);
+\draw[dashed] (ie)--(is);
 \end{tikzpicture}
 \end{align*}
 那么就有两条路径：1) $1\to2^*\to3^*\to1$, 
 对应值为$(\beta/2)(-\beta/2)(-\beta/2)=\beta^3/8$, 
 2) $1\to3^*\to2^*\to1$, 
 对应值为$(-\beta/2)(-\beta/2)(\beta/2)=\beta^3/8$. 
-用(6.
-53)中的结果, 
+用\autoref{6.53}中的结果, 
 我们可知对$E_3^{(0)}$中第一项有
 \begin{align*}
 \frac{2}{(2\beta)^2} \sum_{i=1}^{3}[(\beta^3/8)+(\beta^3/8)] = \frac{3\beta}{8}
 \end{align*}
-用完全相同的方式我们可以证明(6.52)中第二项等于$3\beta/8$, 所以总的三阶能量就变成
+用完全相同的方式我们可以证明\autoref{6.52}中第二项等于$3\beta/8$, 所以总的三阶能量就变成
 \begin{align}
 E_0^{(3)}(\text{苯}) = \frac{3\beta}{4}
 \end{align}
 因此苯的共振能算到三阶就是$2.25\beta$(即确切值的113\%). 
-练习6.7中用图技术给出了四阶能量
+\autoref{ex:6.7}中用图技术给出了四阶能量
 \begin{align}
 E_0^{(4)} = \frac{N\beta}{64}
 \end{align}
 那么苯共振能算到四阶就是$2.34\beta$(确切值的117\%). 
 这里的微扰展开看起来不收敛. 
-事实上它确实会收敛. 
-不过收敛的过程很慢而且是振荡式的. 
-练习6.6进一步研究了这一点. 
+事实上它会收敛. 
+不过收敛的过程慢且振荡. 
+\autoref{ex:6.6}进一步研究了这一点. 
 这里指出一个有趣的事实, 
 微扰展开在大体系下表现更佳. 
 $N$很大时, 
@@ -1618,7 +1609,7 @@ $N$很大时,
 确切的渐近值为$0.2732N\beta$(前者占确切值的97\%).
 
 \exercise{
-证明(6.52)中第二项在苯中等于$\frac{3}{8}\beta$. 
+证明\autoref{6.52}中第二项在苯中等于$\frac{3}{8}\beta$. 
 
 \Next
 考虑一个环状多烯, 
@@ -1645,7 +1636,9 @@ $N$很大时,
 \begin{align*}
 \scr{E}_0 = N\alpha - 2\sum_{j=-\nu}^{\nu}\left( \beta^2_1+\beta^2_2+2\beta_1\beta_2\cos\frac{2j\pi}{2\nu+1} \right)^\frac{1}{2}
 \end{align*}
-(请参见, 如 L. Salem, \textit{Molecular Orbital Theory of Conjugated Systems, Benjamin, New York, 1966, pp. 498-500}). 注意到当$\beta_1=\beta_2=\beta$时, 由于$2\cos^2\theta = (1+\cos2\theta)$且$\beta$是负数, 我们就回归到
+(请参见, 如 L. Salem, \textit{Molecular Orbital Theory of Conjugated Systems},
+Benjamin, New York, 1966, pp. 498-500).
+注意到当$\beta_1=\beta_2=\beta$时, 由于$2\cos^2\theta = (1+\cos2\theta)$且$\beta$是负数, 我们就回归到
 \begin{align*}
 \scr{E}_0 = N\alpha + 4\beta\sum_{j=-\nu}^{\nu}\cos\frac{j\pi}{2\nu+1}
 \end{align*}
@@ -1663,39 +1656,38 @@ E_0 = N\alpha+N\beta
 	\begin{align*}
 	\scr{E}_0 = 6\alpha + 2(\beta_1+\beta_2) - 4(\beta_2^2 + \beta_2^2 -\beta_1\beta_2)^{1/2}
 	\end{align*}
-	可以现用一般的表达式写出H\"uckel矩阵, 对角化之后将占据轨道能量加和. 注意当$\beta_1=\beta_2=\beta$时我们就回归到以前的结果($6\alpha+8\beta$). 
+	可以先用一般的表达式写出H\"uckel矩阵, 对角化之后将占据轨道能量加和. 注意当$\beta_1=\beta_2=\beta$时我们就回归到以前的结果($6\alpha+8\beta$). 
 	\item 设$\beta_1=\beta,\beta_2/\beta_1=x$, 证明苯的共振能可写作
 	\begin{align*}
-	E_R = 4\beta(\frac{1}{2}x-1+(1+x^2-x)^{1/2})
+	E_R = 4\beta(\tfrac{1}{2}x-1+(1+x^2-x)^{1/2})
 	\end{align*}
 	注意当$x=0$时$E_R=0$, 当$x=1$时$E_R=2\beta$, 这结果为精确的.
 	\item
 	利用式子
 	\begin{align*}
-	(1+y)^{1/2} = 1 + \frac{1}{2}y -\frac{1}{2}y^2 + \frac{1}{16}y^3 - \frac{5}{128}y^4 + \cdots\quad|y|<1
+	(1+y)^{1/2} = 1 + \tfrac{1}{2}y -\tfrac{1}{8}y^2 + \tfrac{1}{16}y^3 - \tfrac{5}{128}y^4 + \cdots\quad|y|<1
  	\end{align*}
  	将$E_R$展到$x$的四阶项, 由此证明
  	\begin{align*}
- 	E_R = \beta(\frac{3}{2}x^2+\frac{3}{4}x^3 + \frac{3}{32}x^4+\cdots)
+ 	E_R = \beta(\tfrac{3}{2}x^2+\tfrac{3}{4}x^3 + \tfrac{3}{32}x^4+\cdots)
  	\end{align*}
  	验证$n$阶微扰项(即$E_0^{(n)}$)中$x^n$的系数如下：
  	\begin{align*}
- 	E_0^{(2)} & = \frac{3}{2}\beta\\
- 	E_0^{(3)} & = \frac{3}{4}\beta\\
- 	E_0^{(4)} & = \frac{3}{32}\beta
+ 	E_0^{(2)} & = \tfrac{3}{2}\beta\\
+ 	E_0^{(3)} & = \tfrac{3}{4}\beta\\
+ 	E_0^{(4)} & = \tfrac{3}{32}\beta
  	\end{align*}
  	注意$E_0^{(2)},E_0^{(3)}$的结果与之前算出的值相符. 这种推导可以解释为什么苯的共振能微扰展开收敛行为较差. 一般地当$x$较小时微扰展开很快收敛, 但苯中$x=1$.
  	
- 	下面绘出了到$M$阶的共振能对$M$的函数. 可以看到它振荡收敛到确切值$2\beta$. 以上这种计算$E_0^{(n)}$的方法当$n=2,3,4$变得很大时就会非常繁琐. 以下的结果是如此计算的：
+ 	下面绘出了到$M$阶的共振能对$M$的函数. 可以看到它振荡收敛到确切值$2\beta$. 以上这种计算$n=2,3,4$时$E_0^{(n)}$的方法当$n$变得很大时就会非常繁琐. 以下的结果是如此计算的：
 	现证明$E_0^{(n)}=4\beta C_n^{-1/2}(\frac{1}{2})$, 其中$C_n^{-1/2}$ 是$-\frac{1}{2}$阶$n$次Gegenbauer多项式
-	\footnote{译注：可以参考小谷正雄, 桥本英典（日）所著《特殊函数》, p.36. 书中指出Gegenbauer(盖根鲍尔)多项式是Jacobi多项式的特殊情形, 继续特殊化还可得到Legendre多项式和Tschebyscheff多项式. 
-	王竹溪《特殊函数》中详细讨论了Jacobi多项式及其退化型, 当然也就包括盖根鲍尔多项式(啊! Hypergeometric Function, My Love!). 
-	另外一处参考就是两位著名物理学家郝柏林和陈式刚教授的论文：郝柏林,刘德森,陈式刚. 长共轭键链的$\pi$电子能谱. 物理学报, 1961, 17(7): 303.}
 	, 然后使用该多项式的递推关系可以证明
+%	\footnote{译注：可以参考小谷正雄, 桥本英典（日）所著《特殊函数》, p.36. 书中指出Gegenbauer(盖根鲍尔)多项式是Jacobi多项式的特殊情形, 继续特殊化还可得到Legendre多项式和Tschebyscheff多项式. 
+%	王竹溪《特殊函数》中详细讨论了Jacobi多项式及其退化型, 当然也就包括盖根鲍尔多项式(啊! Hypergeometric Function, My Love!). 
+%	另外一处参考就是两位著名物理学家郝柏林和陈式刚教授的论文：郝柏林,刘德森,陈式刚. 长共轭键链的$\pi$电子能谱. 物理学报, 1961, 17(7): 303.}
  	\begin{align*}
  	(n+1)E_0^{(n+1)} = (n-\frac{1}{2})E_0^{(n)} - (n-2)E_0^{(n-1)}.
  	\end{align*}
-\end{enumerate}
 {\centering
 \begin{tikzpicture}
 \begin{axis}[
@@ -1730,11 +1722,22 @@ width=\textwidth,
 %\node [above, blue] at (axis cs: .8,0) {$\{\bo{R}_A\}$};
 \end{axis}
 \end{tikzpicture}}
+        译注：可以参考小谷正雄, 桥本英典（日）所著《特殊函数》, p.36. 书中指出Gegenbauer(盖根鲍尔)多项式是Jacobi多项式的特殊情形, 继续特殊化还可得到Legendre多项式和Tschebyscheff多项式.
+        王竹溪《特殊函数》中详细讨论了Jacobi多项式及其退化型, 当然也就包括盖根鲍尔多项式(啊! Hypergeometric Function, My Love!).
+        另外一处参考就是两位著名物理学家郝柏林和陈式刚教授的论文：郝柏林,刘德森,陈式刚. 长共轭键链的$\pi$电子能谱. 物理学报, 1961, 17(7): 303.
+\end{enumerate}
 }
 
+\let\oldthesection\thesection
+\renewcommand{\thesection}{*\oldthesection}
 \section{轨道微扰论的图表示}
+\let\thesection\oldthesection
 \label{sec6.4}
-\autoref{sec6.2}中为RS微扰论引入了一种完全普适的图表示. 为了利用它来处理轨道微扰, 我们用上线和下线来分别表示空穴和粒子的自旋轨道, 用点来对应单粒子微扰$v$. 然后画出和之前同样的一组图, 用指标$a$, $b$, ...来标记空穴, 用$r$, $s$, ...来标记粒子. 所以就有
+\autoref{sec6.2}为RS微扰论引入了一种完全普适的图表示.
+为了利用它来处理轨道微扰,
+我们用向上、下的线来分别表示空穴、粒子的自旋轨道,
+用点来对应单粒子微扰$v$.
+然后画出和之前同样的一组图, 用指标$a$, $b$, ...来标记空穴, 用$r$, $s$, ...来标记粒子. 所以就有
 \begin{center}	
 	\begin{tikzpicture}[baseline={(current bounding box.south)},scale=.6]
 	\tiny
@@ -1762,7 +1765,8 @@ width=\textwidth,
 	
 	\path [draw=blue,postaction={on each segment={mid arrow}}]
 	(2,-7.) node{\dian}
-	arc (-45:45:2.12cm)node[right,midway]{r} node{\dian} arc(135:165:2.12cm)node[left,midway]{a} node{\dian} arc(165:195:2.12cm)node[left,midway]{b} arc(195:225:2.12cm)node[left,midway]{c};
+	arc (-45:45:2.12cm)node[right,midway]{r} node{\dian} arc(135:165:2.12cm)node[left,midway]{a} node{\dian}
+        arc(165:195:2.12cm)node[left,midway]{b} node{\dian} arc(195:225:2.12cm)node[left,midway]{c};
 	
 	\path [draw=blue,postaction={on each segment={mid arrow}}]
 	(4,-7.) node{\dian}
@@ -1771,16 +1775,19 @@ width=\textwidth,
 	
 	\path [draw=blue,postaction={on each segment={mid arrow}}]
 	(6,-7.) node{\dian}
-	arc (-45:-15:2.12cm)node[right,midway]{s} node{\dian} arc(-15:45:2.12cm)node[right,midway]{r} node{\dian} arc(135:165:2.12cm)node[left,midway]{a} arc(165:225:2.12cm)node[left,midway]{b};
+	arc (-45:-15:2.12cm)node[right,midway]{s} node{\dian} arc(-15:45:2.12cm)node[right,midway]{r} node{\dian}
+        arc(135:165:2.12cm)node[left,midway]{a} node{\dian} arc(165:225:2.12cm)node[left,midway]{b};
 	
 	\path [draw=blue,postaction={on each segment={mid arrow}}]
 	(8,-7.) node{\dian}
-	arc (-45:15:2.12cm)node[right,midway]{r} node{\dian} arc(-15:-45:2.12cm)node[left,midway]{b} node{\dian} arc(225:180:2.57cm)node[right,midway]{s} node{\dian} to [bend right] node[left,midway]{s} (8,-7.);
+	arc (-45:15:2.12cm)node[right,midway]{r} node{\dian} arc(-15:-45:2.12cm)node[left,midway]{b} node{\dian}
+        arc(225:180:2.57cm)node[right,midway]{s} node{\dian} to [bend right] node[left,midway]{s} (8,-7.);
 	
 
 	\path [draw=blue,postaction={on each segment={mid reverse arrow}}]
 	(10,-7.) node{\dian}
-	arc (-45:15:2.12cm)node[right,midway]{r} node{\dian} arc(-15:-45:2.12cm)node[left,midway]{b} node{\dian} arc(225:180:2.57cm)node[right,midway]{s} node{\dian} to [bend right] node[left,midway]{s} (10,-7.);
+	arc (-45:15:2.12cm)node[right,midway]{r} node{\dian} arc(-15:-45:2.12cm)node[left,midway]{b} node{\dian}
+        arc(225:180:2.57cm)node[right,midway]{s} node{\dian} to [bend right] node[left,midway]{s} (10,-7.);
 	\draw (12,-5.5)node{\normalsize $n=4$};
 	\end{tikzpicture}
 \end{center}
@@ -1804,7 +1811,7 @@ width=\textwidth,
 	=\sum_{ar}\frac{v_{ar}v_{ra}}{\epsilon_a^{(0)}-\epsilon_r^{(0)}}
 	\end{gather}
 \end{subequations}
-可以发现这些结果和\autoref{6.43b}\autoref{6.43c}中的一样。 
+可以发现这些结果和\autoref{6.43b} \autoref{6.43c}中的一样。 
 $E_0^{(3)}$算出后， 
 为
 %\addtocounter{equation}{1}
@@ -1822,8 +1829,7 @@ arc (225:180:2.12cm)node[left,midway]{s} node{\dian} arc (180:135:2.12cm)node[le
 arc (-45:45:2.12cm)node[right,midway]{r} node{\dian} arc(135:180:2.12cm)node[left,midway]{a} node{\dian} arc(180:225:2.12cm)node[left,midway]{b};\end{tikzpicture} \notag\\
 & = \sum_{ars}\frac{v_{as}v_{sr}v_{ra}}{(\epsilon_a^{(0)}-\epsilon_s^{(0)})(\epsilon^{(0)}_a-\epsilon^{(0)}_r)} - \sum_{abr}\frac{v_{ra}v_{ab}v_{br}}{(\epsilon_a^{(0)}-\epsilon_r^{(0)})(\epsilon^{(0)}_b-\epsilon^{(0)}_r)}\tag{6.56c}
 \end{align}
-这与练习6.
-4中所得的结果一样。 
+这与\autoref{6.4}中所得的结果一样。 
 最后，
 对于闭壳层体系，
 由于矩阵元$v_{ij}$只有当$i,j$有相同自旋时才不为零， 
@@ -1840,20 +1846,26 @@ arc (-45:45:2.12cm)node[right,midway]{r} node{\dian} arc(135:180:2.12cm)node[lef
 $l$是闭合圈图的数目。
 
 \exercise{
-求出闭壳层闭壳层环多烯的四阶能量：
+计算闭壳层环多烯的四阶能量：
 \begin{enumerate}[a.]
 	\item 证明
 		\begin{equation*}
 		\begin{tikzpicture}[baseline={(current bounding box.center)},postaction={on each segment={mid reverse arrow}},scale=.6]
 		\path [draw=blue,postaction={on each segment={mid arrow}}]
 		(6,-7.) node{\dian}
-		arc (-45:-15:2.12cm)node[right,midway]{s} node{\dian} arc(-15:45:2.12cm)node[right,midway]{r} node{\dian} arc(135:165:2.12cm)node[left,midway]{a} arc(165:225:2.12cm)node[left,midway]{b};
+		arc (-45:-15:2.12cm)node[right,midway]{s} node{\dian}
+                arc(-15:45:2.12cm)node[right,midway]{r} node{\dian}
+                arc(135:165:2.12cm)node[left,midway]{a} node{\dian}
+                arc(165:225:2.12cm)node[left,midway]{b};
 		\end{tikzpicture}
 		=		
 		\begin{tikzpicture}[baseline={(current bounding box.center)}, postaction={on each segment={mid arrow}},scale=.6]
 			\path [draw=blue,postaction={on each segment={mid arrow}}]
 			(2,-7.) node{\dian}
-			arc (-45:45:2.12cm)node[right,midway]{r} node{\dian} arc(135:165:2.12cm)node[left,midway]{a} node{\dian} arc(165:195:2.12cm)node[left,midway]{b} arc(195:225:2.12cm)node[left,midway]{c};\end{tikzpicture}
+			arc (-45:45:2.12cm)node[right,midway]{r} node{\dian}
+                        arc(135:165:2.12cm)node[left,midway]{a} node{\dian}
+                        arc(165:195:2.12cm)node[left,midway]{b} node{\dian}
+                        arc(195:225:2.12cm)node[left,midway]{c};\end{tikzpicture}
 		=
 		\begin{tikzpicture}[baseline={(current bounding box.center)}, postaction={on each segment={mid arrow}},scale=.6]
 			\path [draw=blue,postaction={on each segment={mid arrow}}]
@@ -1876,14 +1888,14 @@ $l$是闭合圈图的数目。
 		\begin{tikzpicture}[baseline={(current bounding box.center)}, postaction={on each segment={mid arrow}},scale=.6]
 			\path [draw=blue,postaction={on each segment={mid arrow}}]
 			(8,-7.) node{\dian}
-			arc (-45:15:2.12cm)node[right,midway]{r} node{\dian} arc(-15:-45:2.12cm)node[left,midway]{b} node{\dian} arc(225:180:2.57cm)node[right,midway]{s} node{\dian} to [bend right] node[left,midway]{s} (8,-7.);
+			arc (-45:15:2.12cm)node[right,midway]{r} node{\dian} arc(-15:-45:2.12cm)node[left,midway]{b} node{\dian} arc(225:180:2.57cm)node[right,midway]{s} node{\dian} to [bend right] node[left,midway]{a} (8,-7.);
 		\end{tikzpicture}
 		=
 		\begin{tikzpicture}[baseline={(current bounding box.center)}, postaction={on each segment={mid arrow}},scale=.6]
 		\path [draw=blue,postaction={on each segment={mid reverse arrow}}]
 		(10,-7.) node{\dian}
-		arc (-45:15:2.12cm)node[right,midway]{r} node{\dian} arc(-15:-45:2.12cm)node[left,midway]{b} node{\dian} arc(225:180:2.57cm)node[right,midway]{s} node{\dian} to [bend right] node[left,midway]{s} (10,-7.);
-		\draw (12,-5.5)node{$n=4$};
+		arc (-45:15:2.12cm)node[right,midway]{b} node{\dian} arc(-15:-45:2.12cm)node[left,midway]{s} node{\dian} arc(225:180:2.57cm)node[right,midway]{a} node{\dian} to [bend right] node[left,midway]{r} (10,-7.);
+		%\draw (12,-5.5)node{$n=4$};
 		\end{tikzpicture}
 		=-\frac{3N\beta}{128}
 		\end{equation*}
@@ -1892,7 +1904,7 @@ $l$是闭合圈图的数目。
 		E_0^{(4)} = \frac{N\beta}{64}
 		\end{equation*}
 		因此环多烯（$N>6$）的共振能算到第四阶就是$(1/4+1/64)N\beta=0.2656 N\beta$, 和渐近的精确值$0.2732\beta$相比非常接近（占97\%）。
-	\item 对于苯，证明用图形算出的四阶能量与练习6.6中独立得出的值完全相同。
+	\item 对于苯，证明用图形算出的四阶能量与\autoref{ex:6.6}中独立得出的值完全相同。
 \end{enumerate}
 }
 
@@ -1975,7 +1987,7 @@ E_0 = E_0^{(0)} + E_0^{(1)} = \sum_a\epsilon_a - \frac{1}{2}\sum_{ab}\braket{ab|
 对\hft 能量的第一个修正项出现在二阶微扰上.
 
 
-二阶能量的一般表达式在\autoref{sec6.1}节已经推导过, 
+二阶能量的一般表达式在\autoref{sec6.1}已经推导过, 
 为
 \begin{align}
 E_0^{(2)} = \sideset{}{'}\sum_n\frac{|\braket{0|\vs|n}|^2}{E_0^{(0)} - E_n^{(0)}}
@@ -2037,7 +2049,8 @@ E_0^{(2)} = \frac{1}{2}\sum_{abrs}\frac{\braket{ab|rs}\braket{rs|ab}}{\epsilon_a
 对于闭壳层体系, 
 二阶能量可以写成空间轨道的求和:
 \begin{align}
-E_0^{(2)} = 2\sum_{abrs}^{N/2}\frac{\braket{ab|rs}\braket{rs|ba}}{\epsilon_a + \epsilon_b -\epsilon_r-\epsilon_s}-2\sum_{abrs}^{N/2}\frac{\braket{ab|rs}\braket{rs|ba}}{\epsilon_a + \epsilon_b -\epsilon_r-\epsilon_s}
+E_0^{(2)} = 2\sum_{abrs}^{N/2}\frac{\braket{ab|rs}\braket{rs|ba}}{\epsilon_a + \epsilon_b -\epsilon_r-\epsilon_s}
+    -\sum_{abrs}^{N/2}\frac{\braket{ab|rs}\braket{rs|ba}}{\epsilon_a + \epsilon_b -\epsilon_r-\epsilon_s}
 \label{6.74}
 \end{align}
 \exercise{
@@ -2048,9 +2061,9 @@ E_0^{(2)} = 2\sum_{abrs}^{N/2}\frac{\braket{ab|rs}\braket{rs|ba}}{\epsilon_a + \
 但更加繁琐一些, 
 我们从\autoref{6.15}出发可以证明三阶能量为
 \begin{align}
-E_0^{(3)} = & \frac{1}{8} \sum_{abcdrs} \frac{\braket{ab||rs}\braket{cd||ab}\braket{rs||cd}}{(\epsilon_a + \epsilon_b -\epsilon_r-\epsilon_s){\epsilon_c + \epsilon_d -\epsilon_r-\epsilon_s}} \notag\\
-          & + \frac{1}{8}\sum_{abrstu}\frac{\braket{ab||rs}\braket{rs||tu}\braket{tu||ab}}{(\epsilon_a + \epsilon_b -\epsilon_r-\epsilon_s){\epsilon_c + \epsilon_d -\epsilon_t-\epsilon_u}} \notag\\
-          & + \sum_{abcrst}\frac{\braket{ab||rs}\braket{cs||tb}\braket{rt||ac}}{(\epsilon_a + \epsilon_b -\epsilon_r-\epsilon_s){\epsilon_a + \epsilon_c -\epsilon_r-\epsilon_t}}
+E_0^{(3)} = & \frac{1}{8} \sum_{abcdrs} \frac{\braket{ab||rs}\braket{cd||ab}\braket{rs||cd}}{(\epsilon_a + \epsilon_b -\epsilon_r-\epsilon_s)(\epsilon_c + \epsilon_d -\epsilon_r-\epsilon_s)} \notag\\
+          & + \frac{1}{8} \sum_{abrstu} \frac{\braket{ab||rs}\braket{rs||tu}\braket{tu||ab}}{(\epsilon_a + \epsilon_b -\epsilon_r-\epsilon_s)(\epsilon_a + \epsilon_b -\epsilon_t-\epsilon_u)} \notag\\
+          & + \sum_{abcrst}\frac{\braket{ab||rs}\braket{cs||tb}\braket{rt||ac}}{(\epsilon_a + \epsilon_b -\epsilon_r-\epsilon_s)(\epsilon_a + \epsilon_c -\epsilon_r-\epsilon_t)}
           \label{6.75}
 \end{align}
 
@@ -2067,7 +2080,11 @@ E_\mathrm{corr} = \Delta - (\Delta^2 + K_{12}^2)^{1/2}
 2\Delta & = 2(\epsilon_2-\epsilon_1) + J_{11} + J_{22} - 4J_{12} + 2K_{12}\\
         & = 2(\epsilon_2-\epsilon_1) + \braket{11|11} + \braket{22|22} - 4\braket{12|12} + 2\braket{11|22}
 \end{align*}
-若将上面的关联能表达式按双电子积分的Taylor级数展开, 
+若将上面的相关能表达式按双电子积分的Taylor级数\footnote{
+译者注: 即将相关能视为以双电子积分为自变量的多元函数,
+展开成泰勒级数. 可以适当合并齐次自变量以减少冗余自由度、
+少算几个偏导数.
+}展开, 
 展开到第三阶, 
 可以发现
 \begin{align*}
