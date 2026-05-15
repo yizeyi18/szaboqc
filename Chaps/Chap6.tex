@@ -2118,12 +2118,12 @@ E_0^{(2)} & = 2\frac{\braket{11|22}\braket{22|11}}{2(\epsilon_1-\epsilon_2)} - \
 Brueckner首先考察了RS微扰论在在无穷大(宏观)体系中的适用性。
 通过仔细检验每个阶的代数表达式，
 他证明了，
-对$n=0,1,\ldots,6$, 
+在$n=0,1,\ldots,6$时
 $E_0^{(n)}$确实正比于粒子数。
 但他未能给出一般性的证明(即对$n=7,8,\ldots,\infty$)。 
 这里我们简要叙述一下Brueckner的分析过程。
 \autoref{sec6.7.2}中会讨论Goldston的的Linked-Cluster定理，
-该定理用RS微扰论的图表示证明了Brueckne的猜想适用于所有阶的微扰。
+该定理用RS微扰论的图表示证明了Brueckner的猜想适用于所有阶的微扰。
 我们来考虑一个由$N$个无相互作用的\phrase{极小基 $\hd$}组成的超分子。
 我们会证明，
 利用\autoref{sec6.2}中所推导的一般表达式，
@@ -2154,7 +2154,7 @@ E_0^{(1)} = \braket{\Psi_0|\vs|\Psi_0}=-\sum_{i=1}^{N}\braket{1_i1_i|1_i1_i}=-NJ
 \end{subequations}
 这个超分子的\hft 能量就是
 \begin{equation}
-E_0=\braket{\Psi_0|\hs_0+\vs|\Psi_0} = E_0^{(0)} + E_0^{(0)} = N(2\epsilon_1-J_{11})
+E_0=\braket{\Psi_0|\hs_0+\vs|\Psi_0} = E_0^{(0)} + E_0^{(1)} = N(2\epsilon_1-J_{11})
 \end{equation}
 这确实是$N$乘以单个分子的\hft 能量。
 一般的二阶能量表达式为
@@ -2182,13 +2182,13 @@ E_0^{(2)} = \sum_{i=1}^{N} \frac{\left|\braket{\Psi_0|\vs|\Psi_{1_i\bar{1}_i}^{2
 我们证明了这就是每个单元的二阶能量乘以$N$.
 
 
-三阶能量的一般表达式(\autoref{6.15})为
+三阶能量的一般表达式\eqref{6.15}为
 \begin{align}
 E_0^{(3)} = A_0^{(3)} + B_{0}^{(3)}
 \end{align}
 式中
 \begin{gather}
-A_0^{(3)} = \sideset{}{'}\sum_n \sideset{}{'}\sum_m \frac{\braket{0|\vs|n}\braket{n|\vs|m}\braket{m|\vs|0}}{(E_0^{(0)} - E_n^{(0)}) (E_0^{(0)} - E_0^{(m)}) }\\
+A_0^{(3)} = \sideset{}{'}\sum_n \sideset{}{'}\sum_m \frac{\braket{0|\vs|n}\braket{n|\vs|m}\braket{m|\vs|0}}{(E_0^{(0)} - E_n^{(0)}) (E_0^{(0)} - E_m^{(0)}) }\\
 B_0^{(3)} = -E_0^{(1)}\sideset{}{'}{\sum}_n\frac{|\braket{0|\vs|n}|^2}{(E_0^{(0)} - E_n^{(0)})^2}
 \end{gather}
 初看，
@@ -2197,7 +2197,7 @@ B_0^{(3)} = -E_0^{(1)}\sideset{}{'}{\sum}_n\frac{|\braket{0|\vs|n}|^2}{(E_0^{(0)
 \begin{align}
 B_0^{(3)} = -(-NJ_{11}) \sum_{i=1}^{N} \frac{K_{12}^2}{(2\epsilon_1 - 2\epsilon_2)^2} = \frac{N^2J_{11}K_{12}^2}{4(\epsilon_1-\epsilon_2)^2}
 \end{align}
-其中用到了\autoref{6.80b}\autoref{6.83a}\autoref{6.83b}. 
+其中用到了\autoref{6.80b} \autoref{6.83a} \autoref{6.83b}. 
 若想三阶能量正比于$N$, 
 那么这一项肯定要被$A_0^{(3)}$中的某部分消掉。
 这正是本节开头所提的Brueckner曾发现的那种抵消。
@@ -2227,9 +2227,9 @@ E_0^{(3)} = A_0^{(3)} + B_0^{(3)} = \frac{NK_{12}^2(J_{11} + J_{22} - 4J_{12} + 
 \end{align}
 与$E_0^{(1)}$及$E_0^{(2)}$类似，
 上式就是$N$乘每个$\hd$的三阶能量(\autoref{6.78}). 
-注意到\autoref{6.78}是在基组内按照Taloy展开得到的，
+注意到\autoref{6.78}是在基组内按照Taylor级数得到的，
 这两种办法给出的结果相同，
-那么自洽性就得到了检验。
+那么他们的一致性就得到了检验。
 虽然这个例子算不上证明，
 但我们仍希望它能令读者乐于相信：RS微扰论下所得的近似相关能(相较于DCI)，
 是尺寸一致的（也即，
@@ -2267,7 +2267,7 @@ E_0^{(3)} = A_0^{(3)} + B_0^{(3)} = \frac{NK_{12}^2(J_{11} + J_{22} - 4J_{12} + 
 以所有可能的方式链接起来：
 \begin{enumerate}[1.]
 	\item 每个点都有四条线经过。
-	\item 每个图都链通。
+	\item 每个图都连通。
 	\item 每个图都各不相同。
 	\item 含多于一个点的图中，每条线不能穿出穿入同一个点，也即, 不能有如下类型的图：
 		\begin{center}
