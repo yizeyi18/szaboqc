@@ -103,7 +103,7 @@ $\ket{\Phi_i},\mathscr{E}$会很接近$\ket{i},E_i^{(0)}$.
 \end{align}
 现将精确的本征函数与本征值展开成$\lambda$的Taylor级数,
 
-\begin{subequations}
+\begin{subequations}\label{6.4}
 	\begin{align}\label{6.4a}
 	\es &= E_i^{(0)} + \lambda E_i^{(1)} + \lambda^2 E_i^{(2)} + \cdots\\
 	\ket{\Phi_i} &= \ket{i} + \lambda \ket{\Psi_i^{(1)}} + \lambda^2 \ket{\Psi_i^{(2)}} + \cdots
@@ -1829,7 +1829,7 @@ arc (225:180:2.12cm)node[left,midway]{s} node{\dian} arc (180:135:2.12cm)node[le
 arc (-45:45:2.12cm)node[right,midway]{r} node{\dian} arc(135:180:2.12cm)node[left,midway]{a} node{\dian} arc(180:225:2.12cm)node[left,midway]{b};\end{tikzpicture} \notag\\
 & = \sum_{ars}\frac{v_{as}v_{sr}v_{ra}}{(\epsilon_a^{(0)}-\epsilon_s^{(0)})(\epsilon^{(0)}_a-\epsilon^{(0)}_r)} - \sum_{abr}\frac{v_{ra}v_{ab}v_{br}}{(\epsilon_a^{(0)}-\epsilon_r^{(0)})(\epsilon^{(0)}_b-\epsilon^{(0)}_r)}\tag{6.56c}
 \end{align}
-这与\autoref{6.4}中所得的结果一样。 
+这与\autoref{ex:6.4}中所得的结果一样。 
 最后，
 对于闭壳层体系，
 由于矩阵元$v_{ij}$只有当$i,j$有相同自旋时才不为零， 
@@ -2237,27 +2237,30 @@ E_0^{(3)} = A_0^{(3)} + B_0^{(3)} = \frac{NK_{12}^2(J_{11} + J_{22} - 4J_{12} + 
 
 \exercise{推导\autoref{6.80b}和\autoref{6.90}。}
 
+\let\oldthesection\thesection
+\renewcommand{\thesection}{*\oldthesection}
 \section{相关能微扰展开的图表示}\label{sec6.7}
-现在来介绍$n$阶微扰能的图表示。
-我们将零阶波函数取为\hft 波函数。
-其实以任一个单行列式出发，
-都可以推导出相应的微扰展开，
-但\hft 波函数是最方便的，
-原因就是Brillouin定理：单激发不会混入\hft 基态，
+\let\thesection\oldthesection
+现在来介绍$n$阶微扰能的图表示.
+我们取\hft 波函数为零阶波函数.
+其实以任一个单行列式出发,
+都可以推导出相应的微扰展开,
+但\hft 波函数是最方便的,
+原因就是Brillouin定理: 单激发不会混入\hft 基态，
 这大大简化了微扰展开式的结构. 
-之后给出的构建图的规则仅对\hft 微扰论成立。
-虽然我们并不会严格推导构建图和计算图的规则，
-但仍希望能令它们尽可能看起来像之前结果的自然推广。
+之后给出的构建图的规则仅对\hft 微扰论成立.
+虽然我们并不会严格推导构建图和计算图的规则,
+但仍希望能令它们尽可能看起来像之前结果的自然推广.
 
 \subsection{Hugenholtz图}
-如同前面，
-我们将相互作用以点来标记，
-将空穴和粒子用向下和向上的线标记。
+如同前面,
+我们将相互作用以点来标记,
+将空穴和粒子用向下和向上的线标记.
 回看\autoref{6.72},
 可以发现, 
-二阶能量表达式的分子上的矩阵元有四个指标（而非两个）。
-直接原因就是此时的微扰具有双粒子性质。
-因此一个合理的想法是，
+二阶能量表达式的分子上的矩阵元有四个指标(而非两个).
+直接原因就是此时的微扰具有双粒子性质.
+因此一个合理的想法是,
 在表示\hft 微扰论的图中，
 点中应当有\emph{两}条线出，
 \emph{两}条线入。
@@ -2316,9 +2319,9 @@ E_0^{(3)} = A_0^{(3)} + B_0^{(3)} = \frac{NK_{12}^2(J_{11} + J_{22} - 4J_{12} + 
 \end{center}
 但在四个点的情况下， 
 不等价图的数目达到十二个，
-如图~\autoref{f6.1}所示。
+如\autoref{f6.1}所示。
 
-\begin{figure}[H]
+\begin{figure}[h]
 	\centering
 	\begin{tikzpicture}[baseline={(current bounding box.south)},scale=.6]
 	\path [draw=blue,]
@@ -2439,8 +2442,8 @@ E_0^{(3)} = A_0^{(3)} + B_0^{(3)} = \frac{NK_{12}^2(J_{11} + J_{22} - 4J_{12} + 
 如同之前，
 我们将在线上画上下箭头，
 将所有可能的方式都列出来，
-而且每个点都要有两条线穿入，
-两条线穿出。
+而且每个点都要有两条线入，
+两条线出。
 如此，
 就得到一个二阶图，
 三个三阶图。
@@ -2510,21 +2513,26 @@ E_0^{(3)} = A_0^{(3)} + B_0^{(3)} = \frac{NK_{12}^2(J_{11} + J_{22} - 4J_{12} + 
 将这些图转换为代数表达式的规则几乎与之前的规则相同：
 \begin{enumerate}[H1.]
 	\kaishu
-	\item 每个点在分母上贡献一个反对称的矩阵元$\langle\allowbreak\text{穿入标签1},\allowbreak\text{穿入标签2}\allowbreak||\allowbreak\text{穿出标签1},\allowbreak\text{穿出标签2}\allowbreak\rangle$.
+	\item 每个点在分母上贡献一个反对称的矩阵元
+            $\langle\allowbreak\text{穿入标签1},\allowbreak\text{穿入标签2}\allowbreak||\allowbreak\text{穿出标签1},\allowbreak\text{穿出标签2}\allowbreak\rangle$.
+            % 不用braket是因为中间不能换行
+            具体谁是1、谁是2的顺序可任意指定.
 	\item
 	每一对相邻点在分母上贡献一个因子：
 	\begin{align*}
 	\sum \epsilon_\text{空穴} - 
 	\sum \epsilon_\text{粒子} 
 	\end{align*} 
-	用一条虚线分开这两个点，虚线会与穴线和粒子线相交，式中的求和遍及所有与虚线相交的穴线和粒子线。
+	在相邻两点间作一条水平虚线, 式中的求和遍及所有与虚线相交的空穴线和粒子线.
 	\item 
-	表达式的总符号为$(-)^{h+l}$,$h$和$l$分别是空穴线和闭合圈的数目。闭合圈数目不能单单直接从图中看出来。后面我门会讲如何从(H1)给出的代数表达式中直接看出这个数目。
+	表达式的总符号为$(-)^{h+l}$,$h$和$l$分别是空穴线和闭合圈的数目.
+        闭合圈数目不能单单直接从图中看出来.后面会讲如何从(H1)指定的各点指标顺序得到这个数目.
 	\item 
-	将表达式对所有粒子和空穴指标求和。
-	\item 将式子乘以权重因子$2^{-k}$，$k$代表图中有$k$对等价线。等价线的意思是，两条线的出发点和结束点都一样，方向也一样。
+	将表达式对所有粒子和空穴指标求和.
+	\item 将式子乘以权重因子$2^{-k}$, $k$代表图中有$k$对等价线.
+            等价线的意思是两条线的出发点、结束点、方向都一样.
 \end{enumerate}
-可以看见仅有第五条(H5)和之前的规则明显不同. 
+可以看见仅有(H5)和之前的规则明显不同. 
 具体运用这些规则时, 
 唯一比较难办的是确定闭合圈的数目. 
 具体的做法请看下例. 
@@ -2554,30 +2562,28 @@ E_0^{(3)} = A_0^{(3)} + B_0^{(3)} = \frac{NK_{12}^2(J_{11} + J_{22} - 4J_{12} + 
 之前我们说过, 
 反对称矩阵元中, 
 两个穿入和两个穿出标号的顺序不重要, 
-所有上式可以等价地写为
+于是上式可以等价地写为
 \begin{flalign*}
 &\text{\textbf{情形B}}&  &\left(\frac{1}{2}\right)^2 (-)^{2+l_B}\sum_{abrs}\frac{\braket{ab||rs}\braket{sr||ab}}{\epsilon_{a}+\epsilon_{b}-\epsilon_{r}-\epsilon_{s}}&
 \end{flalign*}
-很清楚, 
-如果我们的规则是正确的, 
+如果我们的规则正确, 
 则这两个式子应当相等. 
 那么就要看$l$这个因子如何起作用. 
 闭合圈的数目只有写出矩阵元的表达式之后才能确定. 
-为确定$l$, 
+要确定$l$, 
 先选一个特定的指标, 
 然后从这个指标出发, 
-按照如下规``走过"矩阵元:
+按如下规则``走过''矩阵元:
 \begin{align*}
-\braket{i\tikzmark{i}j||k\tikzmark{k}l},\quad
+\braket{i\tikzmark{i}j||k\tikzmark{k}l}\quad \text{和}\quad
 \braket{ij\tikzmark{j}||kl\tikzmark{l}}
 \tikz[overlay,remember picture]
 {\draw[->,above arrow,] (i.north) to (k.north);
     \draw[->,above arrow,] (j.north) to (l.north);
 }
 \end{align*}
-直到最后到达一个与选定指标相同的指标. 
-所有指标都被走过一次后, 
-总的路径数就是$l$. 
+直到再次到达起点指标. 
+遍历所有指标所需的最小圈数就是$l$. 
 考虑情形A.
 
 \begin{align*}
@@ -2642,7 +2648,7 @@ E_0^{(2)} = \frac{1}{4}\sum_{abrs}\frac{\braket{ab||rs}\braket{rs||ab}}{\epsilon
 \left(\frac{1}{2}\right)^3 (-)^{4+l}\sum_{abcdrs}
 \frac{\braket{ab||rs}\braket{cd||ab}\braket{rs||cd}}{(\epsilon_a  + \epsilon_b - \epsilon_r - \epsilon_s)(\epsilon_c+\epsilon_d-\epsilon_r-\epsilon_s)}
 \end{align*}
-有两条路径$a\to r\to c\to a$和$b\to s\to d\to b$, 
+需要两个圈$a\to r\to c\to a$和$b\to s\to d\to b$, 
 因此$l$为$2$.
 
 \begin{align*}
@@ -2668,7 +2674,7 @@ E_0^{(2)} = \frac{1}{4}\sum_{abrs}\frac{\braket{ab||rs}\braket{rs||ab}}{\epsilon
 & = 
 \left(\frac{1}{2}\right)^3 (-)^{4+l}\sum_{abrstu}
 \frac{\braket{ab||rs}\braket{rs||tu}\braket{tu||ab}}{(\epsilon_a + \epsilon_b - \epsilon_r - \epsilon_s)(\epsilon_c+\epsilon_d-\epsilon_t-\epsilon_u)}\\
-\intertext{这里的$l=2$, 因为全部路径是$a\to r\to t\to a$和$b\to s\to u \to b$. 最后一个图是}
+\intertext{$l=2$, 因为要$a\to r\to t\to a$和$b\to s\to u \to b$两圈. 最后,}
 \begin{tikzpicture}[baseline={(current bounding box.east)},scale=.6]
 % 下面第3个图的结点
 \coordinate (a) at (0,-4);
@@ -2693,7 +2699,7 @@ E_0^{(2)} = \frac{1}{4}\sum_{abrs}\frac{\braket{ab||rs}\braket{rs||ab}}{\epsilon
 \frac{\braket{ab||rs}\braket{cs||tb}\braket{rt||ac}}{(\epsilon_a + \epsilon_b - \epsilon_s - \epsilon_r)(\epsilon_a+\epsilon_c-\epsilon_r-\epsilon_t)}
 \end{align*}
 此处$l=3$, 
-因为全部路径有三条: $a\to r\to a $, 
+因为我们有三个圈: $a\to r\to a $, 
 $b\to s\to b$, 
 $c\to t\to c$.
 
@@ -2734,19 +2740,19 @@ E_0^{(3)} =& \frac{1}{8}\sum_{abcdrs}
 	(b) arc(210:150:1) ;
 	\node at (0,-3+0.3) {\tiny$t$};
 	\path [draw=blue, mid arrow]
-	(c) to node[left,midway]{$a$} (d);
+	(d) to node[left,midway]{$a$} (c);
 	\path [draw=blue, mid reverse arrow]
 	(d) arc(130:230:1.958110934) node[left,midway]{$r$};
 	\end{tikzpicture}
 \end{center}
 	等于
 	\begin{align*}
-	-\frac{1}{2}\sum_{abcderst}\frac{\braket{rs||ac}\braket{at||de}\braket{dc||tb}\braket{cb||rs}}{(\epsilon_{a}+\epsilon_{c}-\epsilon_{r}-\epsilon_{s})(\epsilon_{c}+\epsilon_{d}+\epsilon_{e}-\epsilon_{r}-\epsilon_{t}-\epsilon_{s})(\epsilon_{b}+\epsilon_{e}-\epsilon_{r}-\epsilon_{s})}
+	-\frac{1}{2}\sum_{abcderst}\frac{\braket{rs||ac}\braket{at||de}\braket{dc||tb}\braket{eb||rs}}{(\epsilon_{a}+\epsilon_{c}-\epsilon_{r}-\epsilon_{s})(\epsilon_{c}+\epsilon_{d}+\epsilon_{e}-\epsilon_{r}-\epsilon_{t}-\epsilon_{s})(\epsilon_{b}+\epsilon_{e}-\epsilon_{r}-\epsilon_{s})}
 	\end{align*}
 }
 
 \subsection{Goldstone图}\label{sec6.7.2}
-本节介绍多体微扰论的另外一种图表示：Goldstone所引入的Goldstone图。
+本节介绍多体微扰论的另外一种图表示：Goldstone引入的Goldstone图.
 Goldstone图直接对应着平常的双电子积分，
 而且只需观察就能确定闭合圈的数目。
 不过在给定的微扰阶上， 
@@ -2808,7 +2814,7 @@ Hugenholtz图中的如下单位
 这种方式下反对称的矩阵元不再出现。
 读者可以如此想象上面两种图的对应: 将点切开并拉向两边，
 然后用两种不同的方式标记箭头。
-把对应阶数的Hugenholtz图``拉开”，
+把对应阶数的Hugenholtz图``拉开''，
 就得到该阶数下的Goldstone图。
 比如
 \begin{center}
@@ -2854,7 +2860,7 @@ Hugenholtz图中的如下单位
 这两个Goldstone图分别叫作直接图和交换图.
 
 
-表~\autoref{t6.2}中列出了\hft 微扰论中所有的二阶和三阶Golstone图. 计算这些图的规则是:
+\autoref{t6.2}中列出了\hft 微扰论中所有的二阶和三阶Golstone图. 计算这些图的规则是:
 \begin{enumerate}[G1.]
 	\item 每条相互作用线:
 	\begin{center}
@@ -2888,342 +2894,6 @@ Hugenholtz图中的如下单位
 	\sum^N = (2)^l\sum^{N/2}.
 	\end{align*}
 \end{enumerate}
-\begin{table}[H]
-	\caption{二阶和三阶Goldstone图.}
-	\label{t6.2}
-\begin{tabular}{ccl}
-    \hline
-    1 & \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.75]
-    \coordinate (a) at (0,0);
-    \coordinate (b) at ($(a)+(2,0)$);
-    \coordinate (c) at ($(a)+(0,-2)$);
-    \coordinate (d) at ($(c)+(2,0)$);
-    \path[mid arrow seg,draw=blue]
-    (c) arc(225:135:1.414) node[midway,left]{$r$}  
-    (a) arc( 45:-45:1.414) node[midway,right]{$a$}  
-    (d) arc(225:135:1.414) node[midway,left]{$s$}  
-    (b) arc( 45:-45:1.414) node[midway,right] {$b$}; 
-    \draw[draw=blue,densely dotted]
-    (a)--(b)
-    (c)--(d);
-    \path[use as bounding box] ($(c)-(.5,.5)$) rectangle ($(b)+(.5,.5)$);
-    \end{tikzpicture}
-    & $\displaystyle(-)^{2+2}\left(\frac{1}{2}\right)\sum_{abrs}\frac{\braket{ab|rs}\braket{rs|ab}}{\epsilon_{a}+\epsilon_{b}-\epsilon_{r}-\epsilon_{s}}$\\\hline		
-    2 & \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.75]
-    \coordinate (e) at (4,-2.5+2);
-    \coordinate (f) at ($(e)+(2,0)$);
-    \coordinate (g) at ($(e)+(0,-2)$);
-    \coordinate (h) at ($(g)+(2,0)$);
-    \path[mid arrow seg,draw=blue]
-    (g) arc(225:135:1.414) node[midway,left]{$r$}  
-    (h) arc(-45: 45:1.414) node[midway,right]{$s$} ; 
-    \path[mid arrow seg=.75,draw=blue]
-    (e) to node[pos=.75,right]{$b$} (h)
-    (f) to node[pos=.75,left]{$a$} (g);
-    \draw[draw=blue,densely dotted]
-    (e)--(f)
-    (g)--(h);
-    \path[use as bounding box] ($(g)-(.5,.5)$) rectangle ($(f)+(.5,.5)$);
-    \end{tikzpicture}
-    & $\displaystyle(-)^{2+1}\left(\frac{1}{2}\right)\sum_{abrs}\frac{\braket{ab|rs}\braket{rs|ba}}{\epsilon_{a}+\epsilon_{b}-\epsilon_{r}-\epsilon_{s}}$\\\hline
-    
-    1 & \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.75]
-    \coordinate (a) at (4,-2.5+2);
-    \coordinate (b) at ($(a)+(2,0)$);
-    \coordinate (c) at ($(a)+(0,-2)$);
-    \coordinate (d) at ($(c)+(2,0)$);
-    \path[mid arrow seg,draw=blue]
-    (a) arc(135:225:1.414) node[midway,left]{$a$}  
-    (c) arc(-45:0:1.414) coordinate(m) node[midway,right]{$r$} 
-    (m) arc(0:45:1.414)node[midway,right]{$t$}
-    (d) arc(225:180:1.414) coordinate(n) node[midway,left]{$u$}
-    (n) arc(180:135:1.414) node[midway,left]{$s$}
-    (b) arc(45:-45:1.414) node[midway,right]{$b$}
-    ; 
-    \draw[draw=blue,densely dotted]
-    (m)--(n);
-    \draw[draw=blue,densely dotted]
-    (a)--(b)
-    (c)--(d);
-    \path[use as bounding box] ($(c)-(.5,.5)$) rectangle ($(b)+(.5,.5)$);
-    \end{tikzpicture} 
-    & $\displaystyle(-)^{2+2}\left(\frac{1}{2}\right)\sum_{abrsut}\frac{\braket{ab|ru}\braket{ru|ts}\braket{ts|ba}}{(\epsilon_{a}+\epsilon_{d}-\epsilon_{r}-\epsilon_{u})(\epsilon_{a}+\epsilon_{b}-\epsilon_{t}-\epsilon_{s})}$\\\hline
-    2 & \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.75]
-    \coordinate (a) at (4,-2.5+2);
-    \coordinate (b) at ($(a)+(2,0)$);
-    \coordinate (c) at ($(a)+(0,-2)$);
-    \coordinate (d) at ($(c)+(2,0)$);
-    \path[mid reverse arrow seg=.45,draw=blue]
-    (a) arc(135:225:1.414) node[midway,left]{$r$}  
-    (c) arc(-45:0:1.414) coordinate(m) node[midway,right]{$a$} 
-    (m) arc(0:45:1.414)node[midway,right]{$c$}
-    (d) arc(225:180:1.414) coordinate(n) node[midway,left]{$d$}
-    (n) arc(180:135:1.414) node[midway,left]{$b$}
-    (b) arc(45:-45:1.414) node[midway,right]{$s$}
-    ;
-    \draw[draw=blue,densely dotted]
-    (m)--(n);
-    \draw[draw=blue,densely dotted]
-    (a)--(b)
-    (c)--(d);
-    \path[use as bounding box] ($(c)-(.5,.5)$) rectangle ($(b)+(.5,.5)$);
-    \end{tikzpicture} 
-    & $\displaystyle(-)^{4+2}\left(\frac{1}{2}\right)\sum_{abcdrs}\frac{\braket{ad|rs}\braket{cb|ad}\braket{rs|cb}}{(\epsilon_{a}+\epsilon_{c}-\epsilon_{r}-\epsilon_{s})(\epsilon_{c}+\epsilon_{b}-\epsilon_{r}-\epsilon_{s})}$\\\hline
-    
-    3 & \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.75]
-    \coordinate (a) at (4,-2.5+2);
-    \coordinate (b) at ($(a)+(2,0)$);
-    \coordinate (c) at ($(a)+(0,-2)$);
-    \coordinate (d) at ($(c)+(2,0)$);
-    \path[mid arrow seg,draw=blue]
-    (a) arc(135:225:1.414) node[midway,left]{$a$}  
-    (c) arc(-45:0:1.414) coordinate(m) node[midway,right]{$r$} 
-    (m) arc(0:45:1.414)node[midway,right]{$s$};
-    \path[mid reverse arrow seg=.45,draw=blue]
-    (d) arc(225:180:1.414) coordinate(n) node[midway,left]{$c$}
-    (n) arc(180:135:1.414) node[midway,left]{$b$}
-    (b) arc(45:-45:1.414) node[midway,right]{$t$}
-    ;
-    \draw[draw=blue,densely dotted]
-    (m)--(n);
-    \draw[draw=blue,densely dotted]
-    (a)--(b)
-    (c)--(d);
-    \path[use as bounding box] ($(c)-(.5,.5)$) rectangle ($(b)+(.5,.5)$);
-    \end{tikzpicture} 
-    & $\displaystyle(-)^{3+2}\sum_{abcrst}\frac{\braket{ac|rt}\braket{rb|sc}\braket{st|ab}}{(\epsilon_{a}+\epsilon_{c}-\epsilon_{r}-\epsilon_{t})(\epsilon_{a}+\epsilon_{b}-\epsilon_{s}-\epsilon_{t})}$\\\hline
-    
-    4 & \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.75]
-    \coordinate (a) at (4,-2.5+2);
-    \coordinate (b) at ($(a)+(2,0)$);
-    \coordinate (c) at ($(a)+(0,-2)$);
-    \coordinate (d) at ($(c)+(2,0)$);
-    \path[mid arrow seg,draw=blue]
-    (c) arc(225:180:1.414) coordinate(m) node[midway,left]{$r$}
-    (m) arc(180:135:1.414) node[midway,left]{$s$} 
-    (a) arc(45:0:1.414)    coordinate(n) node[midway,right]{$a$}
-    (n) arc(0:-45:1.414)   node[midway,right]{$b$};
-    \path [mid arrow seg,draw=blue]
-    (b) arc(45:-45:1.414) node[midway,right]{$c$}
-    (d) arc(225:135:1.414) node[midway,left]{$t$};
-    \draw[draw=blue,densely dotted]
-    (m)--(n);
-    \draw[draw=blue,densely dotted]
-    (a)--(b)
-    (c)--(d);
-    \path[use as bounding box] ($(c)-(.5,.5)$) rectangle ($(b)+(.5,.5)$);
-    \end{tikzpicture} 
-    & $\displaystyle(-)^{3+2}\sum_{abcrst}\frac{\braket{bc|rt}\braket{ra|sb}\braket{st|ac}}{(\epsilon_{b}+\epsilon_{c}-\epsilon_{r}-\epsilon_{t})(\epsilon_{a}+\epsilon_{c}-\epsilon_{s}-\epsilon_{t})}$\\\hline
-    
-    5 & \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.75]
-    \coordinate (a) at (0,0);
-    \coordinate (b) at ($(a)+(2.5,0)$);
-    \coordinate (c) at ($(a)+(0,-2)$);
-    \coordinate (d) at ($(c)+(2.5,0)$);
-    \path[mid arrow seg,draw=blue]
-    (c) arc(225:135:1.414)  node[midway,left]{$r$} 
-    (a) arc(45:-45:1.414)   node[midway,right]{$a$}
-    ($(a)+(2.5/2,0)$) arc(45:-45:1.414/2) coordinate (m)  node[midway,right]{$b$} % 从(a)向右挪1单位那个点开始画
-    (m) arc(225:135:1.414/2) node[midway,left]{$s$};
-    \path [mid arrow seg,draw=blue]
-    (d) arc(225:135:1.414/2) coordinate (n) node[midway,left]{$t$}
-    (n) arc(45:-45:1.414/2) node[midway,right]{$c$};
-    \draw[draw=blue,densely dotted]
-    (m)--(n);
-    \draw[draw=blue,densely dotted]
-    (a)--($(a)+(2.5/2,0)$)
-    (c)--(d);
-    \path[use as bounding box] ($(c)-(.5,.5)$) rectangle ($(b)+(.5,.5)$);
-    \end{tikzpicture} 
-    & $\displaystyle(-)^{3+3}\sum_{abcrst}\frac{\braket{ac|rt}\braket{bt|sc}\braket{rs|ab}}{(\epsilon_{a}+\epsilon_{c}-\epsilon_{r}-\epsilon_{t})(\epsilon_{a}+\epsilon_{b}-\epsilon_{s}-\epsilon_{t})}$\\\hline
-\end{tabular}
-\end{table}
-
-\begin{table}[H]
-	\addtocounter{table}{-1}
-	\caption{续表.}
-	\begin{tabular}{ccl}\hline
-		6 & 
-		\begin{tikzpicture}[baseline={(current bounding box.center)},scale=.75]
-		\coordinate (a) at (0,0);
-		\coordinate (b) at ($(a)+(2,0)$);
-		\coordinate (c) at ($(a)+(0,-2)$);
-		\coordinate (d) at ($(c)+(2,0)$);
-		\path[mid arrow seg,draw=blue]
-		(c) arc(225:135:1.414)  node[midway,left]{$r$};
-		\path
-		(a) arc(45:0:1.414) coordinate (m);
-		\path[mid arrow seg,draw=blue]
-		(a) to (m)
-		(m) to (b)
-		(b) arc(45:-45:1.414);
-		\path 
-		(d) arc(225:180:1.414) coordinate (n);
-		\path[mid arrow seg,draw=blue]
-		(d) to (n)
-		(n) to (c);
-		\draw[draw=blue,densely dotted]
-		(a)--(b)
-		(c)--(d)
-		(m)--(n);
-		\path[use as bounding box] ($(c)-(.5,.5)$) rectangle ($(b)+(.5,.5)$);
-		\end{tikzpicture}
-		& $\displaystyle(-)^{3+1}\sum_{abcrst}\frac{\braket{cb|rt}\braket{at|sc}\braket{rs|ab}}{(\epsilon_{c}+\epsilon_{b}-\epsilon_{r}-\epsilon_{t})(\epsilon_{a}+\epsilon_{b}-\epsilon_{r}-\epsilon_{s})}$\\\hline
-		
-		7 & 
-		\begin{tikzpicture}[baseline={(current bounding box.center)},scale=.75]
-		\coordinate (a) at (0,0);
-		\coordinate (b) at ($(a)+(2,0)$);
-		\coordinate (c) at ($(a)+(0,-2)$);
-		\coordinate (d) at ($(c)+(2,0)$);
-		\path[mid arrow seg,draw=blue]
-		(a) arc(135:195:1.414)  coordinate (m) node[midway,left]{$d$}
-		    arc(195:225:1.414)  node[midway,left]{$a$}
-		(b) arc(45:-15:1.414)   coordinate (n) node[midway,left]{$b$}
-		    arc(-15:-45:1.414)  node[midway,left]{$c$}
-		;
-		\path[mid arrow seg=.75,draw=blue]
-		(c) to node[pos=.75,right]{$s$} (b) 
-		(d) to node[pos=.75,left]{$r$}  (a) 
-		;
-		\draw[draw=blue,densely dotted]
-		(a)--(b)
-		(c)--(d)
-		(m)--(n);
-		\path[use as bounding box] ($(c)-(.5,.5)$) rectangle ($(b)+(.5,.5)$);
-		\end{tikzpicture}
-		& $\displaystyle(-)^{4+1}\left(\frac{1}{2}\right)\sum_{abcdrs}\frac{\braket{ac|rs}\braket{db|ac}\braket{sr|db}}{(\epsilon_{a}+\epsilon_{c}-\epsilon_{r}-\epsilon_{s})(\epsilon_{d}+\epsilon_{b}-\epsilon_{r}-\epsilon_{s})}$\\\hline
-		
-		8 & 
-		\begin{tikzpicture}[baseline={(current bounding box.center)},scale=.75]
-		\coordinate (a) at (0,0);
-		\coordinate (b) at ($(a)+(2,0)$);
-		\coordinate (c) at ($(a)+(0,-2)$);
-		\coordinate (d) at ($(c)+(2,0)$);
-		\path[mid arrow seg,draw=blue]
-		(a) arc(135:225:1.414)  node[midway,left]{$a$}
-		(b) arc(45:-45: 1.414)   node[midway,left]{$b$}
-		;
-		\path[mid arrow seg=.8,draw=blue]
-		(c) to node[pos=.75,right]{$r$} ($.75*(b)+.25*(c)$) coordinate(m)
-		(d) to node[pos=.75,left ]{$t$} ($.75*(a)+.25*(d)$) coordinate(n)
-		;
-		\path[mid arrow seg,draw=blue]
-		(m) to node[midway,left ] {$s$} (b) 
-		(n) to node[midway,right] {$u$} (a)
-		;
-		\draw[draw=blue,densely dotted]
-		(a)--(b)
-		(c)--(d)
-		(m)--(n);
-		\path[use as bounding box] ($(c)-(.5,.5)$) rectangle ($(b)+(.5,.5)$);
-		\end{tikzpicture}
-		& $\displaystyle(-)^{2+1}\left(\frac{1}{2}\right)\sum_{abcdrs}\frac{\braket{ac|rs}\braket{db|ac}\braket{sr|db}}{(\epsilon_{a}+\epsilon_{c}-\epsilon_{r}-\epsilon_{s})(\epsilon_{d}+\epsilon_{b}-\epsilon_{r}-\epsilon_{s})}$\\\hline
-		
-		9 & 
-		\begin{tikzpicture}[baseline={(current bounding box.center)},scale=.75]
-		\coordinate (a) at (0,0);
-		\coordinate (b) at ($(a)+(2,0)$);
-		\coordinate (c) at ($(a)+(0,-2)$);
-		\coordinate (d) at ($(c)+(2,0)$);
-		\path[mid arrow seg,draw=blue]
-		(a) arc(135:195:1.414)  coordinate (m) node[midway,left]{$a$}
-		    arc(195:225:1.414)                 node[midway,left]{$b$}
-		(b) arc(45:-45:1.414)                  node[midway,right]{$c$}
-		;
-		\path[mid arrow seg=.75,draw=blue]
-		(c) to node[pos=.75,right]{$s$} (-1.36597012977+2,-1.36597012977) coordinate (n) % -1.36597012977是点(m)的纵座标
-		(d) to node[pos=.75,right]{$t$}  (a) 
-		(c) to node[pos=.75,left ]{$s$}  (b)
-		;
-		\draw[draw=blue,densely dotted]
-		(a)--(b)
-		(c)--(d)
-		(m)--(n);
-		\path[use as bounding box] ($(c)-(.5,.5)$) rectangle ($(b)+(.5,.5)$);
-		\end{tikzpicture}
-		& $\displaystyle(-)^{3+1}\left(\frac{1}{2}\right)\sum_{abcrst}\frac{\braket{bc|rt}\braket{ar|bs}\braket{ts|ac}}{(\epsilon_{c}+\epsilon_{b}-\epsilon_{r}-\epsilon_{t})(\epsilon_{a}+\epsilon_{c}-\epsilon_{s}-\epsilon_{t})}$\\\hline
-		
-		10 & 
-		\begin{tikzpicture}[baseline={(current bounding box.center)},scale=.75]
-		\coordinate (a) at (0,0);
-		\coordinate (b) at ($(a)+(2,0)$);
-		\coordinate (c) at ($(a)+(0,-2)$);
-		\coordinate (d) at ($(c)+(2,0)$);
-		\path[mid arrow seg,draw=blue]
-		(c) arc(225:165:1.414)  coordinate (m) node[midway,left]{$r$}
-		    arc(165:135:1.414)                 node[midway,left]{$s$}
-		    to  node[right,midway]{$a$} (0.63402987022,-0.63402987022) coordinate (n)
-		(b) arc(45:-45:1.414)                  node[midway,right]{$t$}
-		;
-		\path[mid arrow seg=.75,draw=blue]
-		(b) to node[pos=.75,left ]{$c$}  (c) 
-		(a) to node[pos=.75,right]{$b$}  (d)
-		;
-		\draw[draw=blue,densely dotted]
-		(a)--(b)
-		(c)--(d)
-		(m)--(n);
-		\path[use as bounding box] ($(c)-(.5,.5)$) rectangle ($(b)+(.5,.5)$);
-		\end{tikzpicture}
-		& $\displaystyle(-)^{4+1}\left(\frac{1}{2}\right)\sum_{abcrst}\frac{\braket{cb|rt}\braket{ra|sb}\braket{st|ac}}{(\epsilon_{c}+\epsilon_{b}-\epsilon_{r}-\epsilon_{t})(\epsilon_{a}+\epsilon_{c}-\epsilon_{s}-\epsilon_{t})}$\\\hline
-
-		11 & \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.75]
-		\coordinate (a) at (0,0);
-		\coordinate (b) at ($(a)+(2.5,0)$);
-		\coordinate (c) at ($(a)+(0,-2)$);
-		\coordinate (d) at ($(c)+(2.5,0)$);
-		\coordinate (m) at ($(a)+(2.5/2,-2)$);
-		\coordinate (n) at ($(m)+(0,1)$);
-		\coordinate (p) at ($(b)-(0,1)$);
-		\path[mid arrow seg,draw=blue]
-		(c) arc(225:135:1.414)  node[midway,left]{$r$}
-		(p) arc(225:135:1.414/2) node[midway,left]{$t$} arc(45:-45:1.414/2) node[midway,right]{$c$}
-		;
-		\path[mid arrow seg=.8,draw=blue]
-		(a) to node[pos=.75,right]{$b$} (m);
-		\path[mid arrow seg=.75,draw=blue]
-		(n) to node[pos=.7,right]{$a$} (c);
-		; % 从(a)向右挪1单位那个点开始画
-		\path[mid arrow seg,draw=blue]
-		(m) arc(-45:45:1.414/2) node[midway,right]{$s$}
-		;
-		\draw[draw=blue,densely dotted]
-		(n)--(p)
-		(a)--(b)
-		(c)--(m);
-		\path[use as bounding box] ($(c)-(.5,.5)$) rectangle ($(b)+(.5,.5)$);
-		\end{tikzpicture} 
-		& $\displaystyle(-)^{3+2}\sum_{abcrst}\frac{\braket{ab|rs}\braket{sc|at}\braket{rt|bc}}{(\epsilon_{a}+\epsilon_{c}-\epsilon_{r}-\epsilon_{s})(\epsilon_{c}+\epsilon_{b}-\epsilon_{s}-\epsilon_{t})}$\\\hline
-
-		12 & \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.75]
-		\coordinate (a) at (0,0);
-		\coordinate (c) at ($(a)+(0,-2)$);
-		\coordinate (d) at ($(c)+(2.5,0)$);
-		\coordinate (b) at ($(a)+(2.5/2,0)$);
-		\coordinate (p) at ($(b)-(0,1)$);
-		\coordinate (m) at ($(p)+(2.5/2,0)$);
-		\coordinate (n) at ($(m)+(0,-1)$);
-		\path[mid arrow seg,draw=blue]
-		(c) arc(225:135:1.414)  node[midway,left]{$r$}
-		(p) arc(-45:45:1.414/2) node[midway,right]{$s$} 
-		(n) arc(225:135:1.414/2)node[midway,left]{$t$}
-		    arc(45:-45:1.414/2) node[midway,right]{$c$}
-		;
-		\path[mid arrow seg=.85,draw=blue]
-		(a) to node[pos=.85,below]{$a$} (p);
-		\path[mid arrow seg=.75,draw=blue]
-		(b) to node[pos=.75,left]{$b$} (c)
-		; % 从(a)向右挪1单位那个点开始画
-		\draw[draw=blue,densely dotted]
-		(m)--(p)
-		(c)--(d)
-		(a)--(b);
-		\path[use as bounding box] ($(c)-(.5,.5)$) rectangle ($(b)+(.5,.5)$);
-		\end{tikzpicture} 
-		& $\displaystyle(-)^{3+2}\sum_{abcrst}\frac{\braket{bc|rt}\braket{at|sc}\braket{rs|ab}}{(\epsilon_{b}+\epsilon_{c}-\epsilon_{t}-\epsilon_{r})(\epsilon_{a}+\epsilon_{b}-\epsilon_{r}-\epsilon_{s})}$\\\hline
-	\end{tabular}
-\end{table}
 这里我们实际地运用一下这些规则, 
 试着用图计算二阶能量. 
 将二阶能量中的\emph{直接图}按垂直于纸面的镜面进行反射,
@@ -3285,7 +2955,7 @@ Hugenholtz图中的如下单位
 \end{center}
 可见镜面反射下这个图不变, 
 所以权重因子就是$1/2$. 
-又因为图中有两条空穴线和一个闭合圈, 
+又因为图中有两条空穴线和两个闭合圈, 
 所以这个图对应的值为
 \begin{align*}
 \tikz[baseline={(current bounding box.center)},scale=.6]{
@@ -3389,13 +3059,366 @@ Hugenholtz图中的如下单位
 对于闭壳层体系我们利用规则(G6), 
 将对自旋轨道的求和改写为对可见轨道求和只需在直接图的值前面乘以$2^2$, 
 在交换图前面乘以$2^1$, 
-这样就得到了式\autoref{6.74}中的结果. 
+这样就得到了\autoref{6.74}中的结果. 
 \autoref{t6.2}中列出了全部十二个三阶Goldstone图对应的代数式. 
 读者若想检验自己对上面所介绍的规则的理解, 
 可以试着计算这些图, 
 并与表中给出的结果对照.
+\begin{table}[H]
+	\caption{二阶和三阶Goldstone图.}
+	\label{t6.2}
+\begin{tabular}{ccl}
+    \hline
+    1 & \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.75]
+    \coordinate (a) at (0,0);
+    \coordinate (b) at ($(a)+(2,0)$);
+    \coordinate (c) at ($(a)+(0,-2)$);
+    \coordinate (d) at ($(c)+(2,0)$);
+    \path[mid arrow seg,draw=blue]
+    (c) arc(225:135:1.414) node[midway,left]{$r$}  
+    (a) arc( 45:-45:1.414) node[midway,right]{$a$}  
+    (d) arc(225:135:1.414) node[midway,left]{$s$}  
+    (b) arc( 45:-45:1.414) node[midway,right] {$b$}; 
+    \draw[draw=blue,densely dotted]
+    (a)--(b)
+    (c)--(d);
+    \path[use as bounding box] ($(c)-(.5,.5)$) rectangle ($(b)+(.5,.5)$);
+    \end{tikzpicture}
+    & $\displaystyle(-)^{2+2}\left(\frac{1}{2}\right)\sum_{abrs}\frac{\braket{ab|rs}\braket{rs|ab}}{\epsilon_{a}+\epsilon_{b}-\epsilon_{r}-\epsilon_{s}}$\\\hline		
+    2 & \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.75]
+    \coordinate (e) at (4,-2.5+2);
+    \coordinate (f) at ($(e)+(2,0)$);
+    \coordinate (g) at ($(e)+(0,-2)$);
+    \coordinate (h) at ($(g)+(2,0)$);
+    \path[mid arrow seg,draw=blue]
+    (g) arc(225:135:1.414) node[midway,left]{$r$}  
+    (h) arc(-45: 45:1.414) node[midway,right]{$s$} ; 
+    \path[mid arrow seg=.75,draw=blue]
+    (e) to node[pos=.75,right]{$b$} (h)
+    (f) to node[pos=.75,left]{$a$} (g);
+    \draw[draw=blue,densely dotted]
+    (e)--(f)
+    (g)--(h);
+    \path[use as bounding box] ($(g)-(.5,.5)$) rectangle ($(f)+(.5,.5)$);
+    \end{tikzpicture}
+    & $\displaystyle(-)^{2+1}\left(\frac{1}{2}\right)\sum_{abrs}\frac{\braket{ab|rs}\braket{rs|ba}}{\epsilon_{a}+\epsilon_{b}-\epsilon_{r}-\epsilon_{s}}$\\\hline
+    
+    1 & \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.75]
+    \coordinate (a) at (4,-2.5+2);
+    \coordinate (b) at ($(a)+(2,0)$);
+    \coordinate (c) at ($(a)+(0,-2)$);
+    \coordinate (d) at ($(c)+(2,0)$);
+    \path[mid arrow seg,draw=blue]
+    (a) arc(135:225:1.414) node[midway,left]{$a$}  
+    (c) arc(-45:0:1.414) coordinate(m) node[midway,right]{$r$} 
+    (m) arc(0:45:1.414)node[midway,right]{$t$}
+    (d) arc(225:180:1.414) coordinate(n) node[midway,left]{$u$}
+    (n) arc(180:135:1.414) node[midway,left]{$s$}
+    (b) arc(45:-45:1.414) node[midway,right]{$b$}
+    ; 
+    \draw[draw=blue,densely dotted]
+    (m)--(n);
+    \draw[draw=blue,densely dotted]
+    (a)--(b)
+    (c)--(d);
+    \path[use as bounding box] ($(c)-(.5,.5)$) rectangle ($(b)+(.5,.5)$);
+    \end{tikzpicture} 
+    & $\displaystyle(-)^{2+2}\left(\frac{1}{2}\right)\sum_{abrsut}
+    \frac{\braket{ab|ru}\braket{ru|ts}\braket{ts|ab}}
+    {(\epsilon_{a}+\epsilon_{b}-\epsilon_{r}-\epsilon_{u})
+    (\epsilon_{a}+\epsilon_{b}-\epsilon_{t}-\epsilon_{s})}$\\\hline
+    2 & \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.75]
+    \coordinate (a) at (4,-2.5+2);
+    \coordinate (b) at ($(a)+(2,0)$);
+    \coordinate (c) at ($(a)+(0,-2)$);
+    \coordinate (d) at ($(c)+(2,0)$);
+    \path[mid reverse arrow seg=.45,draw=blue]
+    (a) arc(135:225:1.414) node[midway,left]{$r$}  
+    (c) arc(-45:0:1.414) coordinate(m) node[midway,right]{$a$} 
+    (m) arc(0:45:1.414)node[midway,right]{$c$}
+    (d) arc(225:180:1.414) coordinate(n) node[midway,left]{$d$}
+    (n) arc(180:135:1.414) node[midway,left]{$b$}
+    (b) arc(45:-45:1.414) node[midway,right]{$s$}
+    ;
+    \draw[draw=blue,densely dotted]
+    (m)--(n);
+    \draw[draw=blue,densely dotted]
+    (a)--(b)
+    (c)--(d);
+    \path[use as bounding box] ($(c)-(.5,.5)$) rectangle ($(b)+(.5,.5)$);
+    \end{tikzpicture} 
+    & $\displaystyle(-)^{4+2}\left(\frac{1}{2}\right)\sum_{abcdrs}
+    \frac{\braket{ad|rs}\braket{cb|ad}\braket{rs|cb}}
+    {(\epsilon_{a}+\epsilon_{d}-\epsilon_{r}-\epsilon_{s})(\epsilon_{c}+\epsilon_{b}-\epsilon_{r}-\epsilon_{s})}$\\\hline
+    
+    3 & \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.75]
+    \coordinate (a) at (4,-2.5+2);
+    \coordinate (b) at ($(a)+(2,0)$);
+    \coordinate (c) at ($(a)+(0,-2)$);
+    \coordinate (d) at ($(c)+(2,0)$);
+    \path[mid arrow seg,draw=blue]
+    (a) arc(135:225:1.414) node[midway,left]{$a$}  
+    (c) arc(-45:0:1.414) coordinate(m) node[midway,right]{$r$} 
+    (m) arc(0:45:1.414)node[midway,right]{$s$};
+    \path[mid reverse arrow seg=.45,draw=blue]
+    (d) arc(225:180:1.414) coordinate(n) node[midway,left]{$c$}
+    (n) arc(180:135:1.414) node[midway,left]{$b$}
+    (b) arc(45:-45:1.414) node[midway,right]{$t$}
+    ;
+    \draw[draw=blue,densely dotted]
+    (m)--(n);
+    \draw[draw=blue,densely dotted]
+    (a)--(b)
+    (c)--(d);
+    \path[use as bounding box] ($(c)-(.5,.5)$) rectangle ($(b)+(.5,.5)$);
+    \end{tikzpicture} 
+    & $\displaystyle(-)^{3+2}\sum_{abcrst}\frac{\braket{ac|rt}\braket{rb|sc}\braket{st|ab}}{(\epsilon_{a}+\epsilon_{c}-\epsilon_{r}-\epsilon_{t})(\epsilon_{a}+\epsilon_{b}-\epsilon_{s}-\epsilon_{t})}$\\\hline
+    
+    4 & \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.75]
+    \coordinate (a) at (4,-2.5+2);
+    \coordinate (b) at ($(a)+(2,0)$);
+    \coordinate (c) at ($(a)+(0,-2)$);
+    \coordinate (d) at ($(c)+(2,0)$);
+    \path[mid arrow seg,draw=blue]
+    (c) arc(225:180:1.414) coordinate(m) node[midway,left]{$r$}
+    (m) arc(180:135:1.414) node[midway,left]{$s$} 
+    (a) arc(45:0:1.414)    coordinate(n) node[midway,right]{$a$}
+    (n) arc(0:-45:1.414)   node[midway,right]{$b$};
+    \path [mid arrow seg,draw=blue]
+    (b) arc(45:-45:1.414) node[midway,right]{$c$}
+    (d) arc(225:135:1.414) node[midway,left]{$t$};
+    \draw[draw=blue,densely dotted]
+    (m)--(n);
+    \draw[draw=blue,densely dotted]
+    (a)--(b)
+    (c)--(d);
+    \path[use as bounding box] ($(c)-(.5,.5)$) rectangle ($(b)+(.5,.5)$);
+    \end{tikzpicture} 
+    & $\displaystyle(-)^{3+2}\sum_{abcrst}\frac{\braket{bc|rt}\braket{ra|sb}\braket{st|ac}}{(\epsilon_{b}+\epsilon_{c}-\epsilon_{r}-\epsilon_{t})(\epsilon_{a}+\epsilon_{c}-\epsilon_{s}-\epsilon_{t})}$\\\hline
+    
+    5 & \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.75]
+    \coordinate (a) at (0,0);
+    \coordinate (b) at ($(a)+(2.5,0)$);
+    \coordinate (c) at ($(a)+(0,-2)$);
+    \coordinate (d) at ($(c)+(2.5,0)$);
+    \path[mid arrow seg,draw=blue]
+    (c) arc(225:135:1.414)  node[midway,left]{$r$} 
+    (a) arc(45:-45:1.414)   node[midway,right]{$a$}
+    ($(a)+(2.5/2,0)$) arc(45:-45:1.414/2) coordinate (m)  node[midway,right]{$b$} % 从(a)向右挪1单位那个点开始画
+    (m) arc(225:135:1.414/2) node[midway,left]{$s$};
+    \path [mid arrow seg,draw=blue]
+    (d) arc(225:135:1.414/2) coordinate (n) node[midway,left]{$t$}
+    (n) arc(45:-45:1.414/2) node[midway,right]{$c$};
+    \draw[draw=blue,densely dotted]
+    (m)--(n);
+    \draw[draw=blue,densely dotted]
+    (a)--($(a)+(2.5/2,0)$)
+    (c)--(d);
+    \path[use as bounding box] ($(c)-(.5,.5)$) rectangle ($(b)+(.5,.5)$);
+    \end{tikzpicture} 
+    & $\displaystyle(-)^{3+3}\sum_{abcrst}
+    \frac{\braket{ac|rt}\braket{bt|sc}\braket{rs|ab}}
+    {(\epsilon_{a}+\epsilon_{c}-\epsilon_{r}-\epsilon_{t})(\epsilon_{a}+\epsilon_{b}-\epsilon_{r}-\epsilon_{s})}$\\\hline
+\end{tabular}
+\end{table}
 
-\exercise{把二阶/三阶Hugenholtz图拉开, 就能得到表~\autoref{t6.2}中所列的这些Goldstone图. 这个过程可能不那么容易看出来, 但是逆过程很容易理解. 比如, 把如下的图挤压成一个图:
+\begin{table}[H]
+	\addtocounter{table}{-1}
+	\caption{续表.}
+	\begin{tabular}{ccl}\hline
+		6 & 
+		\begin{tikzpicture}[baseline={(current bounding box.center)},scale=.75]
+		\coordinate (a) at (0,0);
+		\coordinate (b) at ($(a)+(2,0)$);
+		\coordinate (c) at ($(a)+(0,-2)$);
+		\coordinate (d) at ($(c)+(2,0)$);
+		\path[mid arrow seg,draw=blue]
+		(c) arc(225:135:1.414)  node[midway,left]{$r$};
+		\path
+		(a) arc(45:0:1.414) coordinate (m);
+		\path[mid arrow seg,draw=blue]
+		(a) to node[midway,right]{$a$} (m) 
+		(m) to node[midway,right]{$s$} (b)
+		(b) arc(45:-45:1.414) node[midway,right]{$b$};
+		\path 
+		(d) arc(225:180:1.414) coordinate (n);
+		\path[mid arrow seg,draw=blue]
+		(d) to node[midway,left]{$t$} (n)
+		(n) to node[midway,right]{$c$} (c);
+		\draw[draw=blue,densely dotted]
+		(a)--(b)
+		(c)--(d)
+		(m)--(n);
+		\path[use as bounding box] ($(c)-(.5,.5)$) rectangle ($(b)+(.5,.5)$);
+		\end{tikzpicture}
+		& $\displaystyle(-)^{3+1}\sum_{abcrst}\frac{\braket{cb|rt}\braket{at|sc}\braket{rs|ab}}{(\epsilon_{c}+\epsilon_{b}-\epsilon_{r}-\epsilon_{t})(\epsilon_{a}+\epsilon_{b}-\epsilon_{r}-\epsilon_{s})}$\\\hline
+		
+		7 & 
+		\begin{tikzpicture}[baseline={(current bounding box.center)},scale=.75]
+		\coordinate (a) at (0,0);
+		\coordinate (b) at ($(a)+(2,0)$);
+		\coordinate (c) at ($(a)+(0,-2)$);
+		\coordinate (d) at ($(c)+(2,0)$);
+		\path[mid arrow seg,draw=blue]
+		(a) arc(135:195:1.414)  coordinate (m) node[midway,left]{$d$}
+		    arc(195:225:1.414)  node[midway,left]{$a$}
+		(b) arc(45:-15:1.414)   coordinate (n) node[midway,left]{$b$}
+		    arc(-15:-45:1.414)  node[midway,left]{$c$}
+		;
+		\path[mid arrow seg=.75,draw=blue]
+		(c) to node[pos=.75,right]{$r$} (b) 
+		(d) to node[pos=.75,left]{$s$}  (a) 
+		;
+		\draw[draw=blue,densely dotted]
+		(a)--(b)
+		(c)--(d)
+		(m)--(n);
+		\path[use as bounding box] ($(c)-(.5,.5)$) rectangle ($(b)+(.5,.5)$);
+		\end{tikzpicture}
+		& $\displaystyle(-)^{4+1}\left(\frac{1}{2}\right)\sum_{abcdrs}\frac{\braket{ac|rs}\braket{db|ac}\braket{sr|db}}{(\epsilon_{a}+\epsilon_{c}-\epsilon_{r}-\epsilon_{s})(\epsilon_{d}+\epsilon_{b}-\epsilon_{r}-\epsilon_{s})}$\\\hline
+		
+		8 & 
+		\begin{tikzpicture}[baseline={(current bounding box.center)},scale=.75]
+		\coordinate (a) at (0,0);
+		\coordinate (b) at ($(a)+(2,0)$);
+		\coordinate (c) at ($(a)+(0,-2)$);
+		\coordinate (d) at ($(c)+(2,0)$);
+		\path[mid arrow seg,draw=blue]
+		(a) arc(135:225:1.414)  node[midway,left]{$a$}
+		(b) arc(45:-45: 1.414)   node[midway,left]{$b$}
+		;
+		\path[mid arrow seg=.8,draw=blue]
+		(c) to node[pos=.75,right]{$r$} ($.75*(b)+.25*(c)$) coordinate(m)
+		(d) to node[pos=.75,left ]{$t$} ($.75*(a)+.25*(d)$) coordinate(n)
+		;
+		\path[mid arrow seg,draw=blue]
+		(m) to node[midway,left ] {$s$} (b) 
+		(n) to node[midway,right] {$u$} (a)
+		;
+		\draw[draw=blue,densely dotted]
+		(a)--(b)
+		(c)--(d)
+		(m)--(n);
+		\path[use as bounding box] ($(c)-(.5,.5)$) rectangle ($(b)+(.5,.5)$);
+		\end{tikzpicture}
+		& $\displaystyle(-)^{2+1}\left(\frac{1}{2}\right)\sum_{abrsut}
+                \frac{\braket{ab|rt}\braket{tr|us}\braket{us|ab}}
+                {(\epsilon_{a}+\epsilon_{b}-\epsilon_{t}-\epsilon_{r})
+                (\epsilon_{a}+\epsilon_{b}-\epsilon_{u}-\epsilon_{s})}$\\\hline
+		
+		9 & 
+		\begin{tikzpicture}[baseline={(current bounding box.center)},scale=.75]
+		\coordinate (a) at (0,0);
+		\coordinate (b) at ($(a)+(2,0)$);
+		\coordinate (c) at ($(a)+(0,-2)$);
+		\coordinate (d) at ($(c)+(2,0)$);
+		\path[mid arrow seg,draw=blue]
+		(a) arc(135:195:1.414)  coordinate (m) node[midway,left]{$a$}
+		    arc(195:225:1.414)                 node[midway,left]{$b$}
+		(b) arc(45:-45:1.414)                  node[midway,right]{$c$}
+		;
+		\path[mid arrow seg=.75,draw=blue]
+		(c) to node[midway,right]{$r$} (-1.36597012977+2,-1.36597012977) coordinate (n) % -1.36597012977是点(m)的纵座标
+		(d) to node[pos=.75,right]{$t$}  (a) 
+		(c) to node[pos=.75,left ]{$s$}  (b)
+		;
+		\draw[draw=blue,densely dotted]
+		(a)--(b)
+		(c)--(d)
+		(m)--(n);
+		\path[use as bounding box] ($(c)-(.5,.5)$) rectangle ($(b)+(.5,.5)$);
+		\end{tikzpicture}
+		& $\displaystyle(-)^{3+1}\left(\frac{1}{2}\right)\sum_{abcrst}\frac{\braket{bc|rt}\braket{ar|bs}\braket{ts|ac}}{(\epsilon_{c}+\epsilon_{b}-\epsilon_{r}-\epsilon_{t})(\epsilon_{a}+\epsilon_{c}-\epsilon_{s}-\epsilon_{t})}$\\\hline
+		
+		10 & 
+		\begin{tikzpicture}[baseline={(current bounding box.center)},scale=.75]
+		\coordinate (a) at (0,0);
+		\coordinate (b) at ($(a)+(2,0)$);
+		\coordinate (c) at ($(a)+(0,-2)$);
+		\coordinate (d) at ($(c)+(2,0)$);
+		\path[mid arrow seg,draw=blue]
+		(c) arc(225:165:1.414)  coordinate (m) node[midway,left]{$r$}
+		    arc(165:135:1.414)                 node[midway,left]{$s$}
+		    to  node[right,midway]{$a$} (0.63402987022,-0.63402987022) coordinate (n);
+		\path[mid reverse arrow seg=.45,draw=blue]
+		(b) arc(45:-45:1.414)                  node[midway,right]{$t$};
+		\path[mid arrow seg=.75,draw=blue]
+		(b) to node[pos=.75,left ]{$c$}  (c) 
+		(a) to node[pos=.75,right]{$b$}  (d)
+		;
+		\draw[draw=blue,densely dotted]
+		(a)--(b)
+		(c)--(d)
+		(m)--(n);
+		\path[use as bounding box] ($(c)-(.5,.5)$) rectangle ($(b)+(.5,.5)$);
+		\end{tikzpicture}
+		& $\displaystyle(-)^{3+1}\left(\frac{1}{2}\right)\sum_{abcrst}
+                \frac{\braket{cb|rt}\braket{ra|sb}\braket{st|ac}}
+                {(\epsilon_{c}+\epsilon_{b}-\epsilon_{r}-\epsilon_{t})(\epsilon_{a}+\epsilon_{c}-\epsilon_{s}-\epsilon_{t})}$\\\hline
+
+		11 & \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.75]
+		\coordinate (a) at (0,0);
+		\coordinate (b) at ($(a)+(2.5,0)$);
+		\coordinate (c) at ($(a)+(0,-2)$);
+		\coordinate (d) at ($(c)+(2.5,0)$);
+		\coordinate (m) at ($(a)+(2.5/2,-2)$);
+		\coordinate (n) at ($(m)+(0,1)$);
+		\coordinate (p) at ($(b)-(0,1)$);
+		\path[mid arrow seg,draw=blue]
+		(c) arc(225:135:1.414)  node[midway,left]{$r$}
+		(p) arc(225:135:1.414/2) node[midway,left]{$t$} arc(45:-45:1.414/2) node[midway,right]{$c$}
+		;
+		\path[mid arrow seg=.8,draw=blue]
+		(a) to node[pos=.75,right]{$b$} (m);
+		\path[mid arrow seg=.75,draw=blue]
+		(n) to node[pos=.7,right]{$a$} (c);
+		; % 从(a)向右挪1单位那个点开始画
+		\path[mid arrow seg,draw=blue]
+		(m) arc(-45:45:1.414/2) node[midway,right]{$s$}
+		;
+		\draw[draw=blue,densely dotted]
+		(n)--(p)
+		(a)--(b)
+		(c)--(m);
+		\path[use as bounding box] ($(c)-(.5,.5)$) rectangle ($(b)+(.5,.5)$);
+		\end{tikzpicture} 
+		& $\displaystyle(-)^{3+2}\sum_{abcrst}
+                \frac{\braket{ab|rs}\braket{sc|at}\braket{rt|bc}}
+                {(\epsilon_{a}+\epsilon_{b}-\epsilon_{r}-\epsilon_{s})
+                (\epsilon_{c}+\epsilon_{b}-\epsilon_{r}-\epsilon_{t})}$\\\hline
+
+		12 & \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.75]
+		\coordinate (a) at (0,0);
+		\coordinate (c) at ($(a)+(0,-2)$);
+		\coordinate (d) at ($(c)+(2.5,0)$);
+		\coordinate (b) at ($(a)+(2.5/2,0)$);
+		\coordinate (p) at ($(b)-(0,1)$);
+		\coordinate (m) at ($(p)+(2.5/2,0)$);
+		\coordinate (n) at ($(m)+(0,-1)$);
+		\path[mid arrow seg,draw=blue]
+		(c) arc(225:135:1.414)  node[midway,left]{$r$}
+		(p) arc(-45:45:1.414/2) node[midway,right]{$s$} 
+		(n) arc(225:135:1.414/2)node[midway,left]{$t$}
+		    arc(45:-45:1.414/2) node[midway,right]{$c$}
+		;
+		\path[mid arrow seg=.85,draw=blue]
+		(a) to node[pos=.85,below]{$a$} (p);
+		\path[mid arrow seg=.75,draw=blue]
+		(b) to node[pos=.75,left]{$b$} (c)
+		; % 从(a)向右挪1单位那个点开始画
+		\draw[draw=blue,densely dotted]
+		(m)--(p)
+		(c)--(d)
+		(a)--(b);
+		\path[use as bounding box] ($(c)-(.5,.5)$) rectangle ($(b)+(.5,.5)$);
+		\end{tikzpicture} 
+		& $\displaystyle(-)^{3+2}\sum_{abcrst}\frac{\braket{bc|rt}\braket{at|sc}\braket{rs|ab}}{(\epsilon_{b}+\epsilon_{c}-\epsilon_{t}-\epsilon_{r})(\epsilon_{a}+\epsilon_{b}-\epsilon_{r}-\epsilon_{s})}$\\\hline
+	\end{tabular}
+\end{table}
+
+\newpage
+
+\exercise{把二阶/三阶Hugenholtz图拉开, 就能得到\autoref{t6.2}中所列的这些Goldstone图. 这个过程可能不那么容易看出来, 但是逆过程很容易理解. 比如, 把如下的图挤压成一个图:
 	\begin{align*}
 	\tikz[baseline={(current bounding box.center)},scale=.6]{
 		\coordinate (a) at (4,-2.5+2);
@@ -3441,16 +3464,16 @@ Hugenholtz图中的如下单位
 	\end{tikzpicture} 
 	\end{align*}
 同样地, 
-把表~\autoref{t6.2}中的三阶Hugenholtz图压在一起, 
-就能得到对应的Goldstone图. 
+把\autoref{t6.2}中的三阶Goldstone图压在一起, 
+就能得到对应的Hugenholtz图. 
 请你验证, 
 上面所得的Hugenholtz图的值确实与其对应的全部Goldstone图的值之和相同.
 
 }
 
 下面我们举个例子, 
-在极小基$\hd$ 模型下计算表~\autoref{t6.2}中二阶和三阶图的值, 
-我们会看见所得值与之前的结果完全一样(\autoref{6.77}\autoref{6.78}). 
+在极小基$\hd$ 模型下计算\autoref{t6.2}中二阶和三阶图的值, 
+我们会看见所得值与之前的结果完全一样(\autoref{6.77} \eqref{6.78}). 
 我们首先转换到对空间轨道的求和, 
 这一步要乘以$2^l$, 
 $l$是闭合圈的数目. 
@@ -3466,18 +3489,20 @@ $l$是闭合圈的数目.
 结果与\autoref{6.77}相同. 
 对三阶图我们可以写出:
 \begin{align*}
-1&\leftrightarrow (2)^2\left( \frac{1}{2} \right) \frac{\braket{11|22}\braket{22|22}\braket{22|11}}{4(\epsilon_1 - \epsilon_2)^2}  = \frac{K_{12}^2J_{22}}{2(\epsilon_1 - \epsilon_2)^2}\\
-2&\leftrightarrow (2)^2\left( \frac{1}{2} \right) \frac{\braket{11|22}\braket{11|11}\braket{22|11}}{4(\epsilon_1 - \epsilon_2)^2}  = \frac{K_{12}^2J_{11}}{2(\epsilon_1 - \epsilon_2)^2}\\
-3&\leftrightarrow -(2)^2 \frac{\braket{11|22}\braket{21|21}\braket{22|11}}{4(\epsilon_1 - \epsilon_2)^2}  = -\frac{K_{12}^2J_{12}}{(\epsilon_1 - \epsilon_2)^2}\\
-4&\leftrightarrow -(2)^2 \frac{\braket{11|22}\braket{21|21}\braket{22|11}}{4(\epsilon_1 - \epsilon_2)^2}  = -\frac{K_{12}^2J_{22}}{(\epsilon_1 - \epsilon_2)^2}\\
-5&\leftrightarrow (2)^3 \frac{\braket{11|22}\braket{12|12}\braket{22|11}}{4(\epsilon_1 - \epsilon_2)^2}  = 2\frac{K_{12}^2K_{12}}{(\epsilon_1 - \epsilon_2)^2}\\
-6&\leftrightarrow (2) \frac{\braket{11|22}\braket{21|21}\braket{22|11}}{4(\epsilon_1 - \epsilon_2)^2}  = \frac{K_{12}^2K_{12}}{2(\epsilon_1 - \epsilon_2)^2}\\
-7&\leftrightarrow -(2)\left( \frac{1}{2} \right) \frac{\braket{11|22}\braket{11|11}\braket{11|22}}{4(\epsilon_1 - \epsilon_2)^2}  = -\frac{K_{12}^2J_{11}}{4(\epsilon_1 - \epsilon_2)^2}\\
-8&\leftrightarrow -(2)\left( \frac{1}{2} \right) \frac{\braket{11|22}\braket{22|22}\braket{11|22}}{4(\epsilon_1 - \epsilon_2)^2}  = -\frac{K_{12}^2J_{22}}{4(\epsilon_1 - \epsilon_2)^2}\\
-9&\leftrightarrow (2) \frac{\braket{11|22}\braket{12|12}\braket{11|22}}{4(\epsilon_1 - \epsilon_2)^2}  = \frac{K_{12}^2J_{12}}{2(\epsilon_1 - \epsilon_2)^2}\\
-10&\leftrightarrow (2) \frac{\braket{11|22}\braket{21|21}\braket{11|22}}{4(\epsilon_1 - \epsilon_2)^2}  = \frac{K_{12}^2J_{12}}{2(\epsilon_1 - \epsilon_2)^2}\\
-11&\leftrightarrow -(2)^2 \frac{\braket{11|22}\braket{21|12}\braket{11|22}}{4(\epsilon_1 - \epsilon_2)^2}  = -\frac{K_{12}^2K_{12}}{(\epsilon_1 - \epsilon_2)^2}\\
-12&\leftrightarrow -(2)^2 \frac{\braket{11|22}\braket{12|21}\braket{22|11}}{4(\epsilon_1 - \epsilon_2)^2}  = -\frac{K_{12}^2K_{12}}{(\epsilon_1 - \epsilon_2)^2}
+1&\leftrightarrow (2)^2\left( \frac{1}{2} \right) \frac{\braket{11|22}\braket{22|22}\braket{22|11}}{4(\epsilon_1 - \epsilon_2)^2}   = \frac{K_{12}^2J_{22}}{2(\epsilon_1 - \epsilon_2)^2}\\
+2&\leftrightarrow (2)^2\left( \frac{1}{2} \right) \frac{\braket{11|22}\braket{11|11}\braket{22|11}}{4(\epsilon_1 - \epsilon_2)^2}   = \frac{K_{12}^2J_{11}}{2(\epsilon_1 - \epsilon_2)^2}\\
+3&\leftrightarrow -(2)^2 \frac{\braket{11|22}\braket{21|21}\braket{22|11}}{4(\epsilon_1 - \epsilon_2)^2}   = -\frac{K_{12}^2J_{12}}{(\epsilon_1 - \epsilon_2)^2}\\
+4&\leftrightarrow -(2)^2 \frac{\braket{11|22}\braket{21|21}\braket{22|11}}{4(\epsilon_1 - \epsilon_2)^2}   = -\frac{K_{12}^2J_{22}}{(\epsilon_1 - \epsilon_2)^2}\\
+5&\leftrightarrow (2)^3 \frac{\braket{11|22}\braket{12|12}\braket{22|11}}{4(\epsilon_1 - \epsilon_2)^2}   = 2\frac{K_{12}^2K_{12}}{(\epsilon_1 - \epsilon_2)^2}\\
+6&\leftrightarrow (2) \frac{\braket{11|22}\braket{21|21}\braket{22|11}}{4(\epsilon_1 - \epsilon_2)^2}   = \frac{K_{12}^2K_{12}}{2(\epsilon_1 - \epsilon_2)^2}\\
+7&\leftrightarrow -(2)\left( \frac{1}{2} \right) \frac{\braket{11|22}\braket{11|11}\braket{11|22}}{4(\epsilon_1 - \epsilon_2)^2}   = -\frac{K_{12}^2J_{11}}{4(\epsilon_1 - \epsilon_2)^2}
+\end{align*}
+\begin{align*}
+8&\leftrightarrow -(2)\left( \frac{1}{2} \right) \frac{\braket{11|22}\braket{22|22}\braket{11|22}}{4(\epsilon_1 - \epsilon_2)^2}   = -\frac{K_{12}^2J_{22}}{4(\epsilon_1 - \epsilon_2)^2}\\
+9&\leftrightarrow (2) \frac{\braket{11|22}\braket{12|12}\braket{11|22}}{4(\epsilon_1 - \epsilon_2)^2}   = \frac{K_{12}^2J_{12}}{2(\epsilon_1 - \epsilon_2)^2}\\
+10&\leftrightarrow (2) \frac{\braket{11|22}\braket{21|21}\braket{11|22}}{4(\epsilon_1 - \epsilon_2)^2}   = \frac{K_{12}^2J_{12}}{2(\epsilon_1 - \epsilon_2)^2}\\
+11&\leftrightarrow -(2)^2 \frac{\braket{11|22}\braket{21|12}\braket{11|22}}{4(\epsilon_1 - \epsilon_2)^2}   = -\frac{K_{12}^2K_{12}}{(\epsilon_1 - \epsilon_2)^2}\\
+12&\leftrightarrow -(2)^2 \frac{\braket{11|22}\braket{12|21}\braket{22|11}}{4(\epsilon_1 - \epsilon_2)^2}   = -\frac{K_{12}^2K_{12}}{(\epsilon_1 - \epsilon_2)^2}
 \end{align*}
 读者可以自行验证以上十二个式子之和确实等于\autoref{6.78}中给出的三阶能量.
 
@@ -3494,7 +3519,7 @@ $l$是闭合圈的数目.
 	(a) arc(135:225:1.414) node[midway,left]{$a$}  
 	(c) arc(-45:45:1.414) coordinate(m) node[midway,right]{$r$} 
 %	(m) arc(0:45:1.414)node[midway,right]{$t$}
-	(d) arc(225:135:1.414) coordinate(n) node[midway,left]{$u$}
+	(d) arc(225:135:1.414) coordinate(n) node[midway,left]{$s$}
 %	(n) arc(180:135:1.414) node[midway,left]{$s$}
 	(b) arc(45:-45:1.414) node[midway,right]{$b$}
 	; 
@@ -3512,8 +3537,8 @@ $l$是闭合圈的数目.
 	\path[mid arrow seg,draw=blue]
 	(a) arc(135:225:1.414) node[midway,left]{$a$}  
 	(c) arc(-45:0:1.414) coordinate(m) node[midway,right]{$r$} 
-	(m) arc(0:45:1.414)node[midway,right]{$t$}
-	(d) arc(225:180:1.414) coordinate(n) node[midway,left]{$u$}
+	(m) arc(0:45:1.414)node[midway,right]{$r$}
+	(d) arc(225:180:1.414) coordinate(n) node[midway,left]{$s$}
 	(n) arc(180:135:1.414) node[midway,left]{$s$}
 	(b) arc(45:-45:1.414) node[midway,right]{$b$}
 	; 
@@ -3560,7 +3585,7 @@ $l$是闭合圈的数目.
 \end{align*}
 可见求和式是一个几何级数, 
 如前所述, 
-几何级数给出一个能量移动了的的分母. 
+几何级数给能量分母加了偏移. 
 若按照上面所述的规则画出所有允许的图, 
 然后求和, 
 就可以得到
@@ -3571,7 +3596,7 @@ E_\mathrm{corr}(\mathrm{EN}) = -\frac{1}{4}\sum_{abrs}\frac{|\braket{ab||rs}|}{\
 
 
 最后我们再提一个例子, 
-如果把所有\emph{双激发}图(这些图中的虚线仅穿过两个空穴线和两个粒子线)加和起来, 
+如果把所有\emph{双激发}图(所有水平虚线仅穿过两条空穴线、两个粒子线的图)加和起来, 
 我们就得到了Bartlett\endnote{
 R. J. Bartlett, I. Shavitt, and G. D. Purvis, The quartic force field of H 2 0 determined bymany-body methods that include quadruple excitation effects, \textit{J. Chem. Phys.} \textbf{71}:281 (1979), 以及其中的参考文献。
 }
@@ -3595,24 +3620,28 @@ E_\mathrm{corr}(\mathrm{D-MBPT}(\infty)) = -\mathbf{B^\dagger(D)}^{-1}\mathbf{B}
 与$E_\mathrm{corr}(\mathrm{EN})$不同, 
 $E_\mathrm{corr}(\mathrm{D-MBPT}(\infty))$精确到了三阶微扰. 
 在第四阶上, 
-它缺失了来自三重, 
+它缺失了来自单重, 
 三重和四重激发的贡献.
 
-\subsection{什么是链通簇（Linked-Cluster）定理?}
-Goldstone在他的\mci{链通簇}(linked-cluster)定理中用图形技术证明, 在更一般的情况下，Brueckner猜想依然成立， 
-也即，RS微扰论的每一阶都是尺寸一致(size-consistent)的。
-正比于$N^2$的项所对应的图由分离的几部分构成（即一个\emph{不链通}图）， 
+\subsection{什么是连通簇（Linked-Cluster）定理?}
+Goldstone在他的\mci{连通簇}(linked-cluster)定理中用图形技术证明,
+在更一般的情况下，Brueckner猜想依然成立,
+也即，RS微扰论的每一阶都尺寸一致(size-consistent).
+正比于$N^2$的项所对应的图由分离的几部分构成（即一个\emph{非连通}图）， 
 Goldstone用含时技巧证明了这类图不会出现在$n$阶能量的最终表达式中。
-因此他把$n$阶能量纯粹用\phrase{\emph{链通}}图表示了出来。本章所用的图全部是\phrase{链通图}。
+因此他把$n$阶能量纯粹用\phrase{连通}图表示了出来。本章所用的图全部是\phrase{连通图}。
 之前我们已经多次对比了图方法和代数方法所得的两种结果，它们完全一致，
-读者可以相信RS微扰论的所有形式(即$N$-态微扰论、轨道微扰论等等形式)都能单纯用\phrase{链通图}表示出来（或者至少相信这个说法的合理性）。
-这里要说明以下尺寸一致这个词的含义，当我们说某个理论尺寸一致时，意思是，该理论给出的多体系统能量随系统大小线性增长。
-仅当系统是$N$个独立的闭壳层分子组成的超分子，而且所用的方法在简并轨道的酉变换下不变时，尺寸一致这个词才意味着系统的能量是$N$倍的单体能量。
+读者可以相信RS微扰论的所有形式(即$N$-态微扰论、轨道微扰论等等形式)都能单纯用\phrase{连通图}表示出来（或者至少相信这个说法的合理性）。
+这里要说明一下``尺寸一致''这个词,
+本书中说某个理论尺寸一致时, 意思是,
+该理论给出的多体系统能量随系统大小线性增长.
+仅当系统是$N$个独立闭壳层单体组成的超分子 且 所用的方法在简并轨道的酉变换下不变时,
+尺寸一致这个词才意味着系统的能量是$N$倍的单体能量.
 \exercise{
 某个超分子由$N$个无相互作用的极小基$\hd$分子组成，
 请通过计算\autoref{t6.2}中的Goldstone图，
 得到该系统的$E_0^{(3)}$。
-将你的结果与\autoref{eq:6.92}相比，
+将你的结果与\autoref{eq:6.92}对比,
 后者是从代数上直接消掉正比于$N^2$的项后得到的。
 \textbf{提示:} 直接证明这个超分子的每个Goldtone图的值都等于$N$乘以单个分子的对应值。
 }
