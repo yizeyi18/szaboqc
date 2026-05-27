@@ -74,8 +74,7 @@ IEPA)基本等价.
 \autoref{sec6.7}讨论多体微扰的图表示,
 最后的\autoref{sec6.8}展示一些描述性算例.
 
-\section{Reyleigh-\sch 微扰理论}
-\label{sec6.1}
+\section{Reyleigh-\sch 微扰理论}\label{sec6.1}
 本节推导标准的Reyleigh-\sch 微扰论的表达式. 
 这些式子都是一般性的, 
 既能用于单粒子系统也能用于N-粒子系统. 
@@ -350,7 +349,6 @@ c_1\\c_2
 \section{RS微扰论的图表示}
 \let\thesection\oldthesection
 \label{sec6.2}
-
 上节末尾我们已经看到, 
 即使是最简单的两态问题,
 其高阶能量公式也相当复杂.
@@ -718,7 +716,8 @@ $\braket{\textbf{入}\text{线标签}| \vs |\textbf{出}\text{线标签} }$.
 (0,1)..controls+(-.5,.5)and+(-.5,-.5)..node[right]{2}(0,3)
 (0,3)..controls+(-.75,-.75)and+(-.75,.75)..node[left]{1}(0,0);
 \end{scope}
-\end{tikzpicture} = (-)^3\frac{(V_{12}V_{21})^2}{\left(E_1^{(0)} - E_2^{(0)}\right)^2\left(2E_1^{(0)} - 2E_2^{(0)}\right)} = -\frac{(V_{12}V_{21})^2}{2\left(E_1^{(0)} - E_2^{(0)}\right)^3} 
+\end{tikzpicture}
+ = (-)^3\frac{(V_{12}V_{21})^2}{\left(E_1^{(0)} - E_2^{(0)}\right)^2\left(2E_1^{(0)} - 2E_2^{(0)}\right)} = -\frac{(V_{12}V_{21})^2}{2\left(E_1^{(0)} - E_2^{(0)}\right)^3} 
 \end{equation*}
 
 值得注意, 
@@ -781,7 +780,8 @@ $\braket{\textbf{入}\text{线标签}| \vs |\textbf{出}\text{线标签} }$.
 \draw[postaction={decorate}] (0.25,0.43301270189221932338186158537647) arc [start angle=60, end angle=420, radius=.5];
 \filldraw (.5,0)circle(1pt);
 \end{scope}
-\end{tikzpicture} = V_{11}
+\end{tikzpicture}
+ = V_{11}
 \end{equation*}
 检视\autoref{t6.1}可以发现, 
 按照我们的规则把图换成算式, 
@@ -805,7 +805,8 @@ $\braket{\textbf{入}\text{线标签}| \vs |\textbf{出}\text{线标签} }$.
     \path [draw=blue,postaction={on each segment={mid arrow}}] 
     (4.5,0) node{\dian}
     arc (-45:45:2.12cm)node[right,midway]{2} node{\dian} arc(135:225:2.12cm)node[left,midway]{1};
-    \end{tikzpicture} & $(-)^{1+1}\dfrac{\braket{1|\vs|2}\braket{2|\vs|1}}{E_1^{(0)}-E_2^{(0)}}=\dfrac{V_{12}V_{21}}{E_1^{(0)}-E_2^{(0)}}$ \\\hline
+    \end{tikzpicture}
+	 & $(-)^{1+1}\dfrac{\braket{1|\vs|2}\braket{2|\vs|1}}{E_1^{(0)}-E_2^{(0)}}=\dfrac{V_{12}V_{21}}{E_1^{(0)}-E_2^{(0)}}$ \\\hline
     \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.55] 
     \diagsize
     \path [draw=blue,postaction={on each segment={mid arrow}}] 
@@ -813,8 +814,8 @@ $\braket{\textbf{入}\text{线标签}| \vs |\textbf{出}\text{线标签} }$.
     arc (-45:0:2.12cm)node[right,midway]{2} node{\dian}
     arc (0:45:2.12cm)node[right,midway]{2} node{\dian} 
     arc (135:225:2.12cm)node[left,midway]{1};
-    \end{tikzpicture} & 
-    $(-)^{1+1}\dfrac{\braket{1|\vs|2}\braket{2|\vs|2}\braket{2|\vs|1}}{(E_1^{(0)}-E_2^{(0)})^2}=\dfrac{V_{12}V_{22}V_{21}}{(E_1^{(0)}-E_2^{(0)})^2}$ \\\hline
+    \end{tikzpicture}
+	 & $(-)^{1+1}\dfrac{\braket{1|\vs|2}\braket{2|\vs|2}\braket{2|\vs|1}}{(E_1^{(0)}-E_2^{(0)})^2}=\dfrac{V_{12}V_{22}V_{21}}{(E_1^{(0)}-E_2^{(0)})^2}$ \\\hline
     \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.55] 
     \diagsize
     \path [draw=blue,postaction={on each segment={mid arrow}}] 
@@ -822,7 +823,8 @@ $\braket{\textbf{入}\text{线标签}| \vs |\textbf{出}\text{线标签} }$.
     arc (225:135:2.12cm)node[left,midway]{2} node{\dian}
     arc (45:0:2.12cm)node[right,midway]{1} node{\dian} 
     arc (0:-45:2.12cm)node[left,midway]{1};
-    \end{tikzpicture} & $(-)^{2+1}\dfrac{\braket{1|\vs|2}\braket{2|\vs|1}\braket{1|\vs|1}}{(E_1^{(0)}-E_2^{(0)})^2}=\dfrac{V_{12}V_{21}V_{11}}{(E_1^{(0)}-E_2^{(0)})^2}$\\\hline
+    \end{tikzpicture}
+	 & $(-)^{2+1}\dfrac{\braket{1|\vs|2}\braket{2|\vs|1}\braket{1|\vs|1}}{(E_1^{(0)}-E_2^{(0)})^2}=\dfrac{V_{12}V_{21}V_{11}}{(E_1^{(0)}-E_2^{(0)})^2}$\\\hline
     \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.55]  
     \diagsize
     \path [draw=blue,postaction={on each segment={mid arrow}}] 
@@ -840,8 +842,8 @@ $\braket{\textbf{入}\text{线标签}| \vs |\textbf{出}\text{线标签} }$.
     arc (-15:45:2.12cm)node[right,midway]{2} node{\dian} 
     arc (135:165:2.12cm)node[left,midway]{1} node{\dian} 
     arc (165:225:2.12cm)node[left,midway]{1} node{\dian} ;
-    \end{tikzpicture} & 
-    $(-)^{2+1}\dfrac{\braket{1|\vs|2}\braket{2|\vs|2}\braket{2|\vs|1}\braket{1|\vs|1}}{(E_1^{(0)}-E_2^{(0)})^3}=\dfrac{V_{12}V_{22}V_{21}V_{11}}{(E_1^{(0)}-E_2^{(0)})^3}$ \\\hline
+    \end{tikzpicture}
+	 & $(-)^{2+1}\dfrac{\braket{1|\vs|2}\braket{2|\vs|2}\braket{2|\vs|1}\braket{1|\vs|1}}{(E_1^{(0)}-E_2^{(0)})^3}=\dfrac{V_{12}V_{22}V_{21}V_{11}}{(E_1^{(0)}-E_2^{(0)})^3}$ \\\hline
     \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.55] 
     \diagsize
     \path [draw=blue,postaction={on each segment={mid arrow}}] 
@@ -850,8 +852,8 @@ $\braket{\textbf{入}\text{线标签}| \vs |\textbf{出}\text{线标签} }$.
     arc (165:135:2.12cm)node[right,midway]{2} node{\dian} 
     arc (45:-15:2.12cm)node[left,midway]{1} node{\dian} 
     arc (-15:-45:2.12cm)node[left,midway]{1} node{\dian} ;
-    \end{tikzpicture} & 
-    $(-)^{2+1}\dfrac{\braket{1|\vs|2}\braket{2|\vs|2}\braket{2|\vs|1}\braket{1|\vs|1}}{(E_1^{(0)}-E_2^{(0)})^3}=\dfrac{V_{12}V_{22}V_{21}V_{11}}{(E_1^{(0)}-E_2^{(0)})^3}$ \\\hline
+    \end{tikzpicture}
+	 & $(-)^{2+1}\dfrac{\braket{1|\vs|2}\braket{2|\vs|2}\braket{2|\vs|1}\braket{1|\vs|1}}{(E_1^{(0)}-E_2^{(0)})^3}=\dfrac{V_{12}V_{22}V_{21}V_{11}}{(E_1^{(0)}-E_2^{(0)})^3}$ \\\hline
     \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.55] 
     \diagsize
     \path [draw=blue,postaction={on each segment={mid arrow}}] 
@@ -860,8 +862,8 @@ $\braket{\textbf{入}\text{线标签}| \vs |\textbf{出}\text{线标签} }$.
     arc (195:165:2.12cm)node[left,midway]{2} node{\dian} 
     arc (165:135:2.12cm)node[left,midway]{2} node{\dian} 
     arc (45:-45:2.12cm)node[right,midway]{1} node{\dian} ;
-    \end{tikzpicture} & 
-    $(-)^{1+1}\dfrac{\braket{1|\vs|2}\braket{2|\vs|2}\braket{2|\vs|2}\braket{1|\vs|1}}{(E_1^{(0)}-E_2^{(0)})^3}=\dfrac{V_{12}V_{22}^2V_{21}}{(E_1^{(0)}-E_2^{(0)})^3}$ \\\hline
+    \end{tikzpicture}
+	 & $(-)^{1+1}\dfrac{\braket{1|\vs|2}\braket{2|\vs|2}\braket{2|\vs|2}\braket{1|\vs|1}}{(E_1^{(0)}-E_2^{(0)})^3}=\dfrac{V_{12}V_{22}^2V_{21}}{(E_1^{(0)}-E_2^{(0)})^3}$ \\\hline
     \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.55]
     \diagsize
     \path [draw=blue,postaction={on each segment={mid arrow}}] 
@@ -870,7 +872,8 @@ $\braket{\textbf{入}\text{线标签}| \vs |\textbf{出}\text{线标签} }$.
     (6,1) to [bend right] node[right,midway]{2} node[pos=0]{\dian}
     (5,2.8) to [bend right] node[left,midway]{1} node[pos=0]{\dian}
     (6,0) ;
-    \end{tikzpicture} & $(-)^{2+1}\dfrac{\braket{1|\vs|2}\braket{2|\vs|1}\braket{1|\vs|2}\braket{2|\vs|1}}{(E_1^{(0)}-E_2^{(0)})^2(2E_1^{(0)} - 2E_2^{(0)})}=\dfrac{(V_{12}V_{21})^2}{2(E_1^{(0)}-E_2^{(0)})^3}$\\\hline
+    \end{tikzpicture}
+	 & $(-)^{2+1}\dfrac{\braket{1|\vs|2}\braket{2|\vs|1}\braket{1|\vs|2}\braket{2|\vs|1}}{(E_1^{(0)}-E_2^{(0)})^2(2E_1^{(0)} - 2E_2^{(0)})}=\dfrac{(V_{12}V_{21})^2}{2(E_1^{(0)}-E_2^{(0)})^3}$\\\hline
     \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.55]
     \diagsize
     \path [draw=blue,postaction={on each segment={mid arrow}}] 
@@ -879,7 +882,8 @@ $\braket{\textbf{入}\text{线标签}| \vs |\textbf{出}\text{线标签} }$.
     (6,1) to [bend left] node[above,midway]{2} node[pos=0]{\dian}
     (7,1.8) to [bend left] node[right,midway]{1} node[pos=0]{\dian}
     (6,0);
-    \end{tikzpicture} & $(-)^{2+1}\dfrac{\braket{1|\vs|2}\braket{2|\vs|1}\braket{1|\vs|2}\braket{2|\vs|1}}{(E_1^{(0)}-E_2^{(0)})^2(2E_1^{(0)} - 2E_2^{(0)})}=\dfrac{(V_{12}V_{21})^2}{2(E_1^{(0)}-E_2^{(0)})^3}$\\\hline
+    \end{tikzpicture}
+	 & $(-)^{2+1}\dfrac{\braket{1|\vs|2}\braket{2|\vs|1}\braket{1|\vs|2}\braket{2|\vs|1}}{(E_1^{(0)}-E_2^{(0)})^2(2E_1^{(0)} - 2E_2^{(0)})}=\dfrac{(V_{12}V_{21})^2}{2(E_1^{(0)}-E_2^{(0)})^3}$\\\hline
 \end{tabular}
 \label{t6.1}
 \end{table}
@@ -978,7 +982,8 @@ arc (45:-45:2.12cm)  node[right,midway]{1} node{\dian} ;
 		(4.5,0) node{\dian}
 		arc (-45:45:2.12cm) node[right,midway]{$n$} node{\dian}
 		arc (135:225:2.12cm)node[left,midway]{1}  node{\dian};
-	\end{tikzpicture} & = \sum_{n\neq 1}\frac{V_{1n}V_{n1}}{E_1^{(0)} - E_n^{(0)}} = \sideset{}{'}\sum_n \frac{V_{1n}V_{n1}}{E_1^{(0)} - E_n^{(0)}}\\
+	\end{tikzpicture}
+	 & = \sum_{n\neq 1}\frac{V_{1n}V_{n1}}{E_1^{(0)} - E_n^{(0)}} = \sum_n'\frac{V_{1n}V_{n1}}{E_1^{(0)} - E_n^{(0)}}\\
 	\begin{tikzpicture}[baseline={(current bounding box.center)},scale=.6] 
 \path [draw=blue,postaction={on each segment={mid arrow}}] 
 (4.5,0) node{\dian}
@@ -1069,8 +1074,7 @@ arc (-15:-45:2.12cm) node[right,midway]{$i$} node{\dian};
 用\autoref{sec6.1}介绍的方法得出四阶能量的代数表达式并与图形方法所得的结果比较.
 
 } 
-\subsection{对图求和}
-\label{sec6.2.3}
+\subsection{对图求和}\label{sec6.2.3}
 图微扰论中的一个重要技术就是对某些特定类的图进行无穷阶求和. 
 为说明这个技术我们考虑两态系统. 
 对二阶有贡献的唯一图就是
@@ -1292,7 +1296,7 @@ E_0 & = \braket{\Psi_0|\hs|\Psi_0} = \braket{\Psi_0|\hs_0+\vs|\Psi_0}\notag\\
 在这种微扰是单粒子作用之和的特殊情形下, 
 系统的总\ha 为
 \begin{align}
-\hs = \hs_0 + \vs = \sum_i(h_0(i)+v(i)) = \sum_ih(i) 
+\hs = \hs_0 + \vs = \sum_i(h_0(i)+v(i)) = \sum_i h(i) 
 \end{align}
 也是一些单粒子作用之和. 
 因此可以找到一组精确的自旋轨道及其能量：
@@ -1390,7 +1394,7 @@ E_0^{(2)} = \sum_{ar}\frac{v_{ar}v_{ra}}{\epsilon_a^{(0)} - \epsilon_r^{(0)}}
 你可以从二阶能量的一般表达式(\autoref{6.12})开始, 
 将其用在$N$-电子体系中：
 \begin{align*}
-E_0^{(2)} = \sideset{}{'}\sum_n\frac{\left| \braket{\Psi_0|\sum_iv(i)\ket{n}}\right|^2}{E_0^{(0)} - E_n^{(0)}}
+E_0^{(2)} = \sideset{}{'}\sum_n\frac{\left| \braket{\Psi_0|\sum_i v(i)\ket{n}}\right|^2}{E_0^{(0)} - E_n^{(0)}}
 \end{align*}
 此处求和遍及除基态外的所有态.
 
@@ -2054,8 +2058,7 @@ E_0^{(2)} = 2\sum_{abrs}^{N/2}\frac{\braket{ab|rs}\braket{rs|ba}}{\epsilon_a + \
 \label{6.74}
 \end{align}
 \exercise{
-从\autoref{6.72}出发, 推导\autoref{6.73}和\autoref{6.74}, 
-.
+从\autoref{6.72}出发, 推导\autoref{6.73}和\autoref{6.74}.
 }
 按照同样的方式, 
 但更加繁琐一些, 
